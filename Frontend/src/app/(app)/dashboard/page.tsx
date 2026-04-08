@@ -33,7 +33,11 @@ function DashboardContent() {
         return true;
     });
 
-    const { data, isLoading, error, refetch } = useDashboardData(!!token, token);
+    // Enable guest-cookie dashboard fetch as well as authenticated token fetch.
+    const { data, isLoading, error, refetch } = useDashboardData(true, token);
+    const errorMessage = error ? (error as Error).message : "";
+    const isNoDogError =
+        /No dog profile found|No dog found|complete the survey|User profile not found/i.test(errorMessage);
 
     // Detect openDetailLog query parameter
     useEffect(() => {
@@ -61,20 +65,20 @@ function DashboardContent() {
 
     if (isLoading) return <DashboardSkeleton />;
 
-    if (error) return (
+    if (error && !isNoDogError) return (
         <div className="p-8 text-center pt-20">
             <h2 className="text-xl font-bold text-red-500 mb-2">오류가 발생했습니다 😢</h2>
             <p className="text-gray-600 mb-6 bg-gray-100 p-4 rounded-lg text-sm font-mono inline-block">
                 {error ? (error as Error).message : "Loading error"}
             </p>
             <br />
-            <button onClick={() => refetch()} className="bg-gray-800 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition">
+            <button onClick={() => refetch()} className="bg-slate-700 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition">
                 다시 시도하기
             </button>
         </div>
     );
 
-    if (!data) return (
+    if (!data || isNoDogError) return (
         <div className="p-8 text-center pt-20">
             <h2 className="text-xl font-bold mb-4">반려견 정보가 없습니다.</h2>
             <p className="text-gray-500 mb-6">설문을 완료하고 맞춤형 코칭을 받아보세요.</p>

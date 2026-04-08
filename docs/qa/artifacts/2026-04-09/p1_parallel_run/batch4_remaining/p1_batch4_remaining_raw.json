@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-04-08T15:06:06.402Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "backendUrl": "https://backend-production-61c6.up.railway.app",
+  "profileDir": "/Users/family/jason/TailLogweb/tmp_qa_profile_snapshot",
+  "summary": {
+    "PASS": 2,
+    "PARTIAL": 0,
+    "FAIL": 0,
+    "BLOCKED": 2
+  },
+  "cases": [
+    {
+      "caseId": "DASH-09",
+      "title": "Dashboard no-dog should show onboarding guidance (not crash)",
+      "status": "PASS",
+      "note": "no-dog fallback guidance rendered on dashboard",
+      "details": {},
+      "durationMs": 2966
+    },
+    {
+      "caseId": "NET-02",
+      "title": "Forced survey 500 (CORS-like symptom) should surface safe failure UX",
+      "status": "PASS",
+      "note": "forced 500 produced user-visible submit failure handling",
+      "details": {
+        "alertMessage": "설문 제출에 실패했습니다. 다시 시도해주세요."
+      },
+      "durationMs": 7263
+    },
+    {
+      "caseId": "DASH-06",
+      "title": "Log delete path",
+      "status": "BLOCKED",
+      "note": "delete endpoint is not available in current backend router",
+      "details": {
+        "status": 405,
+        "logId": "10b10785-ad94-4eee-ac96-e85f3b78e504"
+      },
+      "durationMs": 6364
+    },
+    {
+      "caseId": "COACH-06",
+      "title": "Account unlink scenario",
+      "status": "BLOCKED",
+      "note": "linked identity was not present in current profile; unlink runtime scenario not reproducible",
+      "details": {},
+      "durationMs": 1101
+    }
+  ]
+}
