@@ -149,8 +149,12 @@ python -m pytest tests
 ## 📚 문서  
 
 자세한 문서는 `docs/` 폴더에 있습니다:  
-- [전체 프로젝트 계획 (Plan.md)](./docs/Plan.md)
-- [AI 도입 전략 및 터널 가이드 (AI_Adoption_Plan.md)](./docs/AI_Adoption_Plan.md)
-- [서버 아키텍처 및 인프라 (ServerPlan.md)](./docs/ServerPlan.md)
-- [데이터베이스 설계 (schema.md)](./docs/schema.md)
-- [미래 확장 로드맵 (future_roadmap.md)](./docs/future_roadmap.md)
+- [전체 프로젝트 계획 (Plan.md)](./Plan.md)
+- [AI 도입 전략 및 터널 가이드 (AI_Adoption_Plan.md)](./AI_Adoption_Plan.md)
+- [백엔드 구조 및 API 메모 (backend.md)](./backend.md)
+- [배포/운영 가이드 (deploy.md)](./deploy.md)
+- [E2E 시나리오 (E2E-Test-Scenarios.md)](./E2E-Test-Scenarios.md)
+- [협업 인코딩 규칙 (collaboration-encoding.md)](./collaboration-encoding.md)
+- [미래 확장 로드맵 (future_roadmap.md)](./future_roadmap.md)
+- [QA 문서 인덱스 (qa/README.md)](./qa/README.md)
+- [최근 QA 실행 리포트 (qa/artifacts/2026-04-08/QA_RUN_REPORT.md)](./qa/artifacts/2026-04-08/QA_RUN_REPORT.md)
