@@ -8,6 +8,12 @@ TailLog 웹/앱 QA 전략, 체크리스트, 실행 로그 아카이브를 한곳
 
 ## Latest Run Archive
 - [2026-04-08 QA Run Report](./artifacts/2026-04-08/QA_RUN_REPORT.md)
+- Full Journey Logs (2026-04-08)
+  - `full_journey_web_smoke.log`
+  - `full_journey_api_parallel.log`
+  - `full_journey_backend_pytest.log`
+  - `full_journey_frontend_build.log`
+  - `full_journey_route_api_matrix.log`
 
 ## Quick Commands
 ```bash
