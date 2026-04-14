@@ -101,7 +101,7 @@ export function Step1Profile({ data, updateData }: Props) {
     return (
         <div className="space-y-6">
             <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">누구를 위한 교육인가요?</h2>
+                <h2 className="text-2xl font-bold text-slate-800 mb-2">누구를 위한 교육인가요?</h2>
                 <p className="text-gray-500">맞춤형 교육 과정을 위해 반려견의 기본 정보를 알려주세요.</p>
             </div>
 
@@ -203,7 +203,7 @@ export function Step1Profile({ data, updateData }: Props) {
                                             }}
                                             className="w-full px-4 py-3 text-left hover:bg-brand-lime/5 transition-colors flex items-center justify-between group"
                                         >
-                                            <span className="text-gray-900 group-hover:text-brand-lime font-medium">
+                                            <span className="text-slate-800 group-hover:text-brand-lime font-medium">
                                                 {/* English/Korean toggle placeholder */}
                                                 {(false as boolean) ? b.en : b.ko}
                                             </span>
@@ -231,7 +231,7 @@ export function Step1Profile({ data, updateData }: Props) {
                             type="date"
                             value={data.birthDate}
                             onChange={(e) => updateData({ birthDate: e.target.value })}
-                            className="w-full h-12 pl-12 pr-4 rounded-xl border border-gray-200 focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 outline-none transition-all placeholder-gray-400 text-gray-900"
+                            className="w-full h-12 pl-12 pr-4 rounded-xl border border-gray-200 focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 outline-none transition-all placeholder-gray-400 text-slate-800"
                         />
                     </div>
                 </div>
@@ -245,7 +245,7 @@ export function Step1Profile({ data, updateData }: Props) {
                             type="date"
                             value={data.adoptionDate}
                             onChange={(e) => updateData({ adoptionDate: e.target.value })}
-                            className="w-full h-12 pl-12 pr-4 rounded-xl border border-gray-200 focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 outline-none transition-all placeholder-gray-400 text-gray-900"
+                            className="w-full h-12 pl-12 pr-4 rounded-xl border border-gray-200 focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 outline-none transition-all placeholder-gray-400 text-slate-800"
                         />
                     </div>
                 </div>

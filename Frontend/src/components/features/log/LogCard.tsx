@@ -40,7 +40,7 @@ export function LogCard({ log }: Props) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="glass p-6 rounded-[2.5rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-white/60 relative overflow-hidden group ring-1 ring-black/5"
+            className="glass p-6 rounded-[2.5rem] shadow-elev-base border border-white/60 relative overflow-hidden group ring-1 ring-black/5"
         >
             {/* Header: Time & Intensity */}
             <div className="flex items-center justify-between mb-8 relative z-10">
@@ -52,7 +52,7 @@ export function LogCard({ log }: Props) {
                         <div className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-1">행동 기록</div>
                         <div className="flex items-center gap-2">
                             <Clock className="w-3.5 h-3.5 text-brand-lime" />
-                            <span className="text-sm font-black text-gray-900">{log.time}</span>
+                            <span className="text-sm font-black text-slate-800">{log.time}</span>
                             <span className="text-gray-300 mx-1">|</span>
                             <MapPin className="w-3.5 h-3.5 text-gray-400" />
                             <span className="text-sm font-black text-gray-400 uppercase tracking-tight">
@@ -135,7 +135,7 @@ function ABCStep({ char, title, label, desc, active, color, intensityBg, intensi
                 <div className="flex items-center gap-2 mb-0.5">
                     <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest opacity-60">{label}</span>
                 </div>
-                <div className="text-base font-black text-gray-900 tracking-tight leading-snug">{title}</div>
+                <div className="text-base font-black text-slate-800 tracking-tight leading-snug">{title}</div>
                 <div className="text-[10px] font-bold text-gray-400 opacity-80">{desc}</div>
             </div>
         </div>

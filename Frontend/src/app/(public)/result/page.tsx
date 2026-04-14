@@ -23,10 +23,12 @@ export const dynamic = 'force-dynamic';
 function ResultPageContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const { token, user } = useAuth();
+    const { token, user, loading: isAuthLoading, hasStoredSessionHint } = useAuth();
 
-    // Fetch Data (Guest supported via Cookie)
-    const { data: dashboardData, isLoading } = useDashboardData(true, token);
+    // Fetch Data (Guest supported via Cookie), but guard against transient auth restore race.
+    const isAuthHydratingFromStorage = !isAuthLoading && !token && !user && hasStoredSessionHint;
+    const isDashboardQueryEnabled = !isAuthHydratingFromStorage && !isAuthLoading && (!!token || !user || !!user.is_anonymous);
+    const { data: dashboardData, isLoading } = useDashboardData(isDashboardQueryEnabled, token, true);
 
     // Local State for interactions
     const [showChallengeModal, setShowChallengeModal] = useState(false);
@@ -185,7 +187,7 @@ function ResultPageContent() {
                 <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-md border-t border-gray-100 z-50 safe-area-bottom">
                     <button
                         onClick={() => setShowChallengeModal(true)}
-                        className="w-full bg-gray-900 hover:bg-black text-brand-lime font-black py-4.5 rounded-2xl shadow-xl shadow-gray-200 flex items-center justify-center gap-2 active:scale-[0.98] transition-all group overflow-hidden relative"
+                        className="w-full bg-slate-800 hover:bg-slate-900 text-brand-lime font-black py-4.5 rounded-2xl shadow-xl shadow-gray-200 flex items-center justify-center gap-2 active:scale-[0.98] transition-all group overflow-hidden relative"
                     >
                         <span className="relative z-10">{dog_profile.name} 맞춤형 7일 챌린지 시작하기</span>
                         <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />

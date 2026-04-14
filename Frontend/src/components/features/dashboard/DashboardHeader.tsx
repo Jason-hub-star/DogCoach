@@ -51,7 +51,7 @@ export const DashboardHeader = ({ data }: Props) => {
                         <Sparkles className="w-3.5 h-3.5 fill-brand-lime/20" />
                         Insight Dashboard
                     </motion.div>
-                    <h1 className="text-4xl font-black text-gray-900 leading-[1.1] tracking-tight">
+                    <h1 className="text-4xl font-black text-slate-800 leading-[1.1] tracking-tight">
                         반가워요, <br />
                         <span className="bg-gradient-to-r from-brand-lime to-emerald-500 bg-clip-text text-transparent">{data.dog_profile.name}</span> <span className="text-gray-300 font-medium">보호자님</span>
                     </h1>
@@ -62,7 +62,7 @@ export const DashboardHeader = ({ data }: Props) => {
             <div className="flex gap-4 sm:gap-6 relative z-10 max-w-4xl">
                 <motion.div
                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                    className="glass p-6 rounded-[2.5rem] flex-1 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-white/60 relative overflow-hidden group ring-1 ring-black/5"
+                    className="glass p-6 rounded-[2.5rem] flex-1 shadow-elev-base border border-white/60 relative overflow-hidden group ring-1 ring-black/5"
                 >
                     <div className="absolute -right-4 -top-4 w-20 h-20 bg-orange-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
                     <div className="relative flex flex-col items-start gap-4">
@@ -71,7 +71,7 @@ export const DashboardHeader = ({ data }: Props) => {
                         </div>
                         <div className="space-y-0.5">
                             <div className="text-[10px] text-gray-400 font-black uppercase tracking-widest opacity-60">연속 실천</div>
-                            <div className="text-3xl font-black text-gray-900 tabular-nums">
+                            <div className="text-3xl font-black text-slate-800 tabular-nums">
                                 {data.stats.current_streak} <span className="text-sm font-bold text-gray-400">Days</span>
                             </div>
                         </div>
@@ -80,7 +80,7 @@ export const DashboardHeader = ({ data }: Props) => {
 
                 <motion.div
                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                    className="glass p-6 rounded-[2.5rem] flex-1 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-white/60 relative overflow-hidden group ring-1 ring-black/5"
+                    className="glass p-6 rounded-[2.5rem] flex-1 shadow-elev-base border border-white/60 relative overflow-hidden group ring-1 ring-black/5"
                 >
                     <div className="absolute -right-4 -top-4 w-20 h-20 bg-brand-lime/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
                     <div className="relative flex flex-col items-start gap-4">
@@ -89,7 +89,7 @@ export const DashboardHeader = ({ data }: Props) => {
                         </div>
                         <div className="space-y-0.5">
                             <div className="text-[10px] text-gray-400 font-black uppercase tracking-widest opacity-60">누적 기록</div>
-                            <div className="text-3xl font-black text-gray-900 tabular-nums">
+                            <div className="text-3xl font-black text-slate-800 tabular-nums">
                                 {data.stats.total_logs} <span className="text-sm font-bold text-gray-400">Total</span>
                             </div>
                         </div>

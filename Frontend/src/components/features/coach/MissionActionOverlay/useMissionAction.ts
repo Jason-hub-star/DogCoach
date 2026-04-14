@@ -3,6 +3,7 @@ import confetti from "canvas-confetti";
 import { TrainingStage, TrainingAlternative, TrainingStep } from "../../../../data/curriculum/types";
 import { useAuth } from "@/hooks/useAuth";
 import { useFetchCAlternative, useUpdateTrainingStatus } from "@/hooks/useQueries";
+import { CONFETTI_COLORS } from "@/lib/theme/colors";
 
 interface UseMissionActionProps {
     curriculumId: string | null;
@@ -108,7 +109,7 @@ export function useMissionAction({ curriculumId, dogId, mission, onComplete, isO
             particleCount: 150,
             spread: 70,
             origin: { y: 0.6 },
-            colors: ["#4ADE80", "#D9F99D", "#f7fee7"],
+            colors: [...CONFETTI_COLORS],
         });
     };
 

@@ -67,7 +67,7 @@ export function Step4Problems({ data, updateData }: Props) {
     return (
         <div className="space-y-6">
             <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">가장 큰 고민은 무엇인가요?</h2>
+                <h2 className="text-2xl font-bold text-slate-800 mb-2">가장 큰 고민은 무엇인가요?</h2>
                 <p className="text-gray-500 font-medium">최대 3가지까지 선택할 수 있어요.</p>
             </div>
 
@@ -94,7 +94,7 @@ export function Step4Problems({ data, updateData }: Props) {
                         <div className="flex flex-col items-center">
                             <span className={cn(
                                 "font-bold text-xs md:text-sm whitespace-nowrap",
-                                data.chronicIssues.includes(item.id) ? "text-gray-900" : "text-gray-500"
+                                data.chronicIssues.includes(item.id) ? "text-slate-800" : "text-gray-500"
                             )}>
                                 {item.id === 'etc' && data.chronicIssuesOther ? data.chronicIssuesOther : item.label}
                             </span>
@@ -121,7 +121,7 @@ export function Step4Problems({ data, updateData }: Props) {
                             className="bg-white rounded-[2.5rem] w-full max-w-sm overflow-hidden relative shadow-2xl border border-gray-100 z-10"
                         >
                             <div className="p-8 pb-4 text-center">
-                                <h3 className="text-xl font-black text-gray-900 mb-2">기타 행동 입력</h3>
+                                <h3 className="text-xl font-black text-slate-800 mb-2">기타 행동 입력</h3>
                                 <p className="text-sm text-gray-500">목록에 없는 우리 아이만의 고민이 있나요?</p>
                             </div>
 
@@ -154,7 +154,7 @@ export function Step4Problems({ data, updateData }: Props) {
                                 </button>
                                 <button
                                     onClick={handleOtherSave}
-                                    className="flex-[2] py-4 px-6 rounded-2xl bg-gray-900 hover:bg-black text-brand-lime font-black shadow-lg shadow-gray-200 transition-all text-sm flex items-center justify-center gap-2"
+                                    className="flex-[2] py-4 px-6 rounded-2xl bg-slate-800 hover:bg-slate-900 text-brand-lime font-black shadow-lg shadow-gray-200 transition-all text-sm flex items-center justify-center gap-2"
                                 >
                                     <Check className="w-4 h-4" />
                                     저장하기

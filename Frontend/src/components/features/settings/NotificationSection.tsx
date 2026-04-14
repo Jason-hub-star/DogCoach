@@ -40,7 +40,7 @@ export function NotificationSection({ settings, onUpdate }: Props) {
             <div className="flex flex-col gap-2 px-1">
                 <div className="flex items-center gap-2">
                     <Bell className="w-5 h-5 text-brand-lime" />
-                    <h2 className="text-xl font-black text-gray-900 tracking-tight">알림 설정</h2>
+                    <h2 className="text-xl font-black text-slate-800 tracking-tight">알림 설정</h2>
                 </div>
                 {(!settings.channels.alimtalk && !settings.channels.push) && (
                     <span className="text-[10px] font-black text-brand-orange uppercase tracking-widest animate-pulse">
@@ -58,7 +58,7 @@ export function NotificationSection({ settings, onUpdate }: Props) {
                             <div className="flex items-center justify-between p-6 bg-white/40 backdrop-blur-sm rounded-[2rem] border border-white/60 shadow-inner">
                                 <div className="flex flex-col gap-2">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-sm font-black text-gray-900">카카오 알림톡</span>
+                                        <span className="text-sm font-black text-slate-800">카카오 알림톡</span>
                                         <div className="px-2 py-0.5 bg-gray-200 text-gray-600 rounded text-[9px] font-black uppercase">
                                             준비중
                                         </div>
@@ -101,12 +101,12 @@ export function NotificationSection({ settings, onUpdate }: Props) {
                                         className="overflow-hidden"
                                     >
                                         <div className="flex items-center justify-between p-5 bg-white/40 backdrop-blur-sm rounded-3xl border border-white/60 shadow-inner mt-2">
-                                            <span className="text-xs font-black text-gray-900 uppercase tracking-widest">Remind Time</span>
+                                            <span className="text-xs font-black text-slate-800 uppercase tracking-widest">Remind Time</span>
                                             <input
                                                 type="time"
                                                 value={settings.remind_time}
                                                 onChange={(e) => onUpdate({ ...settings, remind_time: e.target.value })}
-                                                className="bg-white border border-gray-100 rounded-xl px-4 py-2 text-sm font-black text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-lime/30 shadow-sm"
+                                                className="bg-white border border-gray-100 rounded-xl px-4 py-2 text-sm font-black text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-lime/30 shadow-sm"
                                             />
                                         </div>
                                     </motion.div>
@@ -155,7 +155,7 @@ export function NotificationSection({ settings, onUpdate }: Props) {
                                                 type="time"
                                                 value={settings.quiet_hours.start}
                                                 onChange={(e) => handleQuietHoursChange('start', e.target.value)}
-                                                className="w-full bg-white border border-gray-100 rounded-xl px-4 py-3 text-sm font-black text-gray-900 focus:outline-none shadow-sm"
+                                                className="w-full bg-white border border-gray-100 rounded-xl px-4 py-3 text-sm font-black text-slate-800 focus:outline-none shadow-sm"
                                             />
                                         </div>
                                         <div className="pt-6 font-black text-gray-300">→</div>
@@ -165,7 +165,7 @@ export function NotificationSection({ settings, onUpdate }: Props) {
                                                 type="time"
                                                 value={settings.quiet_hours.end}
                                                 onChange={(e) => handleQuietHoursChange('end', e.target.value)}
-                                                className="w-full bg-white border border-gray-100 rounded-xl px-4 py-3 text-sm font-black text-gray-900 focus:outline-none shadow-sm"
+                                                className="w-full bg-white border border-gray-100 rounded-xl px-4 py-3 text-sm font-black text-slate-800 focus:outline-none shadow-sm"
                                             />
                                         </div>
                                     </div>

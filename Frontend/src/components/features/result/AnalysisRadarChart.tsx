@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { DESIGN_COLORS, EFFECT_COLORS } from "@/lib/theme/colors";
 
 interface RadarChartProps {
     data?: number[]; // [Sensibility, Sociability, Aggression, Anxiety, Energy]
@@ -58,8 +59,8 @@ export function AnalysisRadarChart({ data = [8, 4, 3, 9, 6] }: RadarChartProps) 
                                 const p = getPoint(level, i);
                                 return `${p.x},${p.y}`;
                             }).join(" ")}
-                            fill={level === 10 ? "rgba(74, 222, 128, 0.02)" : "none"}
-                            stroke="rgba(0,0,0,0.05)"
+                            fill={level === 10 ? EFFECT_COLORS.limeLevelFill : "none"}
+                            stroke={EFFECT_COLORS.black05}
                             strokeWidth="1"
                         />
                     ))}
@@ -72,7 +73,7 @@ export function AnalysisRadarChart({ data = [8, 4, 3, 9, 6] }: RadarChartProps) 
                             y1={center}
                             x2={axis.endPoint.x}
                             y2={axis.endPoint.y}
-                            stroke="rgba(0,0,0,0.05)"
+                            stroke={EFFECT_COLORS.black05}
                             strokeWidth="1"
                         />
                     ))}
@@ -94,15 +95,15 @@ export function AnalysisRadarChart({ data = [8, 4, 3, 9, 6] }: RadarChartProps) 
                         transition={{ duration: 1.5, type: "spring", bounce: 0.4 }}
                         points={points}
                         fill="url(#radarGradient)"
-                        stroke="#4ade80"
+                        stroke={DESIGN_COLORS.brandLime}
                         strokeWidth="3"
                         strokeLinejoin="round"
                         filter="url(#glow)"
                     />
 
                     <linearGradient id="radarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#4ade80" stopOpacity="0.8" />
-                        <stop offset="100%" stopColor="#22c55e" stopOpacity="0.6" />
+                        <stop offset="0%" stopColor={DESIGN_COLORS.brandLime} stopOpacity="0.8" />
+                        <stop offset="100%" stopColor={DESIGN_COLORS.brandGreen} stopOpacity="0.6" />
                     </linearGradient>
 
                     {/* Labels - Premium Outfit */}

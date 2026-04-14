@@ -13,7 +13,7 @@ function ScanningBar() {
                 initial={{ top: "-10%" }}
                 animate={{ top: "110%" }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                className="absolute left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent shadow-[0_0_15px_rgba(168,85,247,0.8)] z-10"
+                className="absolute left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent shadow-glow-purple-strong z-10"
             />
             <motion.div
                 initial={{ opacity: 0 }}
@@ -83,7 +83,7 @@ export function MissionActionOverlay({ isOpen, curriculumId, dogId, mission, onC
                             ))}
                         </div>
                     </div>
-                    <h1 className="text-2xl font-black text-gray-900 leading-tight break-keep mb-2">{mission.title}</h1>
+                    <h1 className="text-2xl font-black text-slate-800 leading-tight break-keep mb-2">{mission.title}</h1>
                     <p className="text-sm text-gray-500 leading-relaxed break-keep font-medium">{mission.goal}</p>
                 </div>
 
@@ -128,7 +128,7 @@ export function MissionActionOverlay({ isOpen, curriculumId, dogId, mission, onC
                                         </div>
                                         <div>
                                             <p className="text-[10px] font-black text-brand-lime uppercase tracking-tighter mb-1">Success Criteria</p>
-                                            <p className="text-sm text-gray-900 font-bold leading-snug">{step.success_criteria}</p>
+                                            <p className="text-sm text-slate-800 font-bold leading-snug">{step.success_criteria}</p>
                                         </div>
                                     </div>
                                 )}
@@ -211,7 +211,7 @@ export function MissionActionOverlay({ isOpen, curriculumId, dogId, mission, onC
                                                     )}
                                                 </div>
                                                 <div className="flex-1 text-left">
-                                                    <p className="text-sm font-bold text-gray-700 group-hover:text-gray-900">다른 접근으로 바꿔볼까요?</p>
+                                                    <p className="text-sm font-bold text-gray-700 group-hover:text-slate-800">다른 접근으로 바꿔볼까요?</p>
                                                     <p className="text-[10px] text-gray-400 font-medium">{selectedAlternative ? "다음 대안으로 전환합니다." : "대안 훈련으로 전환합니다."}</p>
                                                 </div>
                                                 <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-brand-lime group-hover:translate-x-1 transition-all" />

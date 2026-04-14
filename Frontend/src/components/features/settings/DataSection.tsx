@@ -39,7 +39,7 @@ export function DataSection({ isPro = false }: Props) {
         <div className="space-y-6">
             <div className="flex items-center gap-2 px-1">
                 <Database className="w-5 h-5 text-brand-lime" />
-                <h2 className="text-xl font-black text-gray-900 tracking-tight">데이터 및 관리</h2>
+                <h2 className="text-xl font-black text-slate-800 tracking-tight">데이터 및 관리</h2>
             </div>
 
             <motion.div
@@ -50,7 +50,7 @@ export function DataSection({ isPro = false }: Props) {
                 <div className="space-y-10">
                     <div className="flex items-center justify-between group">
                         <div className="flex flex-col gap-1">
-                            <h3 className="text-base font-black text-gray-900 tracking-tight">반려견 프로필 관리</h3>
+                            <h3 className="text-base font-black text-slate-800 tracking-tight">반려견 프로필 관리</h3>
                             <p className="text-xs font-bold text-gray-500">등록된 강아지 정보를 수정하거나 업데이트합니다.</p>
                         </div>
                         <button
@@ -64,7 +64,7 @@ export function DataSection({ isPro = false }: Props) {
                     <div className="flex items-center justify-between group">
                         <div className="flex flex-col gap-1">
                             <div className="flex items-center gap-2">
-                                <h3 className="text-base font-black text-gray-900 tracking-tight">기록 데이터 내보내기</h3>
+                                <h3 className="text-base font-black text-slate-800 tracking-tight">기록 데이터 내보내기</h3>
                                 {!isPro && (
                                     <span className="bg-gray-100 text-gray-400 text-[8px] font-black uppercase tracking-widest px-2 py-0.5 rounded-lg border border-gray-200/50 flex items-center gap-1">
                                         Professional Edition

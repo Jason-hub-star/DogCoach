@@ -21,7 +21,7 @@ import { PremiumBackground } from "@/components/shared/ui/PremiumBackground";
 function DashboardContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const { token } = useAuth();
+    const { token, user, loading: isAuthLoading, hasStoredSessionHint } = useAuth();
     const [editingLog, setEditingLog] = useState<any | null>(null);
     const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
     const [showMultiDogBanner, setShowMultiDogBanner] = useState(() => {
@@ -33,8 +33,10 @@ function DashboardContent() {
         return true;
     });
 
-    // Enable guest-cookie dashboard fetch as well as authenticated token fetch.
-    const { data, isLoading, error, refetch } = useDashboardData(true, token);
+    // Avoid transient guest fetch while authenticated token is still restoring from localStorage.
+    const isAuthHydratingFromStorage = !isAuthLoading && !token && !user && hasStoredSessionHint;
+    const isDashboardQueryEnabled = !isAuthHydratingFromStorage && !isAuthLoading && (!!token || !user || !!user.is_anonymous);
+    const { data, isLoading, error, refetch } = useDashboardData(isDashboardQueryEnabled, token, true);
     const errorMessage = error ? (error as Error).message : "";
     const isNoDogError =
         /No dog profile found|No dog found|complete the survey|User profile not found/i.test(errorMessage);

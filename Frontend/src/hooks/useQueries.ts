@@ -19,7 +19,11 @@ import type { UserSettings, DogProfileFull } from "@/lib/types";
 // ==========================================
 
 // 1. Dashboard Data Hook
-export function useDashboardData(enabled: boolean = true, token?: string | null) {
+export function useDashboardData(
+    enabled: boolean = true,
+    token?: string | null,
+    authResolved: boolean = true
+) {
     return useQuery({
         queryKey: QUERY_KEYS.dashboard('me'),
         queryFn: async () => {
@@ -29,7 +33,8 @@ export function useDashboardData(enabled: boolean = true, token?: string | null)
                 token: token || undefined
             });
         },
-        enabled: enabled, // Enabled even without token (for Guests)
+        // Wait until auth bootstrap finishes to avoid pre-session duplicate fetches.
+        enabled: enabled && authResolved,
         staleTime: 1000 * 60 * 2, // 2 minutes
     });
 }
@@ -39,10 +44,13 @@ export function useDogLogs(dogId: string | undefined, token?: string | null) {
     return useQuery({
         queryKey: QUERY_KEYS.logs(dogId || ''),
         queryFn: async () => {
-            if (!dogId || !token) return [];
-            return await apiClient.get<any[]>(`/logs/${dogId}`, { token });
+            if (!dogId) return [];
+            return await apiClient.get<any[]>(`/logs/${dogId}`, {
+                token: token || undefined,
+                credentials: 'include',
+            });
         },
-        enabled: !!dogId && !!token,
+        enabled: !!dogId,
     });
 }
 
@@ -82,8 +90,10 @@ export function useCreateLog(dogId: string, token?: string | null) {
 
     return useMutation({
         mutationFn: async (newLog: any) => {
-            if (!token) throw new Error("Authentication required");
-            return await apiClient.post('/logs', { ...newLog, dog_id: dogId }, { token });
+            return await apiClient.post('/logs', { ...newLog, dog_id: dogId }, {
+                token: token || undefined,
+                credentials: 'include',
+            });
         },
         onMutate: async (newLog) => {
             await queryClient.cancelQueries({ queryKey: QUERY_KEYS.logs(dogId) });

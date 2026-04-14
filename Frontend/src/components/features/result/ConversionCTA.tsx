@@ -56,14 +56,14 @@ export function ConversionCTA({ isAuthenticated }: ConversionCTAProps) {
                 <button
                     onClick={handleKakaoLogin}
                     disabled={loading}
-                    className="w-full bg-[#FEE500] hover:bg-[#FDD835] active:scale-[0.98] text-[#3C1E1E] font-black py-5 px-8 rounded-[1.5rem] shadow-2xl shadow-yellow-200/60 flex items-center justify-center gap-3 transition-all group overflow-hidden relative disabled:opacity-70"
+                    className="w-full bg-kakao-yellow hover:bg-kakao-yellow-hover active:scale-[0.98] text-kakao-brown font-black py-5 px-8 rounded-[1.5rem] shadow-2xl shadow-yellow-200/60 flex items-center justify-center gap-3 transition-all group overflow-hidden relative disabled:opacity-70"
                 >
                     <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                     {loading ? (
-                        <div className="w-6 h-6 border-2 border-[#3C1E1E]/30 border-t-[#3C1E1E] rounded-full animate-spin relative z-10" />
+                        <div className="w-6 h-6 border-2 border-kakao-brown/30 border-t-kakao-brown rounded-full animate-spin relative z-10" />
                     ) : (
                         <>
-                            <MessageCircle className="w-6 h-6 fill-[#3C1E1E] relative z-10" />
+                            <MessageCircle className="w-6 h-6 fill-kakao-brown relative z-10" />
                             <span className="text-md relative z-10">리포트 저장하고 매일 코칭받기</span>
                         </>
                     )}

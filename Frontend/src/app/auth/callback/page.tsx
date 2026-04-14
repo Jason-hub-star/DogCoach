@@ -104,7 +104,7 @@ export default function AuthCallbackPage() {
                         </svg>
                     </div>
                     <div className="space-y-2">
-                        <h2 className="text-2xl font-bold text-gray-900">로그인에 실패했습니다</h2>
+                        <h2 className="text-2xl font-bold text-slate-800">로그인에 실패했습니다</h2>
                         <p className="text-gray-500">{errorMessage}</p>
                     </div>
                     <div className="flex flex-col gap-3">
@@ -131,7 +131,7 @@ export default function AuthCallbackPage() {
             <div className="space-y-6">
                 <div className="w-16 h-16 border-4 border-brand-lime border-t-transparent rounded-full animate-spin mx-auto" />
                 <div className="space-y-2">
-                    <h2 className="text-2xl font-bold text-gray-900">
+                    <h2 className="text-2xl font-bold text-slate-800">
                         {state === 'processing' ? '로그인 중입니다' : '페이지 이동 중입니다'}
                     </h2>
                     <p className="text-gray-500">정보를 불러오고 있으니 잠시만 기다려주세요.</p>

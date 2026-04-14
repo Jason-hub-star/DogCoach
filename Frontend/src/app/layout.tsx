@@ -80,7 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${nanumSquareRound.variable} ${outfit.variable} font-nanum bg-gray-50 text-gray-900 antialiased`}>
+      <body className={`${nanumSquareRound.variable} ${outfit.variable} font-nanum bg-gray-50 text-slate-800 antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>

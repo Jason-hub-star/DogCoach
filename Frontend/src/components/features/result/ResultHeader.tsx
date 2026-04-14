@@ -54,7 +54,7 @@ export function ResultHeader({
           className="absolute -bottom-3 -right-3 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-1.5"
         >
           <div className="w-2 h-2 rounded-full bg-brand-lime animate-pulse" />
-          <span className="text-sm font-black text-gray-900 tracking-tight">{score}%</span>
+          <span className="text-sm font-black text-slate-800 tracking-tight">{score}%</span>
         </motion.div>
       </motion.div>
 
@@ -64,7 +64,7 @@ export function ResultHeader({
         transition={{ delay: 0.2 }}
         className="mb-8"
       >
-        <h1 className="text-3xl md:text-4xl font-black text-gray-900 mb-3 break-keep leading-tight tracking-tight">
+        <h1 className="text-3xl md:text-4xl font-black text-slate-800 mb-3 break-keep leading-tight tracking-tight">
           {dogName}, 지금은
           <br />
           <span className="text-brand-lime">{copy.headline}</span>
@@ -103,7 +103,7 @@ export function ResultHeader({
           <Brain className="w-5 h-5" />
         </div>
         <div>
-          <h4 className="font-black text-gray-900 text-xs mb-1 uppercase tracking-widest opacity-50">
+          <h4 className="font-black text-slate-800 text-xs mb-1 uppercase tracking-widest opacity-50">
             Analysis Context
           </h4>
           <p className="text-xs text-gray-600 break-keep font-medium leading-relaxed">

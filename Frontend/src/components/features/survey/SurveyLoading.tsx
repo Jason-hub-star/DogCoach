@@ -62,7 +62,7 @@ export function SurveyLoading({ dogName }: SurveyLoadingProps) {
                                 Deep AI Analysis
                             </span>
                         </motion.div>
-                        <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight break-keep tracking-tight">
+                        <h2 className="text-3xl md:text-4xl font-black text-slate-800 leading-tight break-keep tracking-tight">
                             <span className="text-brand-lime">{dogName}</span>의 행동 패턴을<br />
                             고유 알고리즘으로 분석해요
                         </h2>
@@ -85,7 +85,7 @@ export function SurveyLoading({ dogName }: SurveyLoadingProps) {
                                 initial={{ width: "0%" }}
                                 animate={{ width: "89%" }}
                                 transition={{ duration: 4, ease: [0.34, 1.56, 0.64, 1] }}
-                                className="h-full bg-gradient-to-r from-brand-lime to-green-400 rounded-full shadow-[0_0_15px_rgba(74,222,128,0.5)] relative"
+                                className="h-full bg-gradient-to-r from-brand-lime to-green-400 rounded-full shadow-glow-lime-md relative"
                             >
                                 <motion.div
                                     animate={{ x: ["-100%", "200%"] }}
@@ -107,7 +107,7 @@ export function SurveyLoading({ dogName }: SurveyLoadingProps) {
                             <Lightbulb className="w-5 h-5" />
                         </div>
                         <div>
-                            <h4 className="font-black text-gray-900 text-sm mb-1.5">Premium Insight</h4>
+                            <h4 className="font-black text-slate-800 text-sm mb-1.5">Premium Insight</h4>
                             <p className="text-xs text-gray-600 leading-relaxed break-keep font-medium opacity-80">
                                 직접적인 교정보다 환경 변화가 더 효과적일 때가 많아요.
                                 테일로그는 행동이 시작되는 '트리거'를 변화시키는 데 집중합니다.

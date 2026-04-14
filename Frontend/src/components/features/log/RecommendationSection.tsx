@@ -42,7 +42,7 @@ export function RecommendationSection({ logs, dogName, onStartTraining }: Recomm
             <div className="flex items-center justify-between mb-2 px-1">
                 <div className="flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-brand-lime" />
-                    <h3 className="text-xl font-black text-gray-900 tracking-tight">
+                    <h3 className="text-xl font-black text-slate-800 tracking-tight">
                         {dogName}님을 위한 맞춤 솔루션
                     </h3>
                 </div>
@@ -51,7 +51,7 @@ export function RecommendationSection({ logs, dogName, onStartTraining }: Recomm
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="glass p-7 rounded-[2.5rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-white/60 relative overflow-hidden group/card ring-1 ring-black/5"
+                className="glass p-7 rounded-[2.5rem] shadow-elev-base border border-white/60 relative overflow-hidden group/card ring-1 ring-black/5"
             >
                 {/* Background Accent */}
                 <div className="absolute top-0 right-0 w-48 h-48 bg-brand-lime/10 rounded-full -mr-20 -mt-20 blur-3xl group-hover/card:scale-110 transition-transform duration-1000" />
@@ -62,7 +62,7 @@ export function RecommendationSection({ logs, dogName, onStartTraining }: Recomm
                             <span className="inline-block px-3 py-1 bg-brand-lime/10 text-brand-lime text-[10px] font-black rounded-full uppercase tracking-widest border border-brand-lime/20 shadow-sm">
                                 AI 추천
                             </span>
-                            <h4 className="text-2xl font-black text-gray-900 leading-tight tracking-tight">
+                            <h4 className="text-2xl font-black text-slate-800 leading-tight tracking-tight">
                                 {recommendedCourse.title}
                             </h4>
                         </div>
@@ -93,10 +93,10 @@ export function RecommendationSection({ logs, dogName, onStartTraining }: Recomm
 
                         <button
                             onClick={() => onStartTraining?.(recommendedCourse.id)}
-                            className="w-full bg-gray-900 text-white p-5 rounded-2xl font-black text-sm flex items-center justify-center gap-3 active:scale-[0.98] transition-all hover:bg-black hover:shadow-xl hover:shadow-black/10 group/btn"
+                            className="w-full bg-slate-800 text-white p-5 rounded-2xl font-black text-sm flex items-center justify-center gap-3 active:scale-[0.98] transition-all hover:bg-slate-900 hover:shadow-xl hover:shadow-slate-900/10 group/btn"
                         >
                             <div className="w-8 h-8 bg-brand-lime rounded-full flex items-center justify-center group-hover/btn:scale-110 transition-transform">
-                                <Play className="w-4 h-4 text-gray-900 fill-current ml-0.5" />
+                                <Play className="w-4 h-4 text-slate-800 fill-current ml-0.5" />
                             </div>
                             맞춤 코칭 플랜 시작하기
                         </button>

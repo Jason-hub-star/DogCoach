@@ -84,7 +84,7 @@ export default function DogProfilePage() {
                         </button>
                         <div>
                             <span className="text-[10px] font-black text-brand-lime uppercase tracking-[0.2em]">Profile</span>
-                            <h1 className="text-2xl font-black text-gray-900">반려견 프로필</h1>
+                            <h1 className="text-2xl font-black text-slate-800">반려견 프로필</h1>
                         </div>
                     </div>
                 </header>
@@ -94,7 +94,7 @@ export default function DogProfilePage() {
                         <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
                             <Dog className="w-12 h-12 text-gray-400" />
                         </div>
-                        <h3 className="text-xl font-black text-gray-900 mb-2">
+                        <h3 className="text-xl font-black text-slate-800 mb-2">
                             등록된 반려견이 없습니다
                         </h3>
                         <p className="text-sm text-gray-500 mb-6">
@@ -138,7 +138,7 @@ export default function DogProfilePage() {
                         </button>
                         <div>
                             <span className="text-[10px] font-black text-brand-lime uppercase tracking-[0.2em]">Profile</span>
-                            <h1 className="text-2xl font-black text-gray-900">반려견 프로필</h1>
+                            <h1 className="text-2xl font-black text-slate-800">반려견 프로필</h1>
                         </div>
                     </div>
 
@@ -195,30 +195,30 @@ export default function DogProfilePage() {
                         <div className="flex-1 space-y-4">
                             {!isEditing ? (
                                 <>
-                                    <h2 className="text-3xl font-black text-gray-900">{basic.name}</h2>
+                                    <h2 className="text-3xl font-black text-slate-800">{basic.name}</h2>
                                     <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm">
                                         {basic.breed && (
                                             <div className="flex items-center gap-2">
                                                 <span className="text-gray-500 font-medium">견종</span>
-                                                <span className="font-bold text-gray-900">{basic.breed}</span>
+                                                <span className="font-bold text-slate-800">{basic.breed}</span>
                                             </div>
                                         )}
                                         {basic.birth_date && (
                                             <div className="flex items-center gap-2">
                                                 <span className="text-gray-500 font-medium">생년월일</span>
-                                                <span className="font-bold text-gray-900">{basic.birth_date}</span>
+                                                <span className="font-bold text-slate-800">{basic.birth_date}</span>
                                             </div>
                                         )}
                                         {basic.sex && (
                                             <div className="flex items-center gap-2">
                                                 <span className="text-gray-500 font-medium">성별</span>
-                                                <span className="font-bold text-gray-900">{basic.sex}</span>
+                                                <span className="font-bold text-slate-800">{basic.sex}</span>
                                             </div>
                                         )}
                                         {age !== null && (
                                             <div className="flex items-center gap-2">
                                                 <span className="text-gray-500 font-medium">나이</span>
-                                                <span className="font-bold text-gray-900">{age}세</span>
+                                                <span className="font-bold text-slate-800">{age}세</span>
                                             </div>
                                         )}
                                     </div>
@@ -231,7 +231,7 @@ export default function DogProfilePage() {
                                             type="text"
                                             value={editedData.name}
                                             onChange={(e) => setEditedData({ ...editedData, name: e.target.value })}
-                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-bold text-gray-900"
+                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-bold text-slate-800"
                                         />
                                     </div>
                                     <div className="grid grid-cols-2 gap-3">
@@ -241,7 +241,7 @@ export default function DogProfilePage() {
                                                 type="text"
                                                 value={editedData.breed}
                                                 onChange={(e) => setEditedData({ ...editedData, breed: e.target.value })}
-                                                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900"
+                                                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800"
                                             />
                                         </div>
                                         <div>
@@ -250,7 +250,7 @@ export default function DogProfilePage() {
                                                 type="date"
                                                 value={editedData.birth_date}
                                                 onChange={(e) => setEditedData({ ...editedData, birth_date: e.target.value })}
-                                                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900"
+                                                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800"
                                             />
                                         </div>
                                     </div>
@@ -259,7 +259,7 @@ export default function DogProfilePage() {
                                         <select
                                             value={editedData.sex}
                                             onChange={(e) => setEditedData({ ...editedData, sex: e.target.value })}
-                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900"
+                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800"
                                         >
                                             <option value="">선택</option>
                                             <option value="MALE">수컷</option>
@@ -288,7 +288,7 @@ export default function DogProfilePage() {
                                 <div className="w-10 h-10 rounded-xl bg-brand-lime/10 flex items-center justify-center">
                                     <Home className="w-5 h-5 text-brand-lime" />
                                 </div>
-                                <h3 className="text-lg font-black text-gray-900">환경</h3>
+                                <h3 className="text-lg font-black text-slate-800">환경</h3>
                             </div>
 
                             {!isEditing ? (
@@ -332,7 +332,7 @@ export default function DogProfilePage() {
                                                 ...editedData,
                                                 household_info: { ...editedData.household_info, type: e.target.value }
                                             })}
-                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900"
+                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800"
                                         >
                                             <option value="">선택</option>
                                             <option value="HOUSE">주택</option>
@@ -348,7 +348,7 @@ export default function DogProfilePage() {
                                                 ...editedData,
                                                 household_info: { ...editedData.household_info, family_count: parseInt(e.target.value) || 0 }
                                             })}
-                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900"
+                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800"
                                         />
                                     </div>
                                     <div>
@@ -367,7 +367,7 @@ export default function DogProfilePage() {
                                                 household_info: { ...editedData.household_info, primary_carer: e.target.value }
                                             })}
                                             placeholder="예: 어머니"
-                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900"
+                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800"
                                         />
                                     </div>
                                 </div>
@@ -387,7 +387,7 @@ export default function DogProfilePage() {
                                 <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
                                     <Heart className="w-5 h-5 text-emerald-600" />
                                 </div>
-                                <h3 className="text-lg font-black text-gray-900">건강</h3>
+                                <h3 className="text-lg font-black text-slate-800">건강</h3>
                             </div>
 
                             {!isEditing ? (
@@ -446,7 +446,7 @@ export default function DogProfilePage() {
                                             }}
                                             placeholder="예: 알레르기, 관절 문제 (쉼표로 구분)"
                                             rows={2}
-                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900 resize-none"
+                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800 resize-none"
                                         />
                                     </div>
                                     <div>
@@ -465,7 +465,7 @@ export default function DogProfilePage() {
                                             }}
                                             placeholder="예: 치킨, 간, 껌 (쉼표로 구분)"
                                             rows={2}
-                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900 resize-none"
+                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800 resize-none"
                                         />
                                     </div>
                                 </div>
@@ -495,7 +495,7 @@ export default function DogProfilePage() {
                                 <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
                                     <AlertTriangle className="w-5 h-5 text-orange-600" />
                                 </div>
-                                <h3 className="text-lg font-black text-gray-900">행동</h3>
+                                <h3 className="text-lg font-black text-slate-800">행동</h3>
                             </div>
 
                             {!isEditing ? (
@@ -561,7 +561,7 @@ export default function DogProfilePage() {
                                             }}
                                             placeholder="예: 과도한 짖음, 분리불안, 공격성 (쉼표로 구분)"
                                             rows={2}
-                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900 resize-none"
+                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800 resize-none"
                                         />
                                     </div>
                                     <div>
@@ -580,7 +580,7 @@ export default function DogProfilePage() {
                                             }}
                                             placeholder="예: 초인종, 분리(혼자 남겨짐), 낯선 사람 (쉼표로 구분)"
                                             rows={2}
-                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900 resize-none"
+                                            className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800 resize-none"
                                         />
                                     </div>
                                 </div>
@@ -606,7 +606,7 @@ export default function DogProfilePage() {
                                 <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
                                     <BookOpen className="w-5 h-5 text-blue-600" />
                                 </div>
-                                <h3 className="text-lg font-black text-gray-900">과거 훈련 시도</h3>
+                                <h3 className="text-lg font-black text-slate-800">과거 훈련 시도</h3>
                             </div>
 
                             {!isEditing ? (
@@ -642,7 +642,7 @@ export default function DogProfilePage() {
                                         }}
                                         placeholder="예: 무시하기, 긍정 강화, 전문가 상담 (쉼표로 구분)"
                                         rows={2}
-                                        className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-gray-900 resize-none"
+                                        className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:border-brand-lime focus:outline-none font-medium text-slate-800 resize-none"
                                     />
                                 </div>
                             )}
@@ -662,7 +662,7 @@ export default function DogProfilePage() {
                             <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center">
                                 <Target className="w-5 h-5 text-purple-600" />
                             </div>
-                            <h3 className="text-lg font-black text-gray-900">기질 분석</h3>
+                            <h3 className="text-lg font-black text-slate-800">기질 분석</h3>
                         </div>
 
                         {!isEditing ? (

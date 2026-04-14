@@ -8,7 +8,7 @@ export function AppInfoSection() {
     return (
         <div className="space-y-6">
             <div className="flex items-center gap-2 px-1">
-                <h2 className="text-xl font-black text-gray-900 tracking-tight">앱 정보</h2>
+                <h2 className="text-xl font-black text-slate-800 tracking-tight">앱 정보</h2>
             </div>
 
             <motion.div
@@ -23,7 +23,7 @@ export function AppInfoSection() {
                         <div className="w-20 h-20 bg-white/60 backdrop-blur-md rounded-[2rem] border border-white/80 shadow-inner flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
                             <span className="text-3xl">🐕</span>
                         </div>
-                        <h3 className="text-xl font-black text-gray-900 tracking-tight">DogCoach Academy</h3>
+                        <h3 className="text-xl font-black text-slate-800 tracking-tight">DogCoach Academy</h3>
                         <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] mt-1">Version 2.4.0 (Premium)</p>
                     </div>
 
@@ -35,7 +35,7 @@ export function AppInfoSection() {
                             isInstalled
                                 ? "bg-gray-100 text-gray-400 cursor-not-allowed"
                                 : isInstallable
-                                    ? "bg-gray-900 text-white hover:bg-black hover:shadow-xl hover:shadow-black/20 active:scale-[0.98]"
+                                    ? "bg-slate-800 text-white hover:bg-slate-900 hover:shadow-xl hover:shadow-slate-900/20 active:scale-[0.98]"
                                     : "bg-gray-100 text-gray-400 cursor-not-allowed"
                         )}
                     >

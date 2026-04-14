@@ -32,7 +32,7 @@ export function AiPreferenceSettings({ preference, onUpdate }: Props) {
         <div className="space-y-6">
             <div className="flex items-center gap-2 px-1">
                 <Settings2 className="w-5 h-5 text-brand-lime" />
-                <h2 className="text-xl font-black text-gray-900 tracking-tight">AI 코칭 개인화</h2>
+                <h2 className="text-xl font-black text-slate-800 tracking-tight">AI 코칭 개인화</h2>
             </div>
 
             <motion.div
@@ -58,7 +58,7 @@ export function AiPreferenceSettings({ preference, onUpdate }: Props) {
                                     className={cn(
                                         "p-5 rounded-3xl border-2 transition-all duration-300 text-sm font-black text-center flex flex-col items-center gap-2",
                                         preference.tone === tone.id
-                                            ? "bg-white border-brand-lime text-gray-900 shadow-lg shadow-brand-lime/10 ring-4 ring-brand-lime/5"
+                                            ? "bg-white border-brand-lime text-slate-800 shadow-lg shadow-brand-lime/10 ring-4 ring-brand-lime/5"
                                             : "bg-white/40 border-white/60 text-gray-400 hover:bg-white hover:border-brand-lime/30"
                                     )}
                                 >
@@ -86,7 +86,7 @@ export function AiPreferenceSettings({ preference, onUpdate }: Props) {
                                     className={cn(
                                         "p-5 rounded-3xl border-2 transition-all duration-300 text-sm font-black text-center flex flex-col items-center gap-2",
                                         preference.perspective === perspective.id
-                                            ? "bg-white border-brand-lime text-gray-900 shadow-lg shadow-brand-lime/10 ring-4 ring-brand-lime/5"
+                                            ? "bg-white border-brand-lime text-slate-800 shadow-lg shadow-brand-lime/10 ring-4 ring-brand-lime/5"
                                             : "bg-white/40 border-white/60 text-gray-400 hover:bg-white hover:border-brand-lime/30"
                                     )}
                                 >
@@ -111,7 +111,7 @@ export function AiPreferenceSettings({ preference, onUpdate }: Props) {
                                 <span className="text-[9px] font-black text-brand-lime uppercase tracking-widest bg-brand-lime/10 px-2 py-1 rounded-lg border border-brand-lime/20 mb-3 inline-block">
                                     AI Coaching Context
                                 </span>
-                                <p className="text-gray-900 font-bold leading-relaxed text-sm break-keep">
+                                <p className="text-slate-800 font-bold leading-relaxed text-sm break-keep">
                                     "{previewText}"
                                 </p>
                             </div>

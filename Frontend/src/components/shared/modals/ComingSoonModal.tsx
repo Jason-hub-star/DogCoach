@@ -41,7 +41,7 @@ export function ComingSoonModal({ isOpen, onClose, featureName }: ComingSoonModa
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-2xl font-black text-gray-900 mb-3 break-keep">
+                    <h2 className="text-2xl font-black text-slate-800 mb-3 break-keep">
                         준비중입니다
                     </h2>
 
@@ -59,7 +59,7 @@ export function ComingSoonModal({ isOpen, onClose, featureName }: ComingSoonModa
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={onClose}
-                        className="w-full bg-gray-900 hover:bg-black text-white font-black py-4 rounded-2xl shadow-xl transition-all"
+                        className="w-full bg-slate-800 hover:bg-slate-900 text-white font-black py-4 rounded-2xl shadow-xl transition-all"
                     >
                         확인
                     </motion.button>

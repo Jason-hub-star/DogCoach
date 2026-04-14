@@ -46,12 +46,12 @@ function CurriculumCard({ summary }: { summary: CurriculumSummary }) {
         <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="glass p-6 rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-white/60 ring-1 ring-black/5"
+            className="glass p-6 rounded-[2rem] shadow-elev-base border border-white/60 ring-1 ring-black/5"
         >
             {/* Header */}
             <div className="flex items-start justify-between mb-3">
                 <div className="space-y-1 flex-1 min-w-0">
-                    <h4 className="text-base font-black text-gray-900 tracking-tight truncate">{summary.courseTitle}</h4>
+                    <h4 className="text-base font-black text-slate-800 tracking-tight truncate">{summary.courseTitle}</h4>
                     <div className="flex items-center gap-2">
                         <DifficultyBadge difficulty={summary.difficulty} />
                         <span className="text-[10px] text-gray-400 font-medium">{summary.totalDays}일 코스</span>
@@ -143,7 +143,7 @@ export function TrainingHistoryAccordion({ token }: TrainingHistoryAccordionProp
         <section className="space-y-4">
             <div className="flex items-center gap-2 px-1">
                 <BookOpen className="w-5 h-5 text-brand-lime" />
-                <h3 className="text-xl font-black text-gray-900 tracking-tight">훈련 히스토리</h3>
+                <h3 className="text-xl font-black text-slate-800 tracking-tight">훈련 히스토리</h3>
             </div>
 
             {isLoading && (

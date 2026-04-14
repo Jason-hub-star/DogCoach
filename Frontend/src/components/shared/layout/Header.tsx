@@ -55,7 +55,7 @@ export function Header() {
                         >
                             <span className="text-white text-xl">🐾</span>
                         </motion.div>
-                        <span className="text-2xl font-black text-gray-900 tracking-tight font-outfit group-hover:text-brand-lime transition-colors">
+                        <span className="text-2xl font-black text-slate-800 tracking-tight font-outfit group-hover:text-brand-lime transition-colors">
                             TailLog
                         </span>
                     </Link>
@@ -89,7 +89,7 @@ export function Header() {
                                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 py-1 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
                                     <div className="px-4 py-3 border-b border-gray-50 bg-gray-50/50">
                                         <p className="text-xs text-gray-500">로그인 계정</p>
-                                        <p className="text-sm font-bold text-gray-900 truncate">{user?.email}</p>
+                                        <p className="text-sm font-bold text-slate-800 truncate">{user?.email}</p>
                                     </div>
                                     <Link
                                         href="/dashboard"
@@ -117,7 +117,7 @@ export function Header() {
 
                     <Link
                         href={hasDog ? "/dashboard" : "/survey"}
-                        className="px-5 py-2 rounded-full bg-brand-dark text-white text-sm font-bold hover:bg-gray-800 transition-colors"
+                        className="px-5 py-2 rounded-full bg-brand-dark text-white text-sm font-bold hover:bg-slate-700 transition-colors"
                     >
                         {hasDog ? "내 대시보드로 이동" : "무료로 시작하기"}
                     </Link>
@@ -144,7 +144,7 @@ export function Header() {
 
                         {isLoggedIn ? (
                             <>
-                                <Link href="/dashboard" className="text-gray-900 font-bold flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
+                                <Link href="/dashboard" className="text-slate-800 font-bold flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
                                     <LayoutDashboard className="w-4 h-4" />
                                     대시보드
                                 </Link>

@@ -12,7 +12,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useDashboardData } from "@/hooks/useQueries";
 
 export default function CoachPage() {
-    const { token } = useAuth();
+    const { token, user, loading: isAuthLoading, hasStoredSessionHint } = useAuth();
     const router = useRouter();
     const [shouldHighlight, setShouldHighlight] = useState(false);
     const [entrySource, setEntrySource] = useState<string>("coach");
@@ -24,7 +24,9 @@ export default function CoachPage() {
         setEntrySource(params.get("from") || "coach");
     }, []);
 
-    const { data: dashboardData } = useDashboardData(!!token, token);
+    const isAuthHydratingFromStorage = !isAuthLoading && !token && !user && hasStoredSessionHint;
+    const isDashboardQueryEnabled = !isAuthHydratingFromStorage && !isAuthLoading && (!!token || !user || !!user.is_anonymous);
+    const { data: dashboardData } = useDashboardData(isDashboardQueryEnabled, token, true);
     const dogId = dashboardData?.dog_profile?.id;
 
     const [currentCourseId, setCurrentCourseId] = useState<string>(TRAINING_CURRICULUM[0].id);
@@ -62,7 +64,7 @@ export default function CoachPage() {
         <div className="min-h-screen bg-gray-50 pb-32">
             <header className="bg-white/80 backdrop-blur-md p-6 border-b border-gray-100 sticky top-0 z-30">
                 <div className="flex flex-col">
-                    <h1 className="text-2xl font-black text-gray-900 leading-tight">훈련 아카데미</h1>
+                    <h1 className="text-2xl font-black text-slate-800 leading-tight">훈련 아카데미</h1>
                     {shouldHighlight && (
                         <motion.span
                             initial={{ opacity: 0, x: -10 }}
@@ -90,7 +92,7 @@ export default function CoachPage() {
                                 <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
                                     <Zap className="w-5 h-5 text-amber-500 fill-amber-500" />
                                 </div>
-                                <h2 className="font-black text-gray-900 text-lg">진행 중인 챌린지</h2>
+                                <h2 className="font-black text-slate-800 text-lg">진행 중인 챌린지</h2>
                             </div>
                         </div>
 
@@ -105,7 +107,7 @@ export default function CoachPage() {
                             </div>
 
                             <div className="flex items-center gap-2 mb-2">
-                                <h3 className="text-xl font-black text-gray-900 leading-tight">{currentCourse.title}</h3>
+                                <h3 className="text-xl font-black text-slate-800 leading-tight">{currentCourse.title}</h3>
                                 {currentCourseId === recommendedCourse?.id && (
                                     <span className="bg-brand-lime text-[9px] font-black px-2 py-0.5 rounded text-black uppercase tracking-tighter">추천</span>
                                 )}
@@ -126,7 +128,7 @@ export default function CoachPage() {
                     <div className="flex items-center justify-between mb-5 px-1">
                         <div className="flex items-center gap-2">
                             <BookOpen className="w-5 h-5 text-gray-400" />
-                            <h2 className="font-black text-gray-900">모든 훈련 프로그램</h2>
+                            <h2 className="font-black text-slate-800">모든 훈련 프로그램</h2>
                         </div>
                         <span className="text-xs font-bold text-gray-400">{TRAINING_CURRICULUM.length}</span>
                     </div>
@@ -185,7 +187,7 @@ function CourseCard({
             className={cn(
                 "p-5 rounded-3xl border flex items-center justify-between cursor-pointer transition-all duration-500 group relative overflow-hidden",
                 active
-                    ? "bg-gray-900 border-gray-900 shadow-xl shadow-gray-200 text-white"
+                    ? "bg-slate-800 border-slate-800 shadow-xl shadow-gray-200 text-white"
                     : "bg-white border-gray-100 shadow-sm hover:border-brand-lime/30",
                 recommended && !active && "border-brand-lime ring-2 ring-brand-lime/10",
                 highlighted && "ring-4 ring-brand-lime/20 scale-[1.02] -translate-y-1 shadow-brand-lime/10"
@@ -207,13 +209,13 @@ function CourseCard({
                 <div
                     className={cn(
                         "w-12 h-12 rounded-2xl flex items-center justify-center transition-colors shadow-inner",
-                        active ? "bg-brand-lime text-gray-900" : "bg-brand-lime/10 text-brand-lime"
+                        active ? "bg-brand-lime text-slate-800" : "bg-brand-lime/10 text-brand-lime"
                     )}
                 >
                     {active ? <CheckCircle2 className="w-6 h-6" /> : <BookOpen className="w-5 h-5" />}
                 </div>
                 <div>
-                    <div className={cn("font-black text-base mb-0.5 transition-colors", active ? "text-white" : "text-gray-900 group-hover:text-brand-lime")}>{title}</div>
+                    <div className={cn("font-black text-base mb-0.5 transition-colors", active ? "text-white" : "text-slate-800 group-hover:text-brand-lime")}>{title}</div>
                     <div className={cn("text-[10px] font-black uppercase tracking-widest", active ? "text-brand-lime/70" : "text-gray-400")}>{duration}</div>
                 </div>
             </div>

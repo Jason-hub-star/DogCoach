@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 import { AnimatedCounter } from "@/components/ui/animations/AnimatedCounter";
 
 interface Props {
@@ -25,7 +24,7 @@ export function SurveyProgress({ currentStep, totalSteps }: Props) {
             </div>
             <div className="h-2.5 bg-white shadow-inner rounded-full overflow-hidden border border-gray-100 p-[2px]">
                 <motion.div
-                    className="h-full bg-gradient-to-r from-brand-lime to-green-400 rounded-full shadow-[0_0_10px_rgba(163,230,53,0.5)]"
+                    className="h-full bg-gradient-to-r from-brand-lime to-green-400 rounded-full shadow-glow-lime-green"
                     initial={{ width: 0 }}
                     animate={{ width: `${progress}%` }}
                     transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}

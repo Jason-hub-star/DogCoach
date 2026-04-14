@@ -42,7 +42,7 @@ export function Sidebar() {
             {/* Logo Area */}
             <div className="h-16 flex items-center px-6 border-b border-gray-100">
                 <Link href="/dashboard" className="flex items-center gap-1">
-                    <span className="text-xl font-extrabold text-gray-900 tracking-tight">
+                    <span className="text-xl font-extrabold text-slate-800 tracking-tight">
                         Tail<span className="text-brand-lime">Log</span>
                     </span>
                 </Link>
@@ -58,7 +58,7 @@ export function Sidebar() {
                         🐶
                     </div>
                     <div className="flex-1">
-                        <div className="font-bold text-sm text-gray-900 group-hover:text-brand-lime transition-colors">{dogName}</div>
+                        <div className="font-bold text-sm text-slate-800 group-hover:text-brand-lime transition-colors">{dogName}</div>
                         <div className="text-xs text-gray-500">{displayName}님</div>
                     </div>
                     <div className="text-gray-400 group-hover:text-brand-lime transition-colors opacity-0 group-hover:opacity-100">
@@ -91,8 +91,8 @@ export function Sidebar() {
                             className={cn(
                                 "flex items-center gap-3 px-4 py-3 rounded-xl transition-all",
                                 isActive
-                                    ? "bg-gray-900 text-white shadow-md"
-                                    : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                                    ? "bg-slate-800 text-white shadow-md"
+                                    : "text-gray-600 hover:bg-gray-50 hover:text-slate-800"
                             )}
                         >
                             <Icon className={cn("w-5 h-5", item.label === "AI 코칭" && "rotate-90")} />

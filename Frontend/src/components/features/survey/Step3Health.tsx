@@ -95,7 +95,7 @@ export function Step3Health({ data, updateData }: Props) {
     return (
         <div className="space-y-8">
             <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">건강 상태와 선호도</h2>
+                <h2 className="text-2xl font-bold text-slate-800 mb-2">건강 상태와 선호도</h2>
                 <p className="text-gray-500 font-medium whitespace-nowrap">알맞은 보상과 솔루션을 위해 꼭 필요해요.</p>
             </div>
 
@@ -122,7 +122,7 @@ export function Step3Health({ data, updateData }: Props) {
                             </div>
                             <span className={cn(
                                 "text-xs md:text-sm truncate",
-                                data.healthIssues.includes(item.id) ? "text-gray-900" : "text-gray-500"
+                                data.healthIssues.includes(item.id) ? "text-slate-800" : "text-gray-500"
                             )}>
                                 {item.id === 'etc' && data.healthIssuesOther ? data.healthIssuesOther : item.label}
                             </span>
@@ -149,7 +149,7 @@ export function Step3Health({ data, updateData }: Props) {
                             <span className={cn("text-2xl transition-transform group-hover:scale-125", data.favoriteTreats.includes(item.id) ? "scale-110" : "")}>{item.emoji}</span>
                             <span className={cn(
                                 "text-[10px] font-bold truncate px-1",
-                                data.favoriteTreats.includes(item.id) ? "text-gray-900" : "text-gray-500"
+                                data.favoriteTreats.includes(item.id) ? "text-slate-800" : "text-gray-500"
                             )}>
                                 {item.id === 'etc' && data.favoriteTreatsOther ? data.favoriteTreatsOther : item.label}
                             </span>
@@ -176,7 +176,7 @@ export function Step3Health({ data, updateData }: Props) {
                             className="bg-white rounded-[2.5rem] w-full max-w-sm overflow-hidden relative shadow-2xl border border-gray-100 z-10"
                         >
                             <div className="p-8 pb-4 text-center">
-                                <h3 className="text-xl font-black text-gray-900 mb-2">
+                                <h3 className="text-xl font-black text-slate-800 mb-2">
                                     {activeModal === "health" ? "기타 건강 상황" : "기타 보상"} 입력
                                 </h3>
                                 <p className="text-sm text-gray-500">
@@ -215,7 +215,7 @@ export function Step3Health({ data, updateData }: Props) {
                                 </button>
                                 <button
                                     onClick={handleSaveOther}
-                                    className="flex-[2] py-4 px-6 rounded-2xl bg-gray-900 hover:bg-black text-brand-lime font-black shadow-lg shadow-gray-200 transition-all text-sm flex items-center justify-center gap-2"
+                                    className="flex-[2] py-4 px-6 rounded-2xl bg-slate-800 hover:bg-slate-900 text-brand-lime font-black shadow-lg shadow-gray-200 transition-all text-sm flex items-center justify-center gap-2"
                                 >
                                     <Check className="w-4 h-4" />
                                     저장하기

@@ -36,13 +36,13 @@ export function ActionPlanCard({ stage, onStart, isLocked = false }: ActionPlanC
                 <div className="flex items-center gap-3 mb-6">
                     <div className={`
                         p-3 rounded-2xl shadow-lg
-                        ${isLocked ? 'bg-gray-200 text-gray-400' : 'bg-gray-900 text-brand-lime'}
+                        ${isLocked ? 'bg-gray-200 text-gray-400' : 'bg-slate-800 text-brand-lime'}
                     `}>
                         <Icon className="w-6 h-6" />
                     </div>
                     <div>
                         <span className="text-[10px] font-black uppercase tracking-widest text-gray-400">AI Daily Mission</span>
-                        <h3 className="font-black text-gray-900 text-xl tracking-tight">맞춤형 오늘의 솔루션</h3>
+                        <h3 className="font-black text-slate-800 text-xl tracking-tight">맞춤형 오늘의 솔루션</h3>
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@ export function ActionPlanCard({ stage, onStart, isLocked = false }: ActionPlanC
                             </span>
                         )}
                     </div>
-                    <h4 className={`text-2xl font-black mb-2 break-keep tracking-tight ${isLocked ? 'text-gray-400' : 'text-gray-900'}`}>
+                    <h4 className={`text-2xl font-black mb-2 break-keep tracking-tight ${isLocked ? 'text-gray-400' : 'text-slate-800'}`}>
                         {stage.title}
                     </h4>
                     <p className={`text-sm break-keep leading-relaxed font-medium ${isLocked ? 'text-gray-300' : 'text-gray-500 opacity-80'}`}>
@@ -71,7 +71,7 @@ export function ActionPlanCard({ stage, onStart, isLocked = false }: ActionPlanC
                         w-full py-5 rounded-[1.5rem] font-black text-md transition-all flex items-center justify-center gap-2 group active:scale-[0.98]
                         ${isLocked
                             ? 'bg-gray-100 text-gray-400 hover:bg-gray-200'
-                            : 'bg-gray-900 hover:bg-black text-brand-lime shadow-xl shadow-gray-200'}
+                            : 'bg-slate-800 hover:bg-slate-900 text-brand-lime shadow-xl shadow-gray-200'}
                     `}
                 >
                     <span className="relative z-10">{isLocked ? "로그인하고 시작하기" : "지금 바로 훈련 시작하기"}</span>

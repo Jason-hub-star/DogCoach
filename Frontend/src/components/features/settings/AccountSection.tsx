@@ -127,7 +127,7 @@ export function AccountSection({ timezone, onUpdateTimezone }: Props) {
         <div className="space-y-6">
             <div className="flex items-center gap-2 px-1">
                 <ShieldCheck className="w-5 h-5 text-brand-lime" />
-                <h2 className="text-xl font-black text-gray-900 tracking-tight">계정 및 보안</h2>
+                <h2 className="text-xl font-black text-slate-800 tracking-tight">계정 및 보안</h2>
             </div>
 
             <motion.div
@@ -144,7 +144,7 @@ export function AccountSection({ timezone, onUpdateTimezone }: Props) {
                         <div className="flex flex-col gap-3">
                             <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">표시 시간대</span>
                             <select
-                                className="w-full bg-white border border-gray-100 rounded-2xl px-5 py-4 text-sm font-black text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-lime/30 shadow-sm appearance-none cursor-pointer"
+                                className="w-full bg-white border border-gray-100 rounded-2xl px-5 py-4 text-sm font-black text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-lime/30 shadow-sm appearance-none cursor-pointer"
                                 value={timezone}
                                 onChange={(e) => onUpdateTimezone(e.target.value)}
                             >
@@ -190,11 +190,11 @@ export function AccountSection({ timezone, onUpdateTimezone }: Props) {
                         {/* Google */}
                         <div className="flex items-center justify-between gap-3 p-4 bg-white/60 rounded-2xl border border-white/70">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-2xl bg-gray-900 text-white flex items-center justify-center font-black text-sm">
+                                <div className="w-10 h-10 rounded-2xl bg-slate-800 text-white flex items-center justify-center font-black text-sm">
                                     G
                                 </div>
                                 <div className="flex flex-col">
-                                    <div className="text-sm font-black text-gray-900">Google</div>
+                                    <div className="text-sm font-black text-slate-800">Google</div>
                                     <div className="text-[10px] font-bold text-gray-400">{linked.google ? '연결됨' : '미연결'}</div>
                                 </div>
                             </div>
@@ -213,7 +213,7 @@ export function AccountSection({ timezone, onUpdateTimezone }: Props) {
                                         type="button"
                                         disabled={!isLoggedIn || !!loadingProvider}
                                         onClick={() => setConfirmUnlink('google')}
-                                        className="h-10 px-4 rounded-2xl bg-gray-100 hover:bg-gray-200 text-gray-900 font-black text-xs transition-all disabled:opacity-60 inline-flex items-center gap-2"
+                                        className="h-10 px-4 rounded-2xl bg-gray-100 hover:bg-gray-200 text-slate-800 font-black text-xs transition-all disabled:opacity-60 inline-flex items-center gap-2"
                                     >
                                         <Unlink className="w-4 h-4" />
                                         해제
@@ -223,7 +223,7 @@ export function AccountSection({ timezone, onUpdateTimezone }: Props) {
                                         type="button"
                                         disabled={!isLoggedIn || !!loadingProvider}
                                         onClick={() => handleLink('google')}
-                                        className="h-10 px-4 rounded-2xl bg-gray-900 hover:bg-black text-white font-black text-xs shadow-sm transition-all disabled:opacity-60"
+                                        className="h-10 px-4 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-black text-xs shadow-sm transition-all disabled:opacity-60"
                                     >
                                         {loadingProvider === 'google' ? '연결 중' : '연결'}
                                     </button>
@@ -234,11 +234,11 @@ export function AccountSection({ timezone, onUpdateTimezone }: Props) {
                         {/* Kakao */}
                         <div className="flex items-center justify-between gap-3 p-4 bg-white/60 rounded-2xl border border-white/70">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-2xl bg-[#FEE500] text-[#3C1E1E] flex items-center justify-center font-black text-sm">
+                                <div className="w-10 h-10 rounded-2xl bg-kakao-yellow text-kakao-brown flex items-center justify-center font-black text-sm">
                                     K
                                 </div>
                                 <div className="flex flex-col">
-                                    <div className="text-sm font-black text-gray-900">Kakao</div>
+                                    <div className="text-sm font-black text-slate-800">Kakao</div>
                                     <div className="text-[10px] font-bold text-gray-400">{linked.kakao ? '연결됨' : '미연결'}</div>
                                 </div>
                             </div>
@@ -257,7 +257,7 @@ export function AccountSection({ timezone, onUpdateTimezone }: Props) {
                                         type="button"
                                         disabled={!isLoggedIn || !!loadingProvider}
                                         onClick={() => setConfirmUnlink('kakao')}
-                                        className="h-10 px-4 rounded-2xl bg-gray-100 hover:bg-gray-200 text-gray-900 font-black text-xs transition-all disabled:opacity-60 inline-flex items-center gap-2"
+                                        className="h-10 px-4 rounded-2xl bg-gray-100 hover:bg-gray-200 text-slate-800 font-black text-xs transition-all disabled:opacity-60 inline-flex items-center gap-2"
                                     >
                                         <Unlink className="w-4 h-4" />
                                         해제
@@ -267,7 +267,7 @@ export function AccountSection({ timezone, onUpdateTimezone }: Props) {
                                         type="button"
                                         disabled={!isLoggedIn || !!loadingProvider}
                                         onClick={() => handleLink('kakao')}
-                                        className="h-10 px-4 rounded-2xl bg-gray-900 hover:bg-black text-white font-black text-xs shadow-sm transition-all disabled:opacity-60"
+                                        className="h-10 px-4 rounded-2xl bg-slate-800 hover:bg-slate-900 text-white font-black text-xs shadow-sm transition-all disabled:opacity-60"
                                     >
                                         {loadingProvider === 'kakao' ? '연결 중' : '연결'}
                                     </button>

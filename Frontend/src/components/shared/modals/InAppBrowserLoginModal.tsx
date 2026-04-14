@@ -56,7 +56,7 @@ export function InAppBrowserLoginModal({
             In-App Browser
           </div>
 
-          <h2 className="text-2xl font-black text-gray-900 mb-3 break-keep">
+          <h2 className="text-2xl font-black text-slate-800 mb-3 break-keep">
             카카오톡 인앱브라우저에서는 Google 로그인이 차단될 수 있어요
           </h2>
 
@@ -75,7 +75,7 @@ export function InAppBrowserLoginModal({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={onOpenExternal}
-              className="flex-1 bg-gray-900 hover:bg-black text-white font-black py-4 rounded-2xl shadow-xl transition-all inline-flex items-center justify-center gap-2"
+              className="flex-1 bg-slate-800 hover:bg-slate-900 text-white font-black py-4 rounded-2xl shadow-xl transition-all inline-flex items-center justify-center gap-2"
             >
               <ExternalLink className="w-4 h-4" />
               <span>외부 브라우저</span>
@@ -85,7 +85,7 @@ export function InAppBrowserLoginModal({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleCopy}
-              className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-900 font-black py-4 rounded-2xl transition-all inline-flex items-center justify-center gap-2"
+              className="flex-1 bg-gray-100 hover:bg-gray-200 text-slate-800 font-black py-4 rounded-2xl transition-all inline-flex items-center justify-center gap-2"
             >
               <Copy className="w-4 h-4" />
               <span>{copied ? "복사됨" : "링크 복사"}</span>

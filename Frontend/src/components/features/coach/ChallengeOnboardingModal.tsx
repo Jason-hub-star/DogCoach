@@ -50,7 +50,7 @@ export function ChallengeOnboardingModal({
               <Sparkles className="w-3 h-3" />
               맞춤형 미션
             </div>
-            <h2 className="text-3xl font-black text-gray-900 mb-2 break-keep leading-tight">
+            <h2 className="text-3xl font-black text-slate-800 mb-2 break-keep leading-tight">
               추천 플랜으로 바로 시작,
               <br />
               원하면 Day를 바꿔도 돼요
@@ -69,10 +69,11 @@ export function ChallengeOnboardingModal({
               <motion.path
                 d="M150,50 C250,50 250,150 150,150 C50,150 50,250 150,250 C250,250 250,350 150,350"
                 fill="none"
-                stroke="#4ADE80"
+                stroke="currentColor"
                 strokeWidth="12"
                 strokeLinecap="round"
                 strokeDasharray="1 20"
+                className="text-brand-lime"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -133,7 +134,7 @@ export function ChallengeOnboardingModal({
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={onStart}
-            className="w-full bg-gray-900 hover:bg-black text-brand-lime font-black py-5 rounded-2xl shadow-xl shadow-gray-200 transition-all text-lg flex items-center justify-center gap-2 group"
+            className="w-full bg-slate-800 hover:bg-slate-900 text-brand-lime font-black py-5 rounded-2xl shadow-xl shadow-gray-200 transition-all text-lg flex items-center justify-center gap-2 group"
           >
             플랜 시작하기
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -143,4 +144,3 @@ export function ChallengeOnboardingModal({
     </div>
   );
 }
-

@@ -21,8 +21,8 @@ const TagChip = ({ label, selected, onClick }: { label: string, selected: boolea
     <button
         onClick={onClick}
         className={`px-3 py-1.5 rounded-xl text-[10px] font-black transition-all ring-1 ring-inset uppercase tracking-widest ${selected
-            ? "bg-gray-900 text-brand-lime ring-gray-900 shadow-lg shadow-gray-200 scale-105"
-            : "bg-white text-gray-400 ring-gray-100 hover:ring-brand-lime/30 hover:text-gray-900 hover:bg-gray-50"
+            ? "bg-slate-800 text-brand-lime ring-gray-900 shadow-lg shadow-gray-200 scale-105"
+            : "bg-white text-gray-400 ring-gray-100 hover:ring-brand-lime/30 hover:text-slate-800 hover:bg-gray-50"
             }`}
     >
         {label}
@@ -97,20 +97,20 @@ export const EditLogDialog = ({ log, open, onClose, onUpdate, envTriggers, envCo
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
-                className="bg-white w-full max-w-sm max-h-[92dvh] rounded-[2rem] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.2)] border border-gray-100 relative overflow-y-auto"
+                className="bg-white w-full max-w-sm max-h-[92dvh] rounded-[2rem] p-5 shadow-elev-modal border border-gray-100 relative overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-gray-900 transition-colors"
+                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-slate-800 transition-colors"
                 >
                     <X className="w-4 h-4" />
                 </button>
 
                 <div className="flex items-center gap-2 mb-1">
                     <Sparkles className="w-4 h-4 text-brand-lime" />
-                    <h3 className="text-lg font-black text-gray-900">상세 기록 추가</h3>
+                    <h3 className="text-lg font-black text-slate-800">상세 기록 추가</h3>
                 </div>
 
                 <p className="text-[10px] uppercase font-black tracking-[0.2em] text-gray-400 mb-4 flex items-center gap-2">
@@ -122,7 +122,7 @@ export const EditLogDialog = ({ log, open, onClose, onUpdate, envTriggers, envCo
                     {/* Time Section */}
                     <div>
                         <div className="flex justify-between items-end mb-1.5">
-                            <label className="text-xs font-black text-gray-900 uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded">시간</label>
+                            <label className="text-xs font-black text-slate-800 uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded">시간</label>
                             <button
                                 onClick={() => {
                                     const now = new Date();
@@ -161,7 +161,7 @@ export const EditLogDialog = ({ log, open, onClose, onUpdate, envTriggers, envCo
                     <div>
                         <div className="flex justify-between items-end mb-1.5">
                             <div className="flex items-center gap-2">
-                                <label className="text-xs font-black text-gray-900 uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded">상황</label>
+                                <label className="text-xs font-black text-slate-800 uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded">상황</label>
                                 <span className="text-[10px] font-bold text-gray-400">원인 / 상황</span>
                             </div>
                         </div>
@@ -189,13 +189,13 @@ export const EditLogDialog = ({ log, open, onClose, onUpdate, envTriggers, envCo
                         <div className="absolute -right-4 -top-4 w-16 h-16 bg-white/40 rounded-full blur-xl" />
 
                         <div className="flex justify-between items-center mb-1 relative z-10">
-                            <label className="text-[10px] font-black text-gray-900 uppercase tracking-widest bg-white/50 px-2 py-0.5 rounded">행동</label>
-                            <div className="text-[10px] font-black text-brand-lime uppercase tracking-widest px-2 py-0.5 bg-gray-900 rounded-lg shadow-sm">
+                            <label className="text-[10px] font-black text-slate-800 uppercase tracking-widest bg-white/50 px-2 py-0.5 rounded">행동</label>
+                            <div className="text-[10px] font-black text-brand-lime uppercase tracking-widest px-2 py-0.5 bg-slate-800 rounded-lg shadow-sm">
                                 강도 {intensity}
                             </div>
                         </div>
 
-                        <div className="text-base font-black text-gray-900 mb-2 relative z-10 px-1">{translate(log.behavior)}</div>
+                        <div className="text-base font-black text-slate-800 mb-2 relative z-10 px-1">{translate(log.behavior)}</div>
 
                         <input
                             type="range"
@@ -215,7 +215,7 @@ export const EditLogDialog = ({ log, open, onClose, onUpdate, envTriggers, envCo
                     <div>
                         <div className="flex justify-between items-end mb-1.5">
                             <div className="flex items-center gap-2">
-                                <label className="text-xs font-black text-gray-900 uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded">대처</label>
+                                <label className="text-xs font-black text-slate-800 uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded">대처</label>
                                 <span className="text-[10px] font-bold text-brand-lime">나의 대처</span>
                             </div>
                         </div>
@@ -242,7 +242,7 @@ export const EditLogDialog = ({ log, open, onClose, onUpdate, envTriggers, envCo
                 <button
                     onClick={handleSave}
                     disabled={isSaving}
-                    className="w-full py-3.5 bg-gray-900 text-brand-lime font-black rounded-2xl active:scale-95 transition-all shadow-xl shadow-gray-200 disabled:opacity-50 text-sm"
+                    className="w-full py-3.5 bg-slate-800 text-brand-lime font-black rounded-2xl active:scale-95 transition-all shadow-xl shadow-gray-200 disabled:opacity-50 text-sm"
                 >
                     {isSaving ? "저장 중..." : "수정 완료"}
                 </button>

@@ -8,6 +8,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { Clock, Calendar, Sparkles, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { DESIGN_COLORS, EFFECT_COLORS } from "@/lib/theme/colors";
 
 interface AnalyticsViewProps {
     logs: any[]; // Replace with implicit Log type
@@ -107,7 +108,7 @@ export function AnalyticsView({ logs, id }: AnalyticsViewProps) {
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-brand-lime/10 border border-brand-lime/20 flex items-center justify-center">
                     <BarChart3 className="w-7 h-7 text-brand-lime" />
                 </div>
-                <h4 className="text-lg font-black text-gray-900 mb-2">분석 준비 중이에요</h4>
+                <h4 className="text-lg font-black text-slate-800 mb-2">분석 준비 중이에요</h4>
                 <p className="text-sm text-gray-500 font-medium leading-relaxed break-keep">
                     아직 기록이 없어 차트를 그릴 수 없어요.<br />
                     첫 기록 1개만 추가해도 기본 패턴을 바로 보여드려요.
@@ -126,11 +127,11 @@ export function AnalyticsView({ logs, id }: AnalyticsViewProps) {
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="glass p-7 rounded-[2.5rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-white/60 relative overflow-hidden ring-1 ring-black/5"
+                className="glass p-7 rounded-[2.5rem] shadow-elev-base border border-white/60 relative overflow-hidden ring-1 ring-black/5"
             >
                 <div className="flex flex-col mb-6">
                     <span className="text-[10px] font-black text-brand-lime uppercase tracking-[0.2em] mb-1">원인 분석</span>
-                    <h4 className="text-xl font-black text-gray-900 tracking-tight">
+                    <h4 className="text-xl font-black text-slate-800 tracking-tight">
                         주요 원인 분석
                     </h4>
                 </div>
@@ -138,8 +139,8 @@ export function AnalyticsView({ logs, id }: AnalyticsViewProps) {
                 <div className="h-72 w-full relative">
                     <ResponsiveContainer width="100%" height="100%">
                         <RadarChart cx="50%" cy="50%" outerRadius="80%" data={showMockPreview ? mockRadarData : realRadarData}>
-                            <PolarGrid stroke="#e5e7eb" strokeDasharray="3 3" />
-                            <PolarAngleAxis dataKey="subject" tick={{ fill: '#9ca3af', fontSize: 10, fontWeight: 700 }} />
+                            <PolarGrid stroke={DESIGN_COLORS.gray200} strokeDasharray="3 3" />
+                            <PolarAngleAxis dataKey="subject" tick={{ fill: DESIGN_COLORS.gray400, fontSize: 10, fontWeight: 700 }} />
                             <PolarRadiusAxis
                                 angle={30}
                                 domain={[0, 'auto']}
@@ -149,15 +150,15 @@ export function AnalyticsView({ logs, id }: AnalyticsViewProps) {
                             <Radar
                                 name="빈도"
                                 dataKey="A"
-                                stroke="#4ADE80"
+                                stroke={DESIGN_COLORS.brandLime}
                                 strokeWidth={3}
                                 fill="url(#radarGradient)"
                                 fillOpacity={0.6}
                             />
                             <defs>
                                 <linearGradient id="radarGradient" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#4ADE80" stopOpacity={0.8} />
-                                    <stop offset="95%" stopColor="#10B981" stopOpacity={0.2} />
+                                    <stop offset="5%" stopColor={DESIGN_COLORS.brandLime} stopOpacity={0.8} />
+                                    <stop offset="95%" stopColor={DESIGN_COLORS.brandEmerald} stopOpacity={0.2} />
                                 </linearGradient>
                             </defs>
                         </RadarChart>
@@ -175,12 +176,12 @@ export function AnalyticsView({ logs, id }: AnalyticsViewProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="glass p-7 rounded-[2.5rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-white/60 relative overflow-hidden ring-1 ring-black/5"
+                className="glass p-7 rounded-[2.5rem] shadow-elev-base border border-white/60 relative overflow-hidden ring-1 ring-black/5"
             >
                 <div className="flex items-center justify-between mb-8">
                     <div className="flex flex-col">
                         <span className="text-[10px] font-black text-brand-orange uppercase tracking-[0.2em] mb-1">패턴 인사이트</span>
-                        <h4 className="text-xl font-black text-gray-900 tracking-tight">
+                        <h4 className="text-xl font-black text-slate-800 tracking-tight">
                             행동 패턴 분석
                         </h4>
                     </div>
@@ -190,7 +191,7 @@ export function AnalyticsView({ logs, id }: AnalyticsViewProps) {
                             onClick={() => setPatternTab("hourly")}
                             className={cn(
                                 "flex items-center gap-2 px-3 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all",
-                                patternTab === "hourly" ? "bg-white text-gray-900 shadow-sm" : "text-gray-400 hover:text-gray-600"
+                                patternTab === "hourly" ? "bg-white text-slate-800 shadow-sm" : "text-gray-400 hover:text-gray-600"
                             )}
                         >
                             <Clock className="w-3.5 h-3.5" />
@@ -200,7 +201,7 @@ export function AnalyticsView({ logs, id }: AnalyticsViewProps) {
                             onClick={() => setPatternTab("daily")}
                             className={cn(
                                 "flex items-center gap-2 px-3 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all",
-                                patternTab === "daily" ? "bg-white text-gray-900 shadow-sm" : "text-gray-400 hover:text-gray-600"
+                                patternTab === "daily" ? "bg-white text-slate-800 shadow-sm" : "text-gray-400 hover:text-gray-600"
                             )}
                         >
                             <Calendar className="w-3.5 h-3.5" />
@@ -224,33 +225,33 @@ export function AnalyticsView({ logs, id }: AnalyticsViewProps) {
                                     <BarChart data={showMockPreview ? mockHourlyData : realHourlyData} margin={{ top: 5, right: 0, left: -25, bottom: 0 }}>
                                         <XAxis
                                             dataKey="hour"
-                                            tick={{ fontSize: 10, fill: '#9ca3af', fontWeight: 700 }}
+                                            tick={{ fontSize: 10, fill: DESIGN_COLORS.gray400, fontWeight: 700 }}
                                             tickLine={false}
                                             axisLine={false}
                                             interval={3}
                                         />
                                         <YAxis
-                                            tick={{ fontSize: 10, fill: '#9ca3af', fontWeight: 700 }}
+                                            tick={{ fontSize: 10, fill: DESIGN_COLORS.gray400, fontWeight: 700 }}
                                             tickLine={false}
                                             axisLine={false}
                                             allowDecimals={false}
                                         />
                                         <Tooltip
-                                            cursor={{ fill: 'rgba(0,0,0,0.02)', radius: 8 }}
+                                            cursor={{ fill: EFFECT_COLORS.black02, radius: 8 }}
                                             contentStyle={{
-                                                backgroundColor: 'rgba(255,255,255,0.8)',
-                                                backdropFilter: 'blur(10px)',
-                                                borderRadius: '16px',
-                                                border: '1px solid rgba(0,0,0,0.05)',
-                                                boxShadow: '0 10px 25px -5px rgba(0,0,0,0.05)'
+                                                backgroundColor: EFFECT_COLORS.white80,
+                                                backdropFilter: "blur(10px)",
+                                                borderRadius: "16px",
+                                                border: `1px solid ${EFFECT_COLORS.black05}`,
+                                                boxShadow: `0 10px 25px -5px ${EFFECT_COLORS.black05}`
                                             }}
-                                            labelStyle={{ color: '#111827', fontWeight: 900, marginBottom: '4px' }}
+                                            labelStyle={{ color: DESIGN_COLORS.zinc900, fontWeight: 900, marginBottom: "4px" }}
                                         />
                                         <Bar
                                             dataKey="count"
-                                            fill="#111827"
+                                            fill={DESIGN_COLORS.zinc900}
                                             radius={[6, 6, 2, 2]}
-                                            activeBar={{ fill: '#4ADE80' }}
+                                            activeBar={{ fill: DESIGN_COLORS.brandLime }}
                                         />
                                     </BarChart>
                                 </ResponsiveContainer>
@@ -272,7 +273,7 @@ export function AnalyticsView({ logs, id }: AnalyticsViewProps) {
                                                     initial={{ height: 0 }}
                                                     animate={{ height: `${Math.min((d.count / (Math.max(...(showMockPreview ? mockDayData : realDayData).map(x => x.count)) || 1)) * 100, 100)}%` }}
                                                     transition={{ duration: 1, delay: 0.1 + (i * 0.05), type: "spring", damping: 15 }}
-                                                    className="absolute bottom-0 w-full bg-gradient-to-t from-brand-orange to-orange-400 rounded-full shadow-[0_0_15px_rgba(249,115,22,0.3)]"
+                                                    className="absolute bottom-0 w-full bg-gradient-to-t from-brand-orange to-orange-400 rounded-full shadow-glow-orange-md"
                                                 />
                                             </div>
                                             <span className="text-[10px] text-gray-400 font-black uppercase tracking-tighter">{d.day}</span>

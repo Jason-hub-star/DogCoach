@@ -22,7 +22,7 @@ export function Step7Temperament({ data, updateData }: Props) {
     return (
         <div className="space-y-8">
             <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">타고난 기질은 어떤가요?</h2>
+                <h2 className="text-2xl font-bold text-slate-800 mb-2">타고난 기질은 어떤가요?</h2>
                 <p className="text-gray-500">낯선 사람이나 소리에 얼마나 민감하게 반응하나요?</p>
             </div>
 

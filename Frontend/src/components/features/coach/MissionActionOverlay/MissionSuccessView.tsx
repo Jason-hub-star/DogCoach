@@ -21,7 +21,7 @@ export function MissionSuccessView({ onReaction }: MissionSuccessViewProps) {
         >
             <div className="text-center">
                 <div className="text-6xl mb-6">🎉</div>
-                <h3 className="text-2xl font-black text-gray-900 mb-3">훌륭합니다!</h3>
+                <h3 className="text-2xl font-black text-slate-800 mb-3">훌륭합니다!</h3>
                 <p className="text-gray-500 font-medium break-keep leading-relaxed">
                     오늘의 훈련을 성공적으로 마쳤어요.<br />
                     훈련 중 강아지의 반응은 어땠나요?

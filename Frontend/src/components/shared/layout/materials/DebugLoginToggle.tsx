@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { DESIGN_COLORS } from "@/lib/theme/colors";
 
 interface DebugLoginToggleProps {
     isLoggedIn: boolean;
@@ -18,9 +19,9 @@ export function DebugLoginToggle({ isLoggedIn, onToggle }: DebugLoginToggleProps
             onClick={onToggle}
             className="fixed top-4 left-4 z-50 px-3 py-1.5 rounded-full text-xs font-bold border shadow-lg transition-colors flex items-center gap-2"
             style={{
-                backgroundColor: isLoggedIn ? '#dcfce7' : '#fee2e2', // green-100 : red-100
-                color: isLoggedIn ? '#15803d' : '#991b1b', // green-700 : red-800
-                borderColor: isLoggedIn ? '#86efac' : '#fca5a5', // green-300 : red-300
+                backgroundColor: isLoggedIn ? DESIGN_COLORS.success100 : DESIGN_COLORS.error100,
+                color: isLoggedIn ? DESIGN_COLORS.success700 : DESIGN_COLORS.error800,
+                borderColor: isLoggedIn ? DESIGN_COLORS.success300 : DESIGN_COLORS.error300,
             }}
         >
             <span>🚧 DEBUG: {isLoggedIn ? 'LOGGED IN (User)' : 'GUEST (Visitor)'}</span>

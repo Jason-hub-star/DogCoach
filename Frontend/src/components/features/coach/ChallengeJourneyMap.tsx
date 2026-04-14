@@ -56,7 +56,7 @@ export function ChallengeJourneyMap({ stages, currentDay, unlockMode = "progress
                                 )}>
                                     Day {stage.day}
                                 </div>
-                                <div className="font-black text-gray-900 text-base leading-tight">
+                                <div className="font-black text-slate-800 text-base leading-tight">
                                     {stage.title}
                                     {activeAltId && (
                                         <span className="ml-2 inline-flex items-center gap-1 bg-purple-50 text-purple-600 text-[8px] font-black px-1.5 py-0.5 rounded border border-purple-100 uppercase">
@@ -90,7 +90,7 @@ export function ChallengeJourneyMap({ stages, currentDay, unlockMode = "progress
                                 <div className={cn(
                                     "w-16 h-16 rounded-2xl flex items-center justify-center border-2 transition-all duration-500 shadow-lg relative z-10",
                                     isCurrent
-                                        ? "bg-brand-lime text-gray-900 border-white/40 scale-110 shadow-brand-lime/30"
+                                        ? "bg-brand-lime text-slate-800 border-white/40 scale-110 shadow-brand-lime/30"
                                         : isCompleted
                                             ? "bg-white text-brand-lime border-brand-lime/20"
                                             : isLocked

@@ -17,12 +17,13 @@ import { pdf } from "@react-pdf/renderer";
 import { toPng } from "html-to-image";
 import { apiClient } from "@/lib/api";
 import { LottieLoading } from "@/components/shared/ui/LottieLoading";
+import { DESIGN_COLORS } from "@/lib/theme/colors";
 
 import { PremiumBackground } from "@/components/shared/ui/PremiumBackground";
 
 export default function LogPage() {
     const [activeTab, setActiveTab] = useState<"timeline" | "analytics">("timeline");
-    const { token } = useAuth();
+    const { token, user, loading: isAuthLoading, hasStoredSessionHint } = useAuth();
     const router = useRouter();
     const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
     const [aiAnalysis, setAiAnalysis] = useState<any>(null);
@@ -39,13 +40,19 @@ export default function LogPage() {
     }, []);
 
     // Fetch Data
-    const { data: dashboardData } = useDashboardData(!!token, token);
+    // Avoid transient guest fetch while authenticated token is still restoring from localStorage.
+    const isAuthHydratingFromStorage = !isAuthLoading && !token && !user && hasStoredSessionHint;
+    const isDashboardQueryEnabled = !isAuthHydratingFromStorage && !isAuthLoading && (!!token || !user || !!user.is_anonymous);
+    const { data: dashboardData, isLoading: isDashboardLoading } = useDashboardData(isDashboardQueryEnabled, token, true);
     const dogId = dashboardData?.dog_profile?.id;
     const dogName = dashboardData?.dog_profile?.name || "반려견";
     const { data: logs, isLoading } = useDogLogs(dogId, token);
     const createSnapshot = useCreateBehaviorSnapshot(token);
 
-    const displayLogs = logs || [];
+    const displayLogs = (logs && logs.length > 0)
+        ? logs
+        : (dashboardData?.recent_logs || []);
+    const isTimelineLoading = isDashboardLoading || (!!dogId && isLoading);
 
     // Handle "맞춤 코칭 플랜 시작하기" button
     const handleStartTraining = (courseId: string) => {
@@ -81,7 +88,7 @@ export default function LogPage() {
             if (chartElement) {
                 chartImage = await toPng(chartElement, {
                     quality: 0.95,
-                    backgroundColor: '#ffffff',
+                    backgroundColor: DESIGN_COLORS.white,
                     pixelRatio: 2 // High quality
                 });
             }
@@ -176,16 +183,16 @@ export default function LogPage() {
             {/* Header: Date Picker & Tabs */}
             <header className="sticky top-0 z-30 bg-white/40 backdrop-blur-md border-b border-white/60 ring-1 ring-black/5">
                 <div className="flex items-center justify-between px-6 py-4">
-                    <button className="p-2 -ml-2 text-gray-400 hover:text-gray-900 transition-colors">
+                    <button className="p-2 -ml-2 text-gray-400 hover:text-slate-800 transition-colors">
                         <ChevronLeft className="w-5 h-5" />
                     </button>
                     <div className="flex flex-col items-center">
                         <span className="text-[10px] font-black text-brand-lime uppercase tracking-[0.2em] mb-0.5">Archive</span>
-                        <div className="flex items-center gap-2 font-black text-gray-900 tracking-tight">
+                        <div className="flex items-center gap-2 font-black text-slate-800 tracking-tight">
                             <span>전체 기록</span>
                         </div>
                     </div>
-                    <button className="p-2 -mr-2 text-gray-400 hover:text-gray-900 transition-colors">
+                    <button className="p-2 -mr-2 text-gray-400 hover:text-slate-800 transition-colors">
                         <ChevronRight className="w-5 h-5" />
                     </button>
                 </div>
@@ -227,10 +234,10 @@ export default function LogPage() {
                             className="space-y-4"
                         >
                             <div className="text-sm text-gray-500 font-medium">
-                                총 <span className="text-brand-lime font-bold">{displayLogs.length}개</span>의 기록이 있어요.
+                                총 <span className="text-brand-lime font-bold">{isTimelineLoading ? "--" : displayLogs.length}개</span>의 기록이 있어요.
                             </div>
 
-                            {isLoading ? (
+                            {isTimelineLoading ? (
                                 <div className="flex flex-col items-center justify-center py-20">
                                     <LottieLoading type="cute" message="기록을 불러오고 있어요..." size={250} />
                                 </div>
@@ -280,7 +287,7 @@ export default function LogPage() {
                             <button
                                 onClick={handleDownloadReport}
                                 disabled={isGeneratingPdf}
-                                className="w-full bg-gray-900 text-white p-4 rounded-2xl flex items-center justify-between shadow-lg shadow-gray-200 active:scale-[0.98] transition-transform disabled:opacity-70 disabled:scale-100"
+                                className="w-full bg-slate-800 text-white p-4 rounded-2xl flex items-center justify-between shadow-lg shadow-gray-200 active:scale-[0.98] transition-transform disabled:opacity-70 disabled:scale-100"
                             >
                                 <div className="flex items-center gap-3">
                                     <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">

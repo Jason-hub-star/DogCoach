@@ -29,13 +29,13 @@ export function SubscriptionSection({ subscription, onUpgrade, onManageSubscript
         <div className="space-y-6">
             <div className="flex items-center gap-2 px-1">
                 <Star className="w-5 h-5 text-brand-lime" />
-                <h2 className="text-xl font-black text-gray-900 tracking-tight">멤버십 및 구독</h2>
+                <h2 className="text-xl font-black text-slate-800 tracking-tight">멤버십 및 구독</h2>
             </div>
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="glass p-8 rounded-[3rem] shadow-[0_15px_50px_rgba(0,0,0,0.05)] border border-white/60 relative overflow-hidden group ring-1 ring-black/5"
+                className="glass p-8 rounded-[3rem] shadow-elev-lg border border-white/60 relative overflow-hidden group ring-1 ring-black/5"
             >
                 {/* Background Decor */}
                 <div className="absolute top-0 right-0 w-48 h-48 bg-brand-lime/10 rounded-full -mr-20 -mt-20 blur-3xl" />
@@ -45,7 +45,7 @@ export function SubscriptionSection({ subscription, onUpgrade, onManageSubscript
                         <div className="flex flex-col">
                             <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Current Plan</span>
                             <div className="flex items-center gap-3">
-                                <h3 className="text-2xl font-black text-gray-900 tracking-tight">
+                                <h3 className="text-2xl font-black text-slate-800 tracking-tight">
                                     {isPro ? 'Pro Member' : 'Standard'}
                                 </h3>
                                 <div className={cn(
@@ -66,7 +66,7 @@ export function SubscriptionSection({ subscription, onUpgrade, onManageSubscript
                             <div className="space-y-6">
                                 <div className="p-4 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/60 shadow-inner">
                                     <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Next Billing Date</p>
-                                    <p className="text-sm font-black text-gray-900">
+                                    <p className="text-sm font-black text-slate-800">
                                         {subscription?.next_billing_date ? new Date(subscription.next_billing_date).toLocaleDateString() : 'Active'}
                                     </p>
                                 </div>
@@ -81,7 +81,7 @@ export function SubscriptionSection({ subscription, onUpgrade, onManageSubscript
                             <div className="space-y-6">
                                 <p className="text-sm font-bold text-gray-500 leading-relaxed mb-4">
                                     Pro 멤버십으로 업그레이드하고 <br />
-                                    <span className="text-gray-900">AI 심층 행동 분석</span>과 무제한 솔루션을 경험하세요.
+                                    <span className="text-slate-800">AI 심층 행동 분석</span>과 무제한 솔루션을 경험하세요.
                                 </p>
 
                                 <div className="space-y-3 bg-white/40 backdrop-blur-sm p-6 rounded-3xl border border-white/60 shadow-inner">
@@ -99,7 +99,7 @@ export function SubscriptionSection({ subscription, onUpgrade, onManageSubscript
 {contestMode ? (
                                     <div className="p-6 bg-brand-lime/10 border-2 border-brand-lime/30 rounded-2xl">
                                         <div className="flex items-center gap-2 mb-2">
-                                            <div className="px-2 py-1 bg-brand-lime text-gray-900 rounded text-[9px] font-black uppercase">
+                                            <div className="px-2 py-1 bg-brand-lime text-slate-800 rounded text-[9px] font-black uppercase">
                                                 공모전 시연 모드
                                             </div>
                                         </div>
@@ -111,11 +111,11 @@ export function SubscriptionSection({ subscription, onUpgrade, onManageSubscript
                                     <>
                                         <button
                                             onClick={() => handleComingSoon('Pro 구독')}
-                                            className="w-full bg-gray-900 text-white p-5 rounded-2xl font-black text-sm flex items-center justify-center gap-3 active:scale-[0.98] transition-all hover:bg-black hover:shadow-xl hover:shadow-black/20 group/btn"
+                                            className="w-full bg-slate-800 text-white p-5 rounded-2xl font-black text-sm flex items-center justify-center gap-3 active:scale-[0.98] transition-all hover:bg-slate-900 hover:shadow-xl hover:shadow-slate-900/20 group/btn"
                                         >
                                             지금 Pro 시작하기 (7일 무료)
                                             <div className="w-8 h-8 bg-brand-lime rounded-full flex items-center justify-center group-hover/btn:scale-110 transition-transform">
-                                                <Crown className="w-4 h-4 text-gray-900 fill-current" />
+                                                <Crown className="w-4 h-4 text-slate-800 fill-current" />
                                             </div>
                                         </button>
 
@@ -125,7 +125,7 @@ export function SubscriptionSection({ subscription, onUpgrade, onManageSubscript
                                                 placeholder="초대/프로모션 코드"
                                                 className="flex-1 px-4 bg-transparent text-xs font-bold focus:outline-none placeholder:text-gray-400"
                                             />
-                                            <button onClick={() => handleComingSoon('프로모션 코드')} className="px-4 py-2 bg-white/50 text-gray-500 rounded-xl text-xs font-black hover:bg-white hover:text-gray-900 transition-all">
+                                            <button onClick={() => handleComingSoon('프로모션 코드')} className="px-4 py-2 bg-white/50 text-gray-500 rounded-xl text-xs font-black hover:bg-white hover:text-slate-800 transition-all">
                                                 적용
                                             </button>
                                         </div>

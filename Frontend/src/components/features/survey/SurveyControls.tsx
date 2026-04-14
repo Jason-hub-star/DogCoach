@@ -3,6 +3,7 @@
 import { ArrowRight, ChevronLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { DESIGN_COLORS, EFFECT_COLORS } from "@/lib/theme/colors";
 
 interface Props {
     step: number;
@@ -19,7 +20,7 @@ export function SurveyControls({ step, totalSteps, onNext, onBack, canNext }: Pr
                 <motion.button
                     onClick={onBack}
                     disabled={step === 1}
-                    whileHover={step === 1 ? {} : { scale: 1.1, backgroundColor: "rgba(249, 250, 251, 1)" }}
+                    whileHover={step === 1 ? {} : { scale: 1.1, backgroundColor: DESIGN_COLORS.gray50 }}
                     whileTap={step === 1 ? {} : { scale: 0.9 }}
                     className={cn(
                         "flex items-center justify-center w-12 h-12 rounded-full border border-gray-200 text-gray-600 transition-all",
@@ -32,7 +33,7 @@ export function SurveyControls({ step, totalSteps, onNext, onBack, canNext }: Pr
                 <motion.button
                     onClick={onNext}
                     disabled={!canNext}
-                    whileHover={canNext ? { scale: 1.02, boxShadow: "0 10px 25px -5px rgba(163, 230, 53, 0.4)" } : {}}
+                    whileHover={canNext ? { scale: 1.02, boxShadow: EFFECT_COLORS.controlHoverShadow } : {}}
                     whileTap={canNext ? { scale: 0.98 } : {}}
                     animate={!canNext ? { x: [0, -4, 4, -4, 4, 0] } : {}}
                     transition={!canNext ? {

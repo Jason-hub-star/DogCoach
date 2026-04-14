@@ -27,7 +27,7 @@ export const Toast = ({ message, isVisible, onClose, duration = 2000, type = "su
     if (!isVisible && !show) return null;
 
     const bgColors = {
-        success: "bg-gray-900",
+        success: "bg-slate-800",
         error: "bg-red-500",
         info: "bg-blue-500"
     };

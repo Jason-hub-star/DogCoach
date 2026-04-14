@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, ReactNode } from "react";
+import { EFFECT_COLORS } from "@/lib/theme/colors";
 
 interface ShimmerButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
@@ -10,7 +11,7 @@ interface ShimmerButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     shimmerColor?: string;
 }
 
-export function ShimmerButton({ children, className, shimmerColor = "rgba(255,255,255,0.4)", ...props }: ShimmerButtonProps) {
+export function ShimmerButton({ children, className, shimmerColor = EFFECT_COLORS.white40, ...props }: ShimmerButtonProps) {
     return (
         <button
             className={cn(

@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageCircle } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { ShimmerButton } from "@/components/ui/animations/ShimmerButton";
+import { EFFECT_COLORS } from "@/lib/theme/colors";
 
 interface KakaoSyncModalProps {
     isOpen: boolean;
@@ -51,7 +51,7 @@ export function KakaoSyncModal({ isOpen, onClose, onConfirm }: KakaoSyncModalPro
                             </div>
 
                             {/* Text Content */}
-                            <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight break-keep">
+                            <h3 className="text-xl font-bold text-slate-800 mb-2 leading-tight break-keep">
                                 기록이 날아가지 않게<br />
                                 저장해둘까요?
                             </h3>
@@ -64,10 +64,10 @@ export function KakaoSyncModal({ isOpen, onClose, onConfirm }: KakaoSyncModalPro
                             {/* Primary Action - Kakao */}
                             <ShimmerButton
                                 onClick={onConfirm}
-                                shimmerColor="rgba(255,255,255,0.6)"
-                                className="w-full bg-[#FEE500] hover:bg-[#FDD835] text-[#3C1E1E] font-semibold py-3.5 px-4 rounded-xl shadow-sm"
+                                shimmerColor={EFFECT_COLORS.white60}
+                                className="w-full bg-kakao-yellow hover:bg-kakao-yellow-hover text-kakao-brown font-semibold py-3.5 px-4 rounded-xl shadow-sm"
                             >
-                                <MessageCircle className="w-5 h-5 fill-[#3C1E1E]" />
+                                <MessageCircle className="w-5 h-5 fill-kakao-brown" />
                                 <span>카카오로 3초 만에 저장하기</span>
                             </ShimmerButton>
 

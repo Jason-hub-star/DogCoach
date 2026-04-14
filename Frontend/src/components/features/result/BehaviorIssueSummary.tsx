@@ -20,10 +20,10 @@ export function BehaviorIssueSummary({ dogName, issues, curriculumTitle }: Behav
         >
             <div className="mb-6">
                 <div className="flex items-center gap-2 mb-3">
-                    <div className="p-2 rounded-xl bg-gray-900 text-brand-lime">
+                    <div className="p-2 rounded-xl bg-slate-800 text-brand-lime">
                         <AlertCircle className="w-5 h-5" />
                     </div>
-                    <h3 className="text-xl font-black text-gray-900 tracking-tight">주요 행동 문제</h3>
+                    <h3 className="text-xl font-black text-slate-800 tracking-tight">주요 행동 문제</h3>
                 </div>
 
                 <p className="text-sm text-gray-500 break-keep mb-5 font-medium leading-relaxed">
@@ -61,7 +61,7 @@ export function BehaviorIssueSummary({ dogName, issues, curriculumTitle }: Behav
                     <p className="text-xs text-gray-400 font-black uppercase tracking-widest mb-2">
                         선택된 훈련 과정
                     </p>
-                    <p className="text-gray-900 font-bold text-base break-keep leading-relaxed">
+                    <p className="text-slate-800 font-bold text-base break-keep leading-relaxed">
                         {curriculumTitle}
                     </p>
                 </motion.div>

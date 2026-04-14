@@ -29,7 +29,7 @@ export function RecommendationCard({ data, isLoading, token }: RecommendationCar
           <div className="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center">
             <Loader2 className="w-5 h-5 text-violet-500 animate-spin" />
           </div>
-          <span className="font-black text-gray-900">AI 분석 중...</span>
+          <span className="font-black text-slate-800">AI 분석 중...</span>
         </div>
         <div className="space-y-3">
           {[1, 2, 3].map((i) => (
@@ -76,7 +76,7 @@ export function RecommendationCard({ data, isLoading, token }: RecommendationCar
           <div className="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center">
             <Sparkles className="w-5 h-5 text-violet-500" />
           </div>
-          <h3 className="font-black text-gray-900">AI 맞춤 추천</h3>
+          <h3 className="font-black text-slate-800">AI 맞춤 추천</h3>
         </div>
         <div className="flex items-center gap-1 text-[10px] font-black text-gray-400 uppercase tracking-wider">
           <span>{currentIndex + 1}</span>
@@ -105,7 +105,7 @@ export function RecommendationCard({ data, isLoading, token }: RecommendationCar
               {current.priority}
             </div>
             <div className="flex-1 min-w-0">
-              <h4 className="font-black text-gray-900 text-base mb-1.5">{current.title}</h4>
+              <h4 className="font-black text-slate-800 text-base mb-1.5">{current.title}</h4>
               <p className="text-sm text-gray-600 leading-relaxed break-keep">{current.description}</p>
             </div>
           </div>

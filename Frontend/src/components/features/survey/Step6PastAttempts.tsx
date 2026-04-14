@@ -77,7 +77,7 @@ export function Step6PastAttempts({ data, updateData }: Props) {
     return (
         <div className="space-y-6">
             <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">효과가 없던 방법은?</h2>
+                <h2 className="text-2xl font-bold text-slate-800 mb-2">효과가 없던 방법은?</h2>
                 <p className="text-gray-500 break-keep font-medium">과거에 시도했지만 실패했던 경험을 알려주시면, 중복된 조언을 피할 수 있어요.</p>
             </div>
 
@@ -101,7 +101,7 @@ export function Step6PastAttempts({ data, updateData }: Props) {
                         </div>
                         <span className={cn(
                             "text-xs md:text-sm whitespace-nowrap",
-                            data.pastAttempts.includes(item.id) ? "text-gray-900" : "text-gray-500"
+                            data.pastAttempts.includes(item.id) ? "text-slate-800" : "text-gray-500"
                         )}>
                             {item.id === 'etc' && data.pastAttemptsOther ? data.pastAttemptsOther : item.label}
                         </span>
@@ -139,7 +139,7 @@ export function Step6PastAttempts({ data, updateData }: Props) {
                             className="bg-white rounded-[2.5rem] w-full max-w-sm overflow-hidden relative shadow-2xl border border-gray-100 z-10"
                         >
                             <div className="p-8 pb-4 text-center">
-                                <h3 className="text-xl font-black text-gray-900 mb-2">과거 시도 입력</h3>
+                                <h3 className="text-xl font-black text-slate-800 mb-2">과거 시도 입력</h3>
                                 <p className="text-sm text-gray-500">목록에 없지만 시도해본 특이한 방법이 있나요?</p>
                             </div>
 
@@ -172,7 +172,7 @@ export function Step6PastAttempts({ data, updateData }: Props) {
                                 </button>
                                 <button
                                     onClick={handleOtherSave}
-                                    className="flex-[2] py-4 px-6 rounded-2xl bg-gray-900 hover:bg-black text-brand-lime font-black shadow-lg shadow-gray-200 transition-all text-sm flex items-center justify-center gap-2"
+                                    className="flex-[2] py-4 px-6 rounded-2xl bg-slate-800 hover:bg-slate-900 text-brand-lime font-black shadow-lg shadow-gray-200 transition-all text-sm flex items-center justify-center gap-2"
                                 >
                                     <Check className="w-4 h-4" />
                                     저장하기

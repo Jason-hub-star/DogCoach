@@ -4,7 +4,7 @@ import React from "react";
 
 export const PremiumBackground = () => {
     return (
-        <div className="fixed inset-0 -z-10 overflow-hidden bg-[#fbfbfd]">
+        <div className="fixed inset-0 -z-10 overflow-hidden bg-background">
             {/* Tech Grid Overlay */}
             <div className="absolute inset-0 tech-grid opacity-40" />
 

@@ -2,6 +2,7 @@
 
 import { Document, Page, Text, View, StyleSheet, Image, Font } from "@react-pdf/renderer";
 import { TrainingCourse } from "@/data/curriculum";
+import { DESIGN_COLORS } from "@/lib/theme/colors";
 
 // Register Korean Font (using Noto Sans KR from Google Fonts or similar CDN)
 // Note: Direct URL sometimes fails due to CORS, but let's try a reliable source or use a locally imported font if available.
@@ -24,23 +25,23 @@ const styles = StyleSheet.create({
     page: {
         padding: 30,
         fontFamily: "NotoSansKR",
-        backgroundColor: "#ffffff"
+        backgroundColor: DESIGN_COLORS.white
     },
     header: {
         marginBottom: 20,
         borderBottomWidth: 1,
-        borderBottomColor: "#e5e7eb",
+        borderBottomColor: DESIGN_COLORS.gray200,
         paddingBottom: 10,
     },
     title: {
         fontSize: 24,
         fontWeight: "bold",
         marginBottom: 5,
-        color: "#27272a"
+        color: DESIGN_COLORS.zinc800
     },
     subtitle: {
         fontSize: 10,
-        color: "#71717a"
+        color: DESIGN_COLORS.zinc500
     },
     section: {
         marginBottom: 20,
@@ -49,8 +50,8 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "bold",
         marginBottom: 10,
-        color: "#27272a",
-        backgroundColor: "#ecfccb",
+        color: DESIGN_COLORS.zinc800,
+        backgroundColor: DESIGN_COLORS.brandLimePale,
         padding: 5,
         borderRadius: 4
     },
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
         fontSize: 10,
         marginBottom: 5,
         lineHeight: 1.5,
-        color: "#3f3f46"
+        color: DESIGN_COLORS.zinc700
     },
     grid: {
         display: "flex",
@@ -69,17 +70,17 @@ const styles = StyleSheet.create({
     statCard: {
         flex: 1,
         padding: 10,
-        backgroundColor: "#f4f4f5",
+        backgroundColor: DESIGN_COLORS.gray100,
         borderRadius: 5
     },
     statLabel: {
         fontSize: 8,
-        color: "#71717a"
+        color: DESIGN_COLORS.zinc500
     },
     statValue: {
         fontSize: 12,
         fontWeight: "bold",
-        color: "#27272a"
+        color: DESIGN_COLORS.zinc800
     },
     chartImage: {
         width: "100%",
@@ -94,9 +95,9 @@ const styles = StyleSheet.create({
         right: 30,
         textAlign: "center",
         fontSize: 8,
-        color: "#a1a1aa",
+        color: DESIGN_COLORS.zinc400,
         borderTopWidth: 1,
-        borderTopColor: "#e5e7eb",
+        borderTopColor: DESIGN_COLORS.gray200,
         paddingTop: 10
     }
 });
@@ -246,9 +247,9 @@ export function ReportDocument({ dogName, logs, chartImage, recommendedCourse, a
                 ) : null}
 
                 {aiAnalysis && (
-                    <View style={{ marginTop: 15, padding: 15, backgroundColor: "#fff7ed", borderRadius: 8, borderStyle: "dashed", borderWidth: 1, borderColor: "#fdba74" }}>
-                        <Text style={{ ...styles.text, fontSize: 11, fontWeight: "bold", color: "#c2410c", marginBottom: 8 }}>🐾 {dogName}가 보내는 마음의 편지</Text>
-                        <Text style={{ ...styles.text, color: "#9a3412" }}>{aiAnalysis.dog_voice}</Text>
+                    <View style={{ marginTop: 15, padding: 15, backgroundColor: DESIGN_COLORS.orange100, borderRadius: 8, borderStyle: "dashed", borderWidth: 1, borderColor: DESIGN_COLORS.orange300 }}>
+                        <Text style={{ ...styles.text, fontSize: 11, fontWeight: "bold", color: DESIGN_COLORS.orange700, marginBottom: 8 }}>🐾 {dogName}가 보내는 마음의 편지</Text>
+                        <Text style={{ ...styles.text, color: DESIGN_COLORS.orange800 }}>{aiAnalysis.dog_voice}</Text>
                     </View>
                 )}
 

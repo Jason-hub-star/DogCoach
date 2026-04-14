@@ -59,7 +59,7 @@ export function Step2Environment({ data, updateData }: Props) {
     return (
         <div className="space-y-8">
             <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">어떤 환경에서 지내나요?</h2>
+                <h2 className="text-2xl font-bold text-slate-800 mb-2">어떤 환경에서 지내나요?</h2>
                 <p className="text-gray-500">주거 형태와 가족 구성원은 행동 교정의 중요한 요소입니다.</p>
             </div>
 
@@ -162,7 +162,7 @@ export function Step2Environment({ data, updateData }: Props) {
                             className="bg-white rounded-[2.5rem] w-full max-w-sm overflow-hidden relative shadow-2xl border border-gray-100 z-10"
                         >
                             <div className="p-8 pb-4 text-center">
-                                <h3 className="text-xl font-black text-gray-900 mb-2">양육자 직접 입력</h3>
+                                <h3 className="text-xl font-black text-slate-800 mb-2">양육자 직접 입력</h3>
                                 <p className="text-sm text-gray-500">
                                     아이를 돌보는 특별한 분이 계신가요?<br />(예: 할머니, 삼촌, 펫시터 등)
                                 </p>
@@ -197,7 +197,7 @@ export function Step2Environment({ data, updateData }: Props) {
                                 </button>
                                 <button
                                     onClick={handleSaveOther}
-                                    className="flex-[2] py-4 px-6 rounded-2xl bg-gray-900 hover:bg-black text-brand-lime font-black shadow-lg shadow-gray-200 transition-all text-sm flex items-center justify-center gap-2"
+                                    className="flex-[2] py-4 px-6 rounded-2xl bg-slate-800 hover:bg-slate-900 text-brand-lime font-black shadow-lg shadow-gray-200 transition-all text-sm flex items-center justify-center gap-2"
                                 >
                                     <Check className="w-4 h-4" />
                                     저장하기

@@ -15,7 +15,7 @@ export function SmoothToggle({ checked, onCheckedChange, label, description, cla
     return (
         <div className={cn("flex items-center justify-between py-4 border-b last:border-0 border-gray-100", className)}>
             <div className="flex-1 pr-4">
-                {label && <div className="font-medium text-gray-900">{label}</div>}
+                {label && <div className="font-medium text-slate-800">{label}</div>}
                 {description && <div className="text-xs text-gray-500 mt-0.5 whitespace-pre-line">{description}</div>}
             </div>
             <button

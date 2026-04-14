@@ -37,7 +37,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
     return (
-        <section className="py-24 bg-white overflow-hidden">
+        <section className="py-20 md:py-24 bg-white overflow-hidden">
             <div className="container px-4 md:px-6 mx-auto">
                 <div className="text-center mb-16">
                     <motion.div
@@ -49,7 +49,7 @@ export function TestimonialsSection() {
                         <Star className="w-4 h-4 fill-current" />
                         <span>리얼 후기</span>
                     </motion.div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight break-keep">
+                    <h2 className="text-[clamp(1.9rem,7vw,2.9rem)] md:text-5xl font-bold text-slate-800 tracking-tight break-keep text-balance-kr">
                         이미 <span className="text-brand-lime font-outfit">5,000+</span> 보호자님이
                         <br />
                         기록 기반 훈련을 시작했습니다
@@ -69,7 +69,7 @@ export function TestimonialsSection() {
                                 <CardContent className="p-8 flex flex-col h-full">
                                     <Quote className="w-10 h-10 text-brand-lime/20 mb-4" />
 
-                                    <p className="text-gray-700 leading-relaxed mb-8 break-keep flex-1 italic">
+                                    <p className="text-[15px] sm:text-base text-gray-700 leading-relaxed mb-8 break-keep text-pretty-kr flex-1 italic">
                                         "{item.content}"
                                     </p>
 
@@ -84,8 +84,8 @@ export function TestimonialsSection() {
                                             </AvatarFallback>
                                         </Avatar>
                                         <div>
-                                            <div className="font-bold text-gray-900 text-sm">{item.name}</div>
-                                            <div className="text-gray-500 text-xs font-medium">
+                                            <div className="font-bold text-slate-800 text-sm">{item.name}</div>
+                                            <div className="text-gray-500 text-xs font-medium break-keep text-pretty-kr">
                                                 {item.dogName} ({item.role})
                                             </div>
                                         </div>

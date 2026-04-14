@@ -88,7 +88,7 @@ export default function SettingsPage() {
                 <div className="container mx-auto max-w-2xl flex items-center justify-between">
                     <div className="flex flex-col">
                         <span className="text-[10px] font-black text-brand-lime uppercase tracking-[0.2em] mb-0.5">Configuration</span>
-                        <h1 className="text-2xl font-black text-gray-900 tracking-tight">환경 설정</h1>
+                        <h1 className="text-2xl font-black text-slate-800 tracking-tight">환경 설정</h1>
                     </div>
                 </div>
             </header>
@@ -99,7 +99,7 @@ export default function SettingsPage() {
                         <div className="text-[10px] font-black text-brand-lime uppercase tracking-[0.2em] mb-1">
                             Account Linked
                         </div>
-                        <div className="text-sm font-black text-gray-900 break-keep">
+                        <div className="text-sm font-black text-slate-800 break-keep">
                             {linkedProvider === 'google' ? 'Google' : 'Kakao'} 연결이 완료되었습니다.
                         </div>
                     </div>

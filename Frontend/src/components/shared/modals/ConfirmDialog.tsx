@@ -66,7 +66,7 @@ export function ConfirmDialog({
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-2xl font-black text-gray-900 mb-3 break-keep">
+                    <h2 className="text-2xl font-black text-slate-800 mb-3 break-keep">
                         {title}
                     </h2>
 
@@ -82,7 +82,7 @@ export function ConfirmDialog({
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={onClose}
-                            className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-900 font-black py-4 rounded-2xl transition-all"
+                            className="flex-1 bg-gray-100 hover:bg-gray-200 text-slate-800 font-black py-4 rounded-2xl transition-all"
                         >
                             {cancelText}
                         </motion.button>
@@ -96,7 +96,7 @@ export function ConfirmDialog({
                                 "flex-1 font-black py-4 rounded-2xl shadow-xl transition-all",
                                 isDangerous
                                     ? "bg-red-500 hover:bg-red-600 text-white"
-                                    : "bg-gray-900 hover:bg-black text-white"
+                                    : "bg-slate-800 hover:bg-slate-900 text-white"
                             )}
                         >
                             {confirmText}

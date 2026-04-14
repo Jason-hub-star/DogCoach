@@ -15,14 +15,34 @@ export function useAuth() {
     const [user, setUser] = useState<User | null>(null);
     const [token, setToken] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
+    const [hasStoredSessionHint, setHasStoredSessionHint] = useState(false);
     const migrationAttempted = useRef(false);
 
     useEffect(() => {
+        const hasAuthTokenInStorage = () => {
+            if (typeof window === "undefined") return false;
+            try {
+                const keys = Object.keys(window.localStorage || {});
+                const tokenKey = keys.find((k) => k.startsWith("sb-") && k.endsWith("-auth-token"));
+                if (!tokenKey) return false;
+                const raw = localStorage.getItem(tokenKey);
+                if (!raw) return false;
+                const parsed = JSON.parse(raw);
+                const accessToken = parsed?.access_token || parsed?.currentSession?.access_token || null;
+                return Boolean(accessToken);
+            } catch {
+                return false;
+            }
+        };
+
+        setHasStoredSessionHint(hasAuthTokenInStorage());
+
         // 1. Check active session
         supabase.auth.getSession().then(({ data: { session } }: { data: { session: Session | null } }) => {
             if (session) {
                 setUser(session.user);
                 setToken(session.access_token);
+                setHasStoredSessionHint(true);
                 setLoading(false);
                 // Attempt migration if this is a real user (not anonymous)
                 if (!session.user.is_anonymous && !migrationAttempted.current) {
@@ -39,6 +59,7 @@ export function useAuth() {
             if (session) {
                 setUser(session.user);
                 setToken(session.access_token);
+                setHasStoredSessionHint(true);
                 setLoading(false);
                 // Migrate guest data on real user sign-in
                 if (!session.user.is_anonymous && !migrationAttempted.current) {
@@ -47,6 +68,7 @@ export function useAuth() {
             } else {
                 setUser(null);
                 setToken(null);
+                setHasStoredSessionHint(false);
                 migrationAttempted.current = false;
             }
         });
@@ -67,5 +89,5 @@ export function useAuth() {
         }
     };
 
-    return { user, token, loading };
+    return { user, token, loading, hasStoredSessionHint };
 }

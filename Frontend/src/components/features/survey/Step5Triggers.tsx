@@ -63,7 +63,7 @@ export function Step5Triggers({ data, updateData }: Props) {
     return (
         <div className="space-y-6">
             <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">언제 주로 반응하나요?</h2>
+                <h2 className="text-2xl font-bold text-slate-800 mb-2">언제 주로 반응하나요?</h2>
                 <p className="text-gray-500 w-full break-keep font-medium">정확한 원인 파악을 위해 구체적인 상황을 알려주세요.</p>
             </div>
 
@@ -97,7 +97,7 @@ export function Step5Triggers({ data, updateData }: Props) {
                             className="bg-white rounded-[2.5rem] w-full max-w-sm overflow-hidden relative shadow-2xl border border-gray-100 z-10"
                         >
                             <div className="p-8 pb-4 text-center">
-                                <h3 className="text-xl font-black text-gray-900 mb-2">특수한 상황 입력</h3>
+                                <h3 className="text-xl font-black text-slate-800 mb-2">특수한 상황 입력</h3>
                                 <p className="text-sm text-gray-500">목록에 없지만 특정 상황에서만 반응하나요?</p>
                             </div>
 
@@ -130,7 +130,7 @@ export function Step5Triggers({ data, updateData }: Props) {
                                 </button>
                                 <button
                                     onClick={handleOtherSave}
-                                    className="flex-[2] py-4 px-6 rounded-2xl bg-gray-900 hover:bg-black text-brand-lime font-black shadow-lg shadow-gray-200 transition-all text-sm flex items-center justify-center gap-2"
+                                    className="flex-[2] py-4 px-6 rounded-2xl bg-slate-800 hover:bg-slate-900 text-brand-lime font-black shadow-lg shadow-gray-200 transition-all text-sm flex items-center justify-center gap-2"
                                 >
                                     <Check className="w-4 h-4" />
                                     저장하기

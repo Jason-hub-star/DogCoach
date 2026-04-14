@@ -38,15 +38,15 @@ const plans = [
 
 export function PricingSection() {
     return (
-        <section id="pricing" className="py-24 bg-white">
+        <section id="pricing" className="py-20 md:py-24 bg-white">
             <div className="container px-4 md:px-6 mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 break-keep">
+                    <h2 className="text-[clamp(1.9rem,7vw,2.25rem)] md:text-4xl font-bold text-slate-800 mb-4 leading-tight break-keep text-balance-kr">
                         오늘 1분 기록이
                         <br />
                         <span className="text-brand-orange">다음 10일 행동 변화를 만듭니다.</span>
                     </h2>
-                    <p className="text-lg text-gray-600 break-keep">
+                    <p className="text-base sm:text-lg text-gray-600 leading-relaxed break-keep text-pretty-kr">
                         보호자 루틴에 맞는 플랜을 선택해 시작해보세요.
                     </p>
                 </div>
@@ -71,19 +71,19 @@ export function PricingSection() {
                             )}
 
                             <div className="mb-8">
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                                <h3 className="text-xl font-bold text-slate-800 mb-2">{plan.name}</h3>
                                 <div className="flex items-baseline gap-1">
-                                    <span className="text-4xl font-bold text-gray-900">₩{plan.price}</span>
+                                    <span className="text-4xl font-bold text-slate-800">₩{plan.price}</span>
                                     {plan.period && <span className="text-gray-500 font-medium">{plan.period}</span>}
                                 </div>
-                                <p className="text-gray-500 mt-2 text-sm break-keep">{plan.description}</p>
+                                <p className="text-gray-500 mt-2 text-sm leading-relaxed break-keep text-pretty-kr">{plan.description}</p>
                             </div>
 
                             <ul className="space-y-4 mb-8 flex-1">
                                 {plan.features.map((feature) => (
                                     <li key={feature} className="flex items-start gap-3">
                                         <Check className={cn("w-5 h-5 shrink-0", plan.popular ? "text-brand-lime" : "text-gray-400")} />
-                                        <span className="text-gray-700 text-sm font-medium break-keep">{feature}</span>
+                                        <span className="text-gray-700 text-sm font-medium leading-relaxed break-keep text-pretty-kr">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -93,8 +93,8 @@ export function PricingSection() {
                                 className={cn(
                                     "w-full py-4 rounded-xl text-center font-bold text-sm transition-all",
                                     plan.popular
-                                        ? "bg-brand-dark text-white hover:bg-gray-800 shadow-lg hover:shadow-xl"
-                                        : "bg-white border border-gray-200 text-gray-900 hover:bg-gray-50"
+                                        ? "bg-brand-dark text-white hover:bg-slate-700 shadow-lg hover:shadow-xl"
+                                        : "bg-white border border-gray-200 text-slate-800 hover:bg-gray-50"
                                 )}
                             >
                                 {plan.cta}
@@ -104,7 +104,7 @@ export function PricingSection() {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <p className="text-sm text-gray-400 break-keep">
+                    <p className="text-sm text-gray-400 break-keep text-pretty-kr">
                         프로모션 기간에는 가격이 달라질 수 있습니다.
                     </p>
                 </div>

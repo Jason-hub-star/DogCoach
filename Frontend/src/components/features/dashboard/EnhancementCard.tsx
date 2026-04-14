@@ -35,7 +35,7 @@ export const EnhancementCard = ({ data }: Props) => {
           <Sparkles className="w-5 h-5 text-brand-dark" />
         </div>
         <div className="flex-1">
-          <h3 className="font-bold text-gray-900 mb-1">더 정확한 분석을 위해</h3>
+          <h3 className="font-bold text-slate-800 mb-1">더 정확한 분석을 위해</h3>
           <p className="text-sm text-gray-600 mb-3">
             환경, 건강, 과거 시도 정보를 추가하면 맞춤 추천이 개선됩니다
           </p>

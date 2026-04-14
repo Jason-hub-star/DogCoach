@@ -24,11 +24,6 @@ export const QuickLogWidget = ({ dogId, onLogCreated }: Props) => {
     };
 
     const handleQuickLog = (behavior: string, label: string) => {
-        if (!token) {
-            showToast("로그인이 필요합니다.", "error");
-            return;
-        }
-
         const payload = {
             behavior: behavior,
             intensity: 3, // Default intensity
@@ -65,11 +60,11 @@ export const QuickLogWidget = ({ dogId, onLogCreated }: Props) => {
                     <span className="text-[10px] font-black text-brand-lime uppercase tracking-[0.2em] mb-1">Instant Tracking</span>
                     <div className="flex items-center gap-2">
                         <Zap className="w-5 h-5 text-brand-lime fill-brand-lime" />
-                        <h3 className="text-xl font-black text-gray-900 tracking-tight">빠른 기록</h3>
+                        <h3 className="text-xl font-black text-slate-800 tracking-tight">빠른 기록</h3>
                     </div>
                 </div>
                 <div className="flex items-center gap-1.5 px-3 py-1 bg-white/50 backdrop-blur-md rounded-full border border-white/40 shadow-sm ring-1 ring-black/5">
-                    <div className="w-1.5 h-1.5 bg-brand-lime rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.5)]" />
+                    <div className="w-1.5 h-1.5 bg-brand-lime rounded-full animate-pulse shadow-glow-lime-sm" />
                     <span className="text-[10px] text-gray-500 font-black uppercase tracking-widest">Active</span>
                 </div>
             </div>
@@ -129,7 +124,7 @@ const QuickLogButton = ({ label, icon, onClick, color }: any) => {
             <ScaleButton
                 onClick={onClick}
                 scale={0.92}
-                className={`group w-full flex flex-col items-center justify-center p-4 rounded-[2rem] glass shadow-[0_4px_15px_rgba(0,0,0,0.02)] transition-all h-28 relative overflow-hidden ring-1 ring-black/5 ${colorVariants[color]}`}
+                className={`group w-full flex flex-col items-center justify-center p-4 rounded-[2rem] glass shadow-elev-soft transition-all h-28 relative overflow-hidden ring-1 ring-black/5 ${colorVariants[color]}`}
             >
                 {/* Glow Effect on Hover */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-tr from-transparent via-white/40 to-transparent pointer-events-none" />

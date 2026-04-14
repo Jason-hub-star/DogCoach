@@ -26,7 +26,7 @@ export function LockedAnalysisSection({ title, description, bgClass }: LockedSec
                     </div>
                 </div>
 
-                <h3 className="text-2xl font-black text-gray-900 break-keep tracking-tight group-hover:text-brand-lime transition-colors">{title}</h3>
+                <h3 className="text-2xl font-black text-slate-800 break-keep tracking-tight group-hover:text-brand-lime transition-colors">{title}</h3>
                 {description && <p className="text-gray-400 text-sm mt-2 break-keep font-medium opacity-80 leading-relaxed">{description}</p>}
             </div>
 
