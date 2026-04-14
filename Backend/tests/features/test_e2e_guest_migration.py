@@ -10,7 +10,7 @@ Scenario:
 
 import pytest
 from uuid import uuid4
-from unittest.mock import patch, AsyncMock
+from unittest.mock import patch, AsyncMock, Mock
 from app.features.auth import service as auth_service
 from app.shared.models import User, Dog, UserRole, UserStatus, DogSex
 
@@ -167,7 +167,7 @@ async def test_e2e_jit_user_creation(mock_db):
         with patch("app.features.auth.repository.find_guest_dogs", return_value=[mock_guest_dog]):
             with patch("app.features.auth.repository.claim_dogs_for_user", return_value=1):
                 # Mock db.add and db.flush (JIT user creation)
-                mock_db.add = AsyncMock()
+                mock_db.add = Mock()
                 mock_db.flush = AsyncMock()
 
                 result = await auth_service.migrate_guest_data(

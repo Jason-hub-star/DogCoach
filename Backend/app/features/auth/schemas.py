@@ -7,7 +7,7 @@ from app.shared.models import UserRole, UserStatus
 class UserBase(BaseModel):
     email: Optional[str] = None # Supabase auth handles email, but we might want to return it if we store it or get it from token
     phone_number: Optional[str] = None
-    role: UserRole = UserRole.GUEST
+    role: UserRole = UserRole.USER
     status: UserStatus = UserStatus.ACTIVE
     timezone: str = "Asia/Seoul"
 

@@ -1,8 +1,14 @@
 from typing import List, Union
 from pydantic import field_validator
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(
+        case_sensitive=True,
+        env_file=".env",
+        extra="ignore",
+    )
+
     PROJECT_NAME: str = "DogCoach API"
     API_V1_STR: str = "/api/v1"
 
@@ -26,6 +32,18 @@ class Settings(BaseSettings):
     ANONYMOUS_COOKIE_SECURE: bool | None = None
     ANONYMOUS_COOKIE_SAMESITE: str | None = None
     ANONYMOUS_COOKIE_MAX_AGE: int = 31536000  # 1 year
+
+    @field_validator(
+        "ANONYMOUS_COOKIE_DOMAIN",
+        "ANONYMOUS_COOKIE_SECURE",
+        "ANONYMOUS_COOKIE_SAMESITE",
+        mode="before",
+    )
+    @classmethod
+    def normalize_empty_cookie_fields(cls, v):
+        if v == "":
+            return None
+        return v
 
     @field_validator("ANONYMOUS_COOKIE_SAMESITE")
     @classmethod
@@ -86,10 +104,5 @@ class Settings(BaseSettings):
         if self.ANONYMOUS_COOKIE_SAMESITE:
             return self.ANONYMOUS_COOKIE_SAMESITE
         return "none" if self.is_production else "lax"
-
-    class Config:
-        case_sensitive = True
-        env_file = ".env"
-        extra = "ignore"
 
 settings = Settings()

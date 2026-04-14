@@ -66,6 +66,8 @@ CREATE TABLE dogs (
     updated_at TIMESTAMPTZ DEFAULT now()
 );
 CREATE INDEX idx_dogs_user_id ON dogs(user_id);
+CREATE INDEX idx_dogs_user_created_desc ON dogs(user_id, created_at DESC);
+CREATE INDEX idx_dogs_anonymous_sid_created_desc ON dogs(anonymous_sid, created_at DESC);
 
 -- dog_env
 CREATE TABLE dog_env (
@@ -189,24 +191,24 @@ ALTER TABLE user_settings ENABLE ROW LEVEL SECURITY;
 -- 4. RLS Policies - Service role bypass (Backend API uses service_role key)
 -- ============================================
 -- Allow service_role full access (backend API)
-CREATE POLICY "Service role full access" ON users FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON subscriptions FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON dogs FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON dog_env FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON behavior_logs FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON media_assets FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON ai_coaching FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON action_tracker FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON noti_history FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON log_summaries FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON user_settings FOR ALL USING (auth.role() = 'service_role');
+CREATE POLICY "Service role full access" ON users FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON subscriptions FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON dogs FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON dog_env FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON behavior_logs FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON media_assets FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON ai_coaching FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON action_tracker FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON noti_history FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON log_summaries FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON user_settings FOR ALL TO service_role USING (true) WITH CHECK (true);
 
 -- Users can read their own data
-CREATE POLICY "Users read own data" ON users FOR SELECT USING (auth.uid() = id);
-CREATE POLICY "Users read own subscriptions" ON subscriptions FOR SELECT USING (auth.uid() = user_id);
-CREATE POLICY "Users read own dogs" ON dogs FOR SELECT USING (auth.uid() = user_id);
-CREATE POLICY "Users read own settings" ON user_settings FOR SELECT USING (auth.uid() = user_id);
-CREATE POLICY "Users read own notifications" ON noti_history FOR SELECT USING (auth.uid() = user_id);
+CREATE POLICY "Users read own data" ON users FOR SELECT USING ((select auth.uid()) = id);
+CREATE POLICY "Users read own subscriptions" ON subscriptions FOR SELECT USING ((select auth.uid()) = user_id);
+CREATE POLICY "Users read own dogs" ON dogs FOR SELECT USING ((select auth.uid()) = user_id);
+CREATE POLICY "Users read own settings" ON user_settings FOR SELECT USING ((select auth.uid()) = user_id);
+CREATE POLICY "Users read own notifications" ON noti_history FOR SELECT USING ((select auth.uid()) = user_id);
 
 -- ============================================
 -- 5. updated_at auto-trigger
@@ -217,7 +219,8 @@ BEGIN
     NEW.updated_at = now();
     RETURN NEW;
 END;
-$$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql
+SET search_path = public;
 
 CREATE TRIGGER trg_users_updated_at BEFORE UPDATE ON users FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 CREATE TRIGGER trg_subscriptions_updated_at BEFORE UPDATE ON subscriptions FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
@@ -255,7 +258,6 @@ CREATE TABLE ai_recommendation_snapshots (
 );
 
 CREATE INDEX idx_rec_dog_window_created ON ai_recommendation_snapshots(dog_id, window_days, created_at DESC);
-CREATE UNIQUE INDEX idx_rec_dedupe_key ON ai_recommendation_snapshots(dedupe_key);
 CREATE INDEX idx_rec_user_created ON ai_recommendation_snapshots(user_id, created_at);
 CREATE INDEX idx_rec_expires ON ai_recommendation_snapshots(expires_at);
 
@@ -300,10 +302,10 @@ ALTER TABLE ai_recommendation_feedback ENABLE ROW LEVEL SECURITY;
 ALTER TABLE ai_cost_usage_daily ENABLE ROW LEVEL SECURITY;
 ALTER TABLE ai_cost_usage_monthly ENABLE ROW LEVEL SECURITY;
 
-CREATE POLICY "Service role full access" ON ai_recommendation_snapshots FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON ai_recommendation_feedback FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON ai_cost_usage_daily FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Service role full access" ON ai_cost_usage_monthly FOR ALL USING (auth.role() = 'service_role');
+CREATE POLICY "Service role full access" ON ai_recommendation_snapshots FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON ai_recommendation_feedback FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON ai_cost_usage_daily FOR ALL TO service_role USING (true) WITH CHECK (true);
+CREATE POLICY "Service role full access" ON ai_cost_usage_monthly FOR ALL TO service_role USING (true) WITH CHECK (true);
 
 -- updated_at triggers for cost tables
 CREATE TRIGGER trg_ai_cost_daily_updated_at BEFORE UPDATE ON ai_cost_usage_daily FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
@@ -353,7 +355,9 @@ BEGIN
         CREATE POLICY "Service role full access"
             ON user_training_status
             FOR ALL
-            USING (auth.role() = 'service_role');
+            TO service_role
+            USING (true)
+            WITH CHECK (true);
     END IF;
 END$$;
 
@@ -385,6 +389,8 @@ CREATE INDEX IF NOT EXISTS idx_behavior_snapshot_user_dog_curriculum
     ON training_behavior_snapshots(user_id, dog_id, curriculum_id);
 CREATE INDEX IF NOT EXISTS idx_behavior_snapshot_created_at
     ON training_behavior_snapshots(created_at);
+CREATE INDEX IF NOT EXISTS idx_behavior_snapshot_user_dog_curriculum_snapshot_date
+    ON training_behavior_snapshots(user_id, dog_id, curriculum_id, snapshot_date DESC);
 
 ALTER TABLE training_behavior_snapshots ENABLE ROW LEVEL SECURITY;
 
@@ -400,6 +406,8 @@ BEGIN
         CREATE POLICY "Service role full access"
             ON training_behavior_snapshots
             FOR ALL
-            USING (auth.role() = 'service_role');
+            TO service_role
+            USING (true)
+            WITH CHECK (true);
     END IF;
 END$$;

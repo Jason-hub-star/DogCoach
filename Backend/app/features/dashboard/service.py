@@ -20,12 +20,20 @@ def _as_object(value):
 
 
 async def get_dashboard_data(db: AsyncSession, dog_id: UUID, timezone_str: str = "Asia/Seoul") -> schemas.DashboardResponse:
-    # 1. Fetch Dog Info
-    result = await db.execute(select(Dog).where(Dog.id == dog_id))
-    dog = result.scalar_one_or_none()
-    
-    if not dog:
+    # 1. Fetch Dog + Env in one query
+    dog_context_query = (
+        select(Dog, DogEnv)
+        .outerjoin(DogEnv, DogEnv.dog_id == Dog.id)
+        .where(Dog.id == dog_id)
+        .limit(1)
+    )
+    dog_context_result = await db.execute(dog_context_query)
+    dog_context = dog_context_result.first()
+
+    if not dog_context:
         raise HTTPException(status_code=404, detail="Dog not found")
+
+    dog, dog_env = dog_context
 
     # Calculate Age (using user's timezone for accurate date)
     age_months = 0
@@ -42,11 +50,7 @@ async def get_dashboard_data(db: AsyncSession, dog_id: UUID, timezone_str: str =
         profile_image_url=dog.profile_image_url
     )
 
-    # 1.5 Fetch Env for Issues
-    env_query = select(DogEnv).where(DogEnv.dog_id == dog_id)
-    env_result = await db.execute(env_query)
-    dog_env = env_result.scalar_one_or_none()
-    
+    # 1.5 Parse Env for Issues
     issues = []
     env_triggers = []
     env_consequences = []
@@ -99,30 +103,30 @@ async def get_dashboard_data(db: AsyncSession, dog_id: UUID, timezone_str: str =
     temperament_meta = _as_object(dog_env.temperament) if dog_env else None
     profile_meta = _as_object(dog_env.profile_meta) if dog_env else None
 
-    # 2. Fetch Stats (Total Logs, Streak)
-    # Total Logs
-    count_query = select(func.count()).where(BehaviorLog.dog_id == dog_id)
-    total_logs = (await db.execute(count_query)).scalar() or 0
+    # 2. Fetch Stats (Total Logs + Last Logged At in one query)
+    stats_query = select(
+        func.count(BehaviorLog.id),
+        func.max(BehaviorLog.occurred_at),
+    ).where(BehaviorLog.dog_id == dog_id)
+    total_logs, last_logged_at = (await db.execute(stats_query)).one()
+    total_logs = int(total_logs or 0)
 
-    # Last Logged At
-    last_log_query = select(BehaviorLog.occurred_at).where(BehaviorLog.dog_id == dog_id).order_by(desc(BehaviorLog.occurred_at)).limit(1)
-    last_logged_at = (await db.execute(last_log_query)).scalar_one_or_none()
+    # Fetch recent logs once, and reuse for streak + recent_logs payload
+    recent_logs_query = (
+        select(BehaviorLog)
+        .where(BehaviorLog.dog_id == dog_id)
+        .order_by(desc(BehaviorLog.occurred_at))
+        .limit(500)
+    )
+    recent_logs_result = await db.execute(recent_logs_query)
+    recent_logs_all = recent_logs_result.scalars().all()
 
     # Streak Calculation (consecutive days with at least one log)
     current_streak = 0
     if last_logged_at:
         user_today = get_today_with_timezone(timezone_str)
         tz = ZoneInfo(timezone_str)
-
-        # Fetch recent log timestamps and convert to user timezone in Python
-        recent_dates_query = (
-            select(BehaviorLog.occurred_at)
-            .where(BehaviorLog.dog_id == dog_id)
-            .order_by(desc(BehaviorLog.occurred_at))
-            .limit(500)
-        )
-        result = await db.execute(recent_dates_query)
-        raw_dates = [row[0] for row in result.all()]
+        raw_dates = [log.occurred_at for log in recent_logs_all if log.occurred_at]
 
         # Convert to user-local dates and deduplicate
         log_dates = sorted(
@@ -142,17 +146,15 @@ async def get_dashboard_data(db: AsyncSession, dog_id: UUID, timezone_str: str =
                     expected -= timedelta(days=1)
                 elif d < expected:
                     break
-    
+
     stats = schemas.QuickLogStats(
         total_logs=total_logs,
         current_streak=current_streak,
         last_logged_at=last_logged_at
     )
 
-    # 3. Fetch Recent Logs (Limit 5)
-    logs_query = select(BehaviorLog).where(BehaviorLog.dog_id == dog_id).order_by(desc(BehaviorLog.occurred_at)).limit(5)
-    recent_logs_result = (await db.execute(logs_query)).scalars().all()
-    recent_logs = [schemas.RecentLogItem.model_validate(log) for log in recent_logs_result]
+    # 3. Build Recent Logs (reuse already-fetched rows)
+    recent_logs = [schemas.RecentLogItem.model_validate(log) for log in recent_logs_all[:5]]
 
     return schemas.DashboardResponse(
         dog_profile=dog_profile,

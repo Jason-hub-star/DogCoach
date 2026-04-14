@@ -71,7 +71,9 @@ async def migrate_guest_data(
     # JIT user creation (same pattern as onboarding/repository.py)
     user = await repository.get_user_by_id(db, user_uuid)
     if not user:
-        user = User(id=user_uuid, role="USER")
+        # Avoid hardcoded enum literal; rely on DB/model default for compatibility
+        # with environments where USER enum variant may not exist.
+        user = User(id=user_uuid)
         db.add(user)
         await db.flush()
 
@@ -107,4 +109,3 @@ async def delete_user_account(db: AsyncSession, user_id: str) -> None:
 
     await db.delete(user)
     await db.commit()
-

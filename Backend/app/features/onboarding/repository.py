@@ -18,7 +18,11 @@ async def create_dog_with_env(
         result = await db.execute(stmt)
         user_record = result.scalars().first()
         if not user_record:
-            user_record = User(id=user_id, role="USER")
+            # NOTE:
+            # Do not hardcode role enum literals here. Some deployed databases
+            # may have older enum variants where "USER" is not present.
+            # Rely on DB/model default role to keep JIT user creation compatible.
+            user_record = User(id=user_id)
             db.add(user_record)
             await db.flush() # Ensure user is created before dog refers to it
 

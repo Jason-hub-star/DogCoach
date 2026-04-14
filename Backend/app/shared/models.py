@@ -28,16 +28,15 @@ Base = declarative_base()
 
 # --- Enums (Type Definitions) ---
 class UserRole(str, PyEnum):
-    GUEST = "GUEST"
-    USER = "USER"
-    PRO_USER = "PRO_USER"
-    EXPERT = "EXPERT"
-    ADMIN = "ADMIN"
+    USER = "user"
+    TRAINER = "trainer"
+    ORG_OWNER = "org_owner"
+    ORG_STAFF = "org_staff"
 
 class UserStatus(str, PyEnum):
-    ACTIVE = "ACTIVE"
-    INACTIVE = "INACTIVE"
-    BANNED = "BANNED"
+    ACTIVE = "active"
+    INACTIVE = "inactive"
+    BANNED = "banned"
 
 class PlanType(str, PyEnum):
     FREE = "FREE"
@@ -79,9 +78,23 @@ class User(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     kakao_sync_id = Column(String(255), unique=True, index=True)
-    role = Column(Enum(UserRole, name="user_role"), default=UserRole.GUEST)
+    role = Column(
+        Enum(
+            UserRole,
+            name="user_role",
+            values_callable=lambda enum_cls: [member.value for member in enum_cls],
+        ),
+        default=UserRole.USER,
+    )
     phone_number = Column(String(255))
-    status = Column(Enum(UserStatus, name="user_status"), default=UserStatus.ACTIVE)
+    status = Column(
+        Enum(
+            UserStatus,
+            name="user_status",
+            values_callable=lambda enum_cls: [member.value for member in enum_cls],
+        ),
+        default=UserStatus.ACTIVE,
+    )
     timezone = Column(String(50), default="Asia/Seoul")
     
     # Rule 4.1: Use TIMESTAMPTZ (DateTime(timezone=True))
@@ -128,6 +141,11 @@ class Dog(Base):
     anonymous_sid = Column(String(255), index=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+    __table_args__ = (
+        Index('idx_dogs_user_created_desc', 'user_id', created_at.desc()),
+        Index('idx_dogs_anonymous_sid_created_desc', 'anonymous_sid', created_at.desc()),
+    )
 
     user = relationship("User", back_populates="dogs")
     env = relationship("DogEnv", back_populates="dog", uselist=False, cascade="all, delete-orphan")
@@ -359,6 +377,13 @@ class TrainingBehaviorSnapshot(Base):
     __table_args__ = (
         Index('idx_behavior_snapshot_user_dog_curriculum', 'user_id', 'dog_id', 'curriculum_id'),
         Index('idx_behavior_snapshot_created_at', 'created_at'),
+        Index(
+            'idx_behavior_snapshot_user_dog_curriculum_snapshot_date',
+            'user_id',
+            'dog_id',
+            'curriculum_id',
+            snapshot_date.desc(),
+        ),
     )
 
 
@@ -372,4 +397,3 @@ class AICostUsageMonthly(Base):
     budget_limit_usd = Column(Numeric(10, 2), default=30)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
-
