@@ -9,8 +9,6 @@ import { XCircle, CheckCircle, PlayCircle } from "lucide-react";
 const GENERIC_BARKING_THUMBNAIL = {
     src: "/images/landing/dog-portrait-placeholder-1600.jpg",
     title: "짖음 훈련, 누구에게나 같은 답일까요?",
-    credit: "사진: Owlf / Wikimedia Commons",
-    license: "CC BY-SA 4.0",
 };
 
 export function ProblemSection() {
@@ -60,27 +58,8 @@ export function ProblemSection() {
                                         <p className="line-clamp-2 text-sm font-semibold leading-snug text-white">
                                             {GENERIC_BARKING_THUMBNAIL.title}
                                         </p>
-                                        <p className="mt-1 text-[11px] text-white/70">
-                                            흔히 보는 일반 훈련 영상 형식의 예시 화면
-                                        </p>
                                     </div>
-                                    <span className="shrink-0 rounded-md bg-black/60 px-2 py-1 text-[11px] font-semibold text-white">
-                                        08:24
-                                    </span>
                                 </div>
-                            </div>
-                            <div className="flex items-start justify-between gap-3 border-t border-white/10 bg-slate-900/95 px-4 py-3 text-left">
-                                <div className="min-w-0">
-                                    <p className="text-xs text-slate-300">
-                                        {GENERIC_BARKING_THUMBNAIL.credit}
-                                    </p>
-                                    <p className="mt-1 text-[11px] text-slate-400">
-                                        라이선스: {GENERIC_BARKING_THUMBNAIL.license}
-                                    </p>
-                                </div>
-                                <span className="shrink-0 rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-slate-300">
-                                    예시 썸네일
-                                </span>
                             </div>
                         </div>
                         <h3 className="text-xl font-bold text-slate-800 mb-2 break-keep text-balance-kr">
