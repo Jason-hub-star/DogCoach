@@ -1,4 +1,4 @@
-# DogCoach 🐶
+# TailLogs🐶
 
 > **데이터 기반 반려견 행동 코칭 플랫폼** — 과학적 기록, AI 분석, 맞춤형 트레이닝
 
@@ -127,7 +127,9 @@ DogCoach/
 │       │   ├── shared/            # 레이아웃, 헤더, 하단 내비
 │       │   └── features/          # 도메인별 특화 컴포넌트
 │       ├── hooks/                 # TanStack Query 훅 모음
-│       └── lib/                   # API 클라이언트, 타입, Supabase 설정
+│       ├── lib/                   # API 클라이언트, 타입, Supabase 설정
+│           └── theme/colors.ts    # 차트/캔버스/PDF 공용 색상 토큰 상수
+│       └── styles/globals.css     # Tailwind v4 @theme 기반 디자인 토큰
 │
 ├── Backend/                       # FastAPI 서버
 │   └── app/
@@ -144,8 +146,10 @@ DogCoach/
 │           └── settings/          # 사용자 설정
 │
 └── docs/                          # 프로젝트 문서
+    ├── status/                    # 현재 상태/결정 로그
+    ├── ref/                       # 아키텍처/스키마 정본
+    ├── archive/                   # 해결된 결정 아카이브
     ├── architecture-diagrams.md   # 전체 아키텍처 다이어그램 (Mermaid)
-    ├── schema.md                  # 데이터베이스 스키마
     └── Plan.md                    # 개발 계획
 ```
 
@@ -219,6 +223,27 @@ npm run dev
 # → http://localhost:3000
 ```
 
+### 프론트엔드 품질 체크
+
+```bash
+cd Frontend
+npm run check:color-hardcode   # 임의 hex 클래스(bg-[#...]) 차단
+npm run check:utf8             # UTF-8 인코딩 검증
+npm run build                  # 프로덕션 빌드 검증
+```
+
+---
+
+## 🎨 디자인 토큰 가이드
+
+- **CSS 토큰 소스**: `Frontend/src/styles/globals.css` (`@theme`)
+- **TS 토큰 소스**: `Frontend/src/lib/theme/colors.ts`  
+  - 차트(Recharts), 캔버스(confetti), PDF(`@react-pdf/renderer`)처럼 CSS 변수 직접 사용이 어려운 경우 이 상수를 사용합니다.
+- **원칙**
+  - UI 코드에서 `bg-[#...]/text-[#...]` 같은 임의 hex 클래스 사용 금지
+  - 반복되는 그림자/글로우는 `globals.css` 유틸리티 클래스로 재사용
+  - 색상 변경은 토큰 파일(위 2곳) 중심으로 처리
+
 ---
 
 ## 🔐 인증 흐름
@@ -281,8 +306,13 @@ python -m pytest tests -v
 
 | 문서 | 설명 |
 |------|------|
+| [README.md](./docs/README.md) | 문서 운영 가이드 (SSOT/Tier/Change Class) |
+| [status/PROJECT-STATUS.md](./docs/status/PROJECT-STATUS.md) | 현재 진행 상태 및 체크리스트 |
+| [status/DECISION-LOG.md](./docs/status/DECISION-LOG.md) | 미해결 의사결정 로그 |
+| [ref/ARCHITECTURE.md](./docs/ref/ARCHITECTURE.md) | 아키텍처 정본 문서 |
+| [ref/SCHEMA.md](./docs/ref/SCHEMA.md) | 데이터 스키마 참조 정본 |
+| [ref/DOC-CHANGE-CLASS.md](./docs/ref/DOC-CHANGE-CLASS.md) | 변경 class별 문서 갱신 매핑 |
 | [architecture-diagrams.md](./docs/architecture-diagrams.md) | 전체 아키텍처 Mermaid 다이어그램 (11종) |
-| [schema.md](./docs/schema.md) | 데이터베이스 스키마 설계 |
 | [Plan.md](./docs/Plan.md) | 프로젝트 전체 개발 계획 |
 | [AI_Adoption_Plan.md](./docs/AI_Adoption_Plan.md) | AI 도입 전략 |
 | [future_roadmap.md](./docs/future_roadmap.md) | 미래 확장 로드맵 |

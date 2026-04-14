@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/family/jason/TailLogweb/.claude/hooks/self-review-gate.sh",
+            "timeout": 5,
+            "statusMessage": "Self-review 체크..."
+          },
+          {
+            "type": "command",
+            "command": "/Users/family/jason/TailLogweb/.claude/hooks/doc-drift-reminder.sh",
+            "timeout": 5,
+            "statusMessage": "Doc-sync 후보 점검..."
+          }
+        ]
+      }
+    ]
+  }
+}

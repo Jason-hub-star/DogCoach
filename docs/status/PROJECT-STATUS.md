@@ -1,0 +1,91 @@
+# TailLogweb Project Status
+
+## Current Phase
+- Landing→App loading optimization 플레이북 정리 및 페이즈 게이트 운영: in progress
+- Frontend design token 정합화 + 문서 운영 프레임워크 이식: done (2026-04-08)
+- Production guest dashboard 컨텍스트 매핑 복구 및 실흐름 검증: done (2026-04-08)
+
+## Active Tracks
+- Landing→App loading optimization(스켈레톤 계측, 중복 요청 제거, DB/RBAC 튜닝): in progress
+- 디자인 토큰 통일 + 하드코딩 색상 제거: done (2026-04-08)
+- 하드코딩 색상 회귀 방지 검사(`check:color-hardcode`) 도입: done (2026-04-08)
+- Vibehub-style 문서 운영 구조(`status/ref/archive`) 도입: done (2026-04-08)
+- Vercel FE ↔ Railway BE 프로덕션 API 경로/환경변수 정상화: done (2026-04-08)
+- Railway CORS + guest cookie 정책(`SameSite=None`, `Secure`) 운영 반영: done (2026-04-08)
+- 프로덕션 게스트 실흐름(설문 -> 대시보드 데이터 렌더) 브라우저 검증: done (2026-04-08)
+- guest/authenticated 5개 라우트 3회 baseline + 핵심 4지표 확보(production/session-injected): done (2026-04-09)
+- 프로덕션 OAuth 실로그인 기준 authenticated 재현 측정: done (2026-04-09)
+- Phase1 FE/BE request correlation 계측(request-id + timing headers + FE trace buffer): done (2026-04-09)
+- Phase2 auth-bootstrap 중복 요청 방지 가드(useDashboardData enable 조건 강화): done (2026-04-09)
+- Phase2 OAuth postcheck 재측정(프로덕션): done (2026-04-09)
+- Phase2 auth-restore race guard 패치(useAuth stored-session hint): done (2026-04-09)
+- Phase2 패치 프로덕션 배포 + OAuth 재검증(`/dashboard` 1회 200): done (2026-04-09, GO)
+- Phase3 dashboard DB round trip 축소(쿼리 통합 1차): done (2026-04-09)
+- Phase4 hot-path 인덱스 추가안(models/schema/patch): done (2026-04-09)
+- Phase4 performance advisors 1회 수집(unindexed FK/RLS policy perf 경고 확인): done (2026-04-09)
+- Phase4 security advisors 재시도 수집(function_search_path_mutable, leaked password protection): done (2026-04-09)
+- Phase4 inspect index/table/long-running 수집(SUPABASE_DB_PASSWORD 지정): done (2026-04-09)
+- Phase4 role-bypassrls 대체 점검(pg_roles query): done (2026-04-09)
+- Phase4 RLS 성능 패치 프로덕션 적용 + advisors 감소(167→34): done (2026-04-09)
+- Phase4 EXPLAIN 인덱스 사용 확인(idx_dogs_user_created_desc 등): done (2026-04-09)
+- Phase4 initplan cleanup SQL 2차 보강(혼합식 policy 누락/재실행 idempotency 보강): done (2026-04-09)
+- Phase4 sub-agent 교차리뷰 반영(P1 리스크 수정안 반영): done (2026-04-09)
+- Phase4 Supabase advisors/inspect 실측 재검증(circuit breaker 해소 후): done (2026-04-09)
+- Phase4 최종 Gate 재판정(`PHASE4_FINAL_GO_CHECK`, performance WARN 0): done (2026-04-09, GO)
+- Storage 버킷/RLS 실제 운영 환경 적용 검증(`dog-profiles` bucket+policies live 확인): done (2026-04-09)
+- Phase5 회귀 모니터링 스냅샷 러너 추가(`run_phase5_monitoring_snapshot.sh`): done (2026-04-09)
+- Phase5 모니터링 1차 스냅샷 수집(성능 WARN 0, 보안 WARN 1): done (2026-04-09)
+- Phase5 모니터링 단기 3회 누적 스냅샷(성능 0/보안 1 유지): done (2026-04-09)
+- Phase5 24h/48h 체크포인트 일정 고정(`PHASE5_MONITORING_SCHEDULE.md`): done (2026-04-09)
+- Phase5 24~48시간 회귀 모니터링 누적: in progress
+- /doc-update 루틴 실실행 + prune dry-run 증적화: done (2026-04-09)
+- `docs/ref/SCHEMA.md` ↔ `Backend/supabase_schema.sql` 최신 변경점 동기화: done (2026-04-09)
+- 앱 인증 가드 정책 결정(현재 page-level 유지): done (2026-04-08)
+- Storage 운영 검증 기록 정본 위치 결정(status + ref 분리): done (2026-04-08)
+
+## Execution Checklist
+### P0 — Immediate
+- [x] Landing→App loading optimization 플레이북에 서브에이전트 교차리뷰 게이트 반영 (2026-04-09)
+- [x] 페이즈 진입 조건(A 자기리뷰 + B 교차리뷰 + 문서 정합성) 문서 고정 (2026-04-09)
+- [x] P0 기준선 스냅샷 문서화 + 최종 Gate 재판정(GO to P1) (2026-04-09)
+- [x] Supabase `dog-profiles` 버킷/RLS 운영 적용 여부 확인 후 증적 기록 (2026-04-09)
+- [x] `DECISION-LOG` pending 결정 resolve 및 archive 이동 (2026-04-08)
+- [x] 프로덕션 대시보드 `no_dog` 루프 원인 분석 및 복구 (2026-04-08)
+
+### P1 — Core
+- [x] Phase 0 authenticated baseline `data_ready_ms` 1차 수집 및 증적 기록(session-injected production FE, 2026-04-09)
+- [x] guest/authenticated 5개 라우트 3회 반복 측정(p50/p90) 완료 (2026-04-09)
+- [x] authenticated 기준 `skeleton_visible_ms`, `stable_ui_ms`, `api_count_5s` 계측 추가 (2026-04-09)
+- [x] 프로덕션 OAuth 실로그인 기반 authenticated 재현 측정 1회 (2026-04-09)
+- [x] `db_round_trips`를 Phase 3 DoD로 이관 결정 (2026-04-09)
+- [x] FE `x-request-id` 전파 + BE `X-Process-Time-MS`/`Server-Timing` 응답 계측 적용 (2026-04-09)
+- [x] FE/BE correlation 최소 검증 아티팩트 작성 (`PHASE1_INSTRUMENTATION_CHECK.md`) (2026-04-09)
+- [x] auth-bootstrap 구간 `/dashboard` 중복 요청 방지 조건 적용 (`PHASE2_DEDUPE_CHECK.md`) (2026-04-09)
+- [x] `/dashboard` 서비스 쿼리 통합으로 DB round trip 1차 축소 반영 (2026-04-09)
+- [x] hot-path 인덱스 패치 파일 생성 (`Backend/scripts/patch_2026_04_09_phase3_hotpath_indexes.sql`) (2026-04-09)
+- [x] Phase3 DB/RBAC audit 문서화 + 공식문서/오픈소스 근거 연결 (2026-04-09)
+- [x] production OAuth 실측 1회 재검증 실행 (`PHASE2_POSTCHECK_OAUTH.md`) (2026-04-09, 결과: `/dashboard` 401→200 유지)
+- [x] auth-restore race guard 패치 코드 반영 + build 검증 (`PHASE2_AUTH_RACE_GUARD_PATCH.md`) (2026-04-09)
+- [x] Phase2 패치 프론트 배포 후 OAuth 실측 재검증 (`PHASE2_POSTDEPLOY_GO_CHECK.md`) (2026-04-09)
+- [x] `/dashboard` 초기 `401 -> 200` 중복 제거 재측정 완료 (2026-04-09, `api_count_5s=1`, status `[200]`)
+- [x] Supabase `db advisors` 성능/보안 재수집 (`PHASE4_ADVISORS_RETRY.md`) (2026-04-09)
+- [x] Supabase `inspect db index-stats/table-stats/long-running-queries` 재수집 (`PHASE4_ADVISORS_RETRY.md`) (2026-04-09)
+- [x] `pg_roles` 기반 role bypassrls 대체 점검 (`role_bypassrls_query.json`) (2026-04-09)
+- [x] Phase4 RLS 정책 성능 패치 적용 + EXPLAIN 증적 추가 (`PHASE4_RLS_PATCH_APPLY.md`) (2026-04-09)
+- [x] Phase4 initplan cleanup SQL 보강 + 서브에이전트 교차리뷰 반영 (`PHASE4_INITPLAN_CLEANUP_RETRY.md`) (2026-04-09)
+- [x] 잔여 `auth_rls_initplan`(34 WARN 중 core 테이블 잔여분) 추가 정리 (`PHASE4_FINAL_GO_CHECK.md`, performance WARN 0) (2026-04-09)
+- [x] `/doc-update` 루틴을 실제 변경 시나리오 1회 실행해 드리프트 체크 (2026-04-09)
+- [x] `docs/ref/SCHEMA.md`와 실제 `Backend/supabase_schema.sql` 차이 점검 (2026-04-09)
+- [x] 중앙가드(layout/middleware) 전환 필요성 재평가(현재 page-level 유지, `Frontend/src/app/(app)/CLAUDE.md` 가이드와 정합) (2026-04-09)
+
+### P2 — Enhancement
+- [x] 주간 문서 정리 루틴에 `prune-project-status.sh --dry-run` 포함 (`docs/README.md` 7절) (2026-04-09)
+- [x] 오래된 운영 문서를 `docs/archive`로 이동할 기준 수립 (`docs/archive/ARCHIVE-RULES.md`) (2026-04-09)
+
+### P3 — Rollout Guard
+- [x] Phase5 스냅샷 러너 추가 (`scripts/qa/run_phase5_monitoring_snapshot.sh`) (2026-04-09)
+- [x] Phase5 1차 스냅샷 수집 (`PHASE5_MONITORING_KICKOFF.md`) (2026-04-09)
+- [x] Phase5 단기 3회 스냅샷 누적 (`PHASE5_MONITORING_PROGRESS_3X.md`) (2026-04-09)
+- [x] Phase5 +24h/+48h 체크포인트 일정 문서화 (`PHASE5_MONITORING_SCHEDULE.md`) (2026-04-09)
+- [ ] +24h 체크포인트 실행 및 증적 반영 (`2026-04-10 21:00 KST` ±30m)
+- [ ] +48h 체크포인트 실행 및 Phase5 최종 판정 (`2026-04-11 21:00 KST` ±30m)

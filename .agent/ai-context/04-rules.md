@@ -1,53 +1,35 @@
-﻿# Engineering Rules
+# Engineering Rules
 
-Last Updated: 2026-02-14
+Last Updated: 2026-04-08
 
-## Runbook
-- Frontend:
-  - `cd Frontend`
-  - `npm install`
-  - `npm run dev`
-  - `npm run build`
-- Backend:
-  - `cd Backend`
-  - `python -m venv venv`
-  - `./venv/Scripts/activate`
-  - `pip install -r requirements.txt`
-  - `python -m uvicorn app.main:app --reload`
-  - `python -m compileall app`
+## Runtime Facts
+- Frontend: Next.js App Router (`Frontend/src/app`)
+- Backend: FastAPI feature routers (`Backend/app/features/*`)
+- API Prefix: `/api/v1` (`Frontend/src/lib/api.ts`, `Backend/app/core/config.py`)
+
+## Canonical Route Set
+- Public: `/`, `/login`, `/survey`, `/result`, `/privacy`, `/terms`, `/auth/callback`
+- App: `/dashboard`, `/log`, `/coach`, `/settings`, `/dog/profile`
 
 ## Core Coding Rules
-- Frontend Query Key는 `QUERY_KEYS` 팩토리만 사용.
-- mutation 후 무효화는 대상 key만 정밀 invalidation.
-- canonical route는 `/survey`만 사용 (`/Survey`, `/checkup` 금지).
-- Backend는 Router/Service/Repository 계층 분리 준수.
-- 모든 엔드포인트는 소유권/권한 검증 포함.
-- `X-Timezone` 헤더 기반 시간 집계 일관성 유지.
+- Frontend 쿼리 키는 `QUERY_KEYS`만 사용 (`Frontend/src/lib/query-keys.ts`).
+- API 호출은 `apiClient`를 사용하고, 직접 `fetch` 분산 사용을 피한다.
+- Backend는 `Router -> Service -> Repository` 경계를 유지한다.
+- `migrate-guest`는 best-effort이되 콜백 흐름을 막지 않는다.
+- 204 응답은 클라이언트에서 빈 바디로 안전 처리한다.
 
-## Security Rules
-- `POST /auth/migrate-guest`는 멱등 동작 보장.
-- dog/log/coach 엔드포인트는 소유권 검증 필수.
-- 비구독자 잠금 모드에서 실제 솔루션 데이터 DOM 노출 금지.
-- `.env` 계열 파일 커밋 금지.
+## Security & Data Rules
+- `.env*` 파일은 커밋 금지.
+- OAuth callback 허용 경로는 화이트리스트로 유지한다.
+- 프로필 이미지 업로드/조회 변경 시 Storage 정책 영향 범위를 문서에 남긴다.
 
-## Review Rubric
-- 우선순위: 동작 회귀 > 데이터 정합성 > 보안/권한 > 성능 회귀 > 테스트 누락.
-- 심각도:
-  - `critical`: 데이터 유출/권한 우회/핵심 플로우 완전 차단
-  - `high`: 핵심 기능 오동작
-  - `medium`: 성능/모바일/엣지 케이스
-  - `low`: 문구/UI/리팩터링
-- 머지 기준: `critical`, `high` 0개.
+## Verification Ladder
+1. `cd Frontend && npm run check:utf8`
+2. `cd Frontend && npm run build`
+3. `cd Backend && python -m compileall app`
+4. `cd Backend && python -m pytest tests`
 
-## Encoding Rules
-- 모든 코드/문서 UTF-8 + LF.
-- ANSI/EUC-KR/CP949 저장 금지.
-- 로그/핸드오프에 아래 문구 포함:
-  - `Encoding check: UTF-8 + LF verified for changed files.`
-
-## Quick Check Commands
-- `rg -n "/Survey|/checkup|TODO|FIXME" Frontend/src docs -S`
-- `rg -n "invalidateQueries|queryKey|useQuery|useMutation" Frontend/src -S`
-- `rg -n "auth/callback|getSession|signInWithOAuth|migrate-guest" Frontend/src Backend/app -S`
-- `cd Frontend && npm run build`
-- `cd Backend && python -m compileall app`
+## Quick Checks
+- `rg -n "QUERY_KEYS|invalidateQueries" Frontend/src -S`
+- `rg -n "returnTo|migrate-guest|auth/callback" Frontend/src Backend/app -S`
+- `rg -n "@router\.(get|post|patch|put|delete)" Backend/app/features -S`

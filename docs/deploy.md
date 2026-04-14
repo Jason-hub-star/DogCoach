@@ -1,6 +1,22 @@
 # TailLog Deploy Guide (Vercel + Render)
 
 > Current migration note: for low-risk transition to Fly backend only, see `docs/fly-backend-phase1.md`.
+> Current production note (2026-04-08): frontend는 Vercel, backend는 Railway 기준으로 운영 중.
+
+## 0) Current Production Baseline (Verified 2026-04-08)
+- Frontend: `https://www.mungai.co.kr` (Vercel)
+- Backend: `https://backend-production-61c6.up.railway.app` (Railway)
+- Frontend env:
+  - `NEXT_PUBLIC_API_URL=https://backend-production-61c6.up.railway.app`
+  - `NEXT_PUBLIC_SITE_URL=https://www.mungai.co.kr`
+- Backend env (핵심):
+  - `ENVIRONMENT=production`
+  - `BACKEND_CORS_ORIGINS` includes `https://www.mungai.co.kr`
+  - `ANONYMOUS_COOKIE_SECURE=true`
+  - `ANONYMOUS_COOKIE_SAMESITE=none`
+- 증적:
+  - `docs/qa/artifacts/2026-04-08/VERCEL_CHECK_REPORT.md`
+  - `docs/qa/artifacts/2026-04-08/context_mapping_real_flow_after_fix.json`
 
 ## 1) Architecture
 - Frontend: Vercel (`Frontend` root)

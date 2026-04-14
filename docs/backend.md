@@ -48,3 +48,5 @@ Backend/
 - [x] **React Query Factory**: 도메인별 쿼리 키 중앙 관리 (`src/lib/query-keys.ts`).
 - [x] **Error Boundary & Error Handling**: 백엔드 DomainException 및 프론트엔드 API 클라이언트 에러 핸들링 고도화.
 - [x] **Training Status Convention**: `UserTrainingStatus` Enum의 엄격한 타입 제한으로 인해, 플랜 B 교체(Swap) 시 `SKIPPED_INEFFECTIVE` 상태값을 사용하도록 규약 정의 (추후 Phase 2 스키마 마이그레이션 시 변경 예정).
+- [x] **Dashboard Query Consolidation (2026-04-09)**: `Dog+DogEnv`, 로그 통계(`count/max`), 최근로그 재사용으로 `/dashboard` DB round trip 1차 축소.
+- [x] **Hot-path Index Patch (2026-04-09)**: `dogs(user_id, created_at desc)`, `dogs(anonymous_sid, created_at desc)`, `training_behavior_snapshots(..., snapshot_date desc)` 추가 스크립트 작성.

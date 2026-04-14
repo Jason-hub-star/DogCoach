@@ -1,5 +1,5 @@
-이 문서는 DogCoach 작업의 최우선 로컬 규칙이다. 에이전트는 모든 작업 전에 반드시 읽고 따른다.
-# TailLog (DogCoach) - Claude Code 프로젝트 가이드
+이 문서는 Taillog 작업의 최우선 로컬 규칙이다. 에이전트는 모든 작업 전에 반드시 읽고 따른다.
+# TailLog  Claude Code 프로젝트 가이드
 
 개 행동 교정 SaaS. ABC(선행-행동-결과) 기록 → 데이터 시각화 → AI 코칭.
 

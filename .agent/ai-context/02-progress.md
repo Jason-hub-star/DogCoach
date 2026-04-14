@@ -1,6 +1,124 @@
 ﻿# Progress
 
-Last Updated: 2026-02-15
+Last Updated: 2026-04-08
+
+## 2026-04-08
+- 변경: `DEC-001`, `DEC-002`를 pending에서 resolve로 전환하고 archive로 이동.
+- 이유: 문서 운영 프레임워크 이식 후에도 핵심 운영 결정 2건이 pending으로 남아 있어 상태 추적이 불완전했음.
+- 변경 파일:
+  - `docs/status/DECISION-LOG.md`
+  - `docs/archive/decisions-resolved.md`
+  - `docs/status/PROJECT-STATUS.md`
+  - `docs/ref/ARCHITECTURE.md`
+  - `docs/ref/SCHEMA.md`
+  - `.agent/ai-context/05-handoff.md`
+- 검증:
+  - `rg -n "DEC-001|DEC-002|Pending|resolved" docs/status docs/archive docs/ref -S`
+- 영향:
+  - `DECISION-LOG`는 pending-only 원칙을 회복했고, 해결된 결정은 archive로 분리됨.
+  - 인증 가드 정책은 당분간 page-level 유지로 고정되어 회귀 리스크가 낮아짐.
+  - Storage 운영 증적 기록 위치(status)와 구조 정본(ref) 경계가 명확해짐.
+
+- 변경: `vibehub-media` 문서관리 프레임워크를 TailLogweb에 이식.
+- 이유: 문서가 평면 구조(`docs/*`)에 머물러 상태 추적/결정 로그/정본 경계가 약했고, 변경 시 드리프트를 빠르게 감지하기 어려웠음.
+- 변경 파일:
+  - `docs/README.md`
+  - `docs/status/PROJECT-STATUS.md`
+  - `docs/status/DECISION-LOG.md`
+  - `docs/ref/ARCHITECTURE.md`
+  - `docs/ref/SCHEMA.md`
+  - `docs/ref/DOC-CHANGE-CLASS.md`
+  - `docs/archive/decisions-resolved.md`
+  - `.claude/commands/doc-update.md`
+  - `.claude/commands/doc-sync.md`
+  - `.claude/commands/session-start.md`
+  - `.claude/README.md`
+  - `.agent/ai-context/00-index.md`
+  - `scripts/docs/prune-project-status.sh`
+- 검증:
+  - `bash scripts/docs/prune-project-status.sh --dry-run`
+  - `bash -n scripts/docs/prune-project-status.sh`
+- 영향:
+  - `status/ref/archive` 3계층 문서 구조 도입으로 정본 문서 경계가 명확해짐.
+  - `/doc-update`는 적용, `/doc-sync`는 점검으로 역할이 분리됨.
+  - `done (YYYY-MM-DD)` 기반 상태 정리 루틴이 추가되어 stale 상태 누적을 줄일 수 있음.
+
+- 변경: `.claude` 운영 자산(commands/hooks/automations/settings) 추가.
+- 이유: 기존 `.claude`가 `settings.local.json` 단일 파일 상태여서 세션 루프(시작/자기검토/문서동기화)가 약했음.
+- 변경 파일:
+  - `.claude/README.md`
+  - `.claude/settings.json`
+  - `.claude/commands/session-start.md`
+  - `.claude/commands/doc-update.md`
+  - `.claude/commands/self-review.md`
+  - `.claude/automations/README.md`
+  - `.claude/automations/daily-context-refresh.md`
+  - `.claude/automations/weekly-workflow-audit.md`
+  - `.claude/automations/weekly-doc-link-check.md`
+  - `.claude/hooks/self-review-gate.sh`
+  - `.claude/hooks/doc-drift-reminder.sh`
+- 검증:
+  - `bash -n .claude/hooks/self-review-gate.sh`
+  - `bash -n .claude/hooks/doc-drift-reminder.sh`
+- 영향:
+  - 코드 편집 누적 시 `/self-review`, `/doc-update` 리마인드가 자동 출력됨.
+  - 세션 시작/문서 동기화/자기검토 절차가 명문화됨.
+
+- 변경: `.agent` 운영 문서를 코드 현실 기준으로 리프레시.
+- 이유: 오래된 경로/우선순위/오픈이슈가 남아 있어 다음 세션 진입이 느리고 엇나갈 위험이 있었음.
+- 변경 파일:
+  - `.agent/rules/dogcoach.md`
+  - `.agent/ai-context/00-index.md`
+  - `.agent/ai-context/01-today-plan.md`
+  - `.agent/ai-context/03-open-issues.md`
+  - `.agent/ai-context/04-rules.md`
+  - `.agent/ai-context/05-handoff.md`
+  - `.agent/ai-context/logs/2026-04-08-session-log.md`
+- 검증:
+  - `rg -n "Last Updated|Today Read Order|Next Start Order" .agent/ai-context -S`
+- 영향:
+  - 다음 세션 읽기 순서와 우선 작업 3개가 고정됨.
+  - 코드와 불일치하는 문서 항목(README 깨진 링크, app 레이아웃 인증 설명 등)을 open issue로 격리함.
+
+- 변경: `docs/README.md` 문서 링크 정합화.
+- 이유: `docs/ServerPlan.md`, `docs/schema.md` 등 실제로 없는 경로를 참조하고 있었음.
+- 변경 파일:
+  - `docs/README.md`
+- 검증:
+  - `ls docs/ServerPlan.md docs/schema.md` 실패 재현(기존 문제 확인)
+  - 링크 대상을 현재 존재 문서(`Plan.md`, `backend.md`, `deploy.md` 등)로 교체
+- 영향:
+  - 신규 작업자 문서 진입 시 깨진 링크로 인한 이탈 감소.
+
+- 변경: `Frontend/src/app/(app)/CLAUDE.md` 설명을 실제 코드 동작과 정합화.
+- 이유: 문서에는 `layout.tsx` 인증 리다이렉트가 있다고 되어 있었지만 실제 layout은 앱 쉘 렌더링만 담당.
+- 변경 파일:
+  - `Frontend/src/app/(app)/CLAUDE.md`
+- 검증:
+  - `rg -n "useAuth\\(|router\\.push\\('/login'" Frontend/src/app/'(app)' -S`
+  - `layout.tsx` 확인(사이드바/하단 내비게이션 렌더링 전용)
+- 영향:
+  - 보호 경로 정책에 대한 오해 감소.
+  - 다음 변경 시 인증 가드 위치를 명확히 판단 가능.
+
+- 변경: `.claude/settings.local.json` 권한 목록 최소화 및 민감 흔적 제거.
+- 이유: Windows 전용 임시 명령, 과거 토큰 설정 문자열, 불필요 권한이 섞여 운영 혼선 위험이 있었음.
+- 변경 파일:
+  - `.claude/settings.local.json`
+- 검증:
+  - `python3 -m json.tool .claude/settings.local.json >/dev/null`
+  - `rg -n "SUPABASE_ACCESS_TOKEN|sbp_" .claude/settings.local.json -S` (결과 없음)
+- 영향:
+  - 현재 mac 환경 기준으로 필요한 권한만 유지되어 안전성과 예측 가능성 향상.
+
+- 변경: `AGENTS.md` 시작 경로 규칙을 mac/windows 호환 형태로 보강.
+- 이유: 기존 단일 Windows 경로가 현재 작업 경로와 불일치.
+- 변경 파일:
+  - `AGENTS.md`
+- 검증:
+  - `rg -n "macOS|Windows|TailLogweb/CLAUDE.md" AGENTS.md -S`
+- 영향:
+  - 세션 시작 시 읽을 규칙 파일 경로 혼동 감소.
 
 ## 2026-02-15
 - 변경: Result 페이지 UX 개선 (BehaviorIssueSummary 추가, 의미 없는 요소 제거).
