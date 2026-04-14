@@ -1,0 +1,2 @@
+dog-profiles/
+analysis-reports/

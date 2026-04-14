@@ -1,0 +1,223 @@
+{
+  "generatedAt": "2026-04-08T05:00:47.676Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "backendUrl": "https://backend-production-61c6.up.railway.app",
+  "seeded": {
+    "cookie": {
+      "name": "anonymous_sid",
+      "value": "ce002fd5-992a-470a-912b-39a137c4185f"
+    },
+    "seedResponse": {
+      "id": "b63cf2a9-74fc-4265-9600-3fd107571605",
+      "name": "qa_perf_1775624027401",
+      "breed": "mixed",
+      "created_at": "2026-04-08T04:53:49.150226Z"
+    }
+  },
+  "desktopRuns": [
+    {
+      "label": "desktop",
+      "run": 1,
+      "landingDomMs": 142,
+      "dashboardDataReadyMs": 264,
+      "skeletonToDataMs": 3,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "desktop",
+      "run": 2,
+      "landingDomMs": 452,
+      "dashboardDataReadyMs": 654,
+      "skeletonToDataMs": 369,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "desktop",
+      "run": 3,
+      "landingDomMs": 159,
+      "dashboardDataReadyMs": 318,
+      "skeletonToDataMs": 74,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "desktop",
+      "run": 4,
+      "landingDomMs": 148,
+      "dashboardDataReadyMs": 271,
+      "skeletonToDataMs": 66,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "desktop",
+      "run": 5,
+      "landingDomMs": 342,
+      "dashboardDataReadyMs": 707,
+      "skeletonToDataMs": 150,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    }
+  ],
+  "mobileRuns": [
+    {
+      "label": "mobile_iphone13",
+      "run": 1,
+      "landingDomMs": 295,
+      "dashboardDataReadyMs": 649,
+      "skeletonToDataMs": 308,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "mobile_iphone13",
+      "run": 2,
+      "landingDomMs": 200,
+      "dashboardDataReadyMs": 495,
+      "skeletonToDataMs": 219,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "mobile_iphone13",
+      "run": 3,
+      "landingDomMs": 380,
+      "dashboardDataReadyMs": 192,
+      "skeletonToDataMs": 4,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "mobile_iphone13",
+      "run": 4,
+      "landingDomMs": 304,
+      "dashboardDataReadyMs": 387,
+      "skeletonToDataMs": 146,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "mobile_iphone13",
+      "run": 5,
+      "landingDomMs": 249,
+      "dashboardDataReadyMs": 223,
+      "skeletonToDataMs": 4,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    }
+  ],
+  "apiRuns": [
+    {
+      "ms": 5261,
+      "status": 200
+    },
+    {
+      "ms": 5159,
+      "status": 200
+    },
+    {
+      "ms": 4976,
+      "status": 200
+    },
+    {
+      "ms": 5142,
+      "status": 200
+    },
+    {
+      "ms": 4847,
+      "status": 200
+    },
+    {
+      "ms": 4999,
+      "status": 200
+    },
+    {
+      "ms": 4971,
+      "status": 200
+    },
+    {
+      "ms": 5193,
+      "status": 200
+    },
+    {
+      "ms": 5103,
+      "status": 200
+    },
+    {
+      "ms": 5077,
+      "status": 200
+    },
+    {
+      "ms": 5093,
+      "status": 200
+    },
+    {
+      "ms": 5006,
+      "status": 200
+    },
+    {
+      "ms": 4955,
+      "status": 200
+    },
+    {
+      "ms": 5053,
+      "status": 200
+    },
+    {
+      "ms": 5004,
+      "status": 200
+    },
+    {
+      "ms": 4844,
+      "status": 200
+    },
+    {
+      "ms": 4941,
+      "status": 200
+    },
+    {
+      "ms": 5143,
+      "status": 200
+    },
+    {
+      "ms": 5029,
+      "status": 200
+    },
+    {
+      "ms": 5050,
+      "status": 200
+    }
+  ]
+}

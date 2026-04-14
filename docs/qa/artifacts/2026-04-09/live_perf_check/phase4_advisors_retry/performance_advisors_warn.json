@@ -1,0 +1,3008 @@
+[
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.users\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "users",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_users_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.subscriptions\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "subscriptions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_subscriptions_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dogs\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dogs_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dog_env\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dog_env_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.behavior_logs\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_behavior_logs_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.media_assets\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "media_assets",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_media_assets_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.ai_coaching\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "ai_coaching",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_ai_coaching_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.action_tracker\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "action_tracker",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_action_tracker_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.noti_history\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "noti_history",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_noti_history_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.log_summaries\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "log_summaries",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_log_summaries_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.user_settings\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_user_settings_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.users\\` has a row level security policy \\`Users read own data\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "users",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_users_Users read own data"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.subscriptions\\` has a row level security policy \\`Users read own subscriptions\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "subscriptions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_subscriptions_Users read own subscriptions"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dogs\\` has a row level security policy \\`Users read own dogs\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dogs_Users read own dogs"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.user_settings\\` has a row level security policy \\`Users read own settings\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_user_settings_Users read own settings"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.noti_history\\` has a row level security policy \\`Users read own notifications\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "noti_history",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_noti_history_Users read own notifications"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.ai_recommendation_snapshots\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "ai_recommendation_snapshots",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_ai_recommendation_snapshots_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.ai_recommendation_feedback\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "ai_recommendation_feedback",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_ai_recommendation_feedback_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.ai_cost_usage_daily\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "ai_cost_usage_daily",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_ai_cost_usage_daily_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.ai_cost_usage_monthly\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "ai_cost_usage_monthly",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_ai_cost_usage_monthly_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.user_training_status\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "user_training_status",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_user_training_status_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.training_behavior_snapshots\\` has a row level security policy \\`Service role full access\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "training_behavior_snapshots",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_training_behavior_snapshots_Service role full access"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.toss_orders\\` has a row level security policy \\`toss_orders_user_select\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "toss_orders",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_toss_orders_toss_orders_user_select"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.toss_orders\\` has a row level security policy \\`toss_orders_user_insert\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "toss_orders",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_toss_orders_toss_orders_user_insert"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.toss_orders\\` has a row level security policy \\`toss_orders_user_update\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "toss_orders",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_toss_orders_toss_orders_user_update"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.edge_function_requests\\` has a row level security policy \\`edge_requests_service_only\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "edge_function_requests",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_edge_function_requests_edge_requests_service_only"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.behavior_logs\\` has a row level security policy \\`behavior_logs_b2b_select\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_behavior_logs_behavior_logs_b2b_select"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.behavior_logs\\` has a row level security policy \\`behavior_logs_b2b_insert\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_behavior_logs_behavior_logs_b2b_insert"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.behavior_logs\\` has a row level security policy \\`behavior_logs_b2b_update\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_behavior_logs_behavior_logs_b2b_update"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.user_training_status\\` has a row level security policy \\`Authenticated users can insert own training status\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "user_training_status",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_user_training_status_Authenticated users can insert own training status"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.org_dogs\\` has a row level security policy \\`org_dogs_select\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "org_dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_org_dogs_org_dogs_select"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.daily_reports\\` has a row level security policy \\`daily_reports_select\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "daily_reports",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_daily_reports_daily_reports_select"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.daily_reports\\` has a row level security policy \\`daily_reports_insert\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "daily_reports",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_daily_reports_daily_reports_insert"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.daily_reports\\` has a row level security policy \\`daily_reports_update\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "daily_reports",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_daily_reports_daily_reports_update"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.parent_interactions\\` has a row level security policy \\`parent_interactions_select\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "parent_interactions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_parent_interactions_parent_interactions_select"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.parent_interactions\\` has a row level security policy \\`parent_interactions_insert\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "parent_interactions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_parent_interactions_parent_interactions_insert"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.parent_interactions\\` has a row level security policy \\`parent_interactions_update\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "parent_interactions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_parent_interactions_parent_interactions_update"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.organizations\\` has a row level security policy \\`organizations_select\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "organizations",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_organizations_organizations_select"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.organizations\\` has a row level security policy \\`organizations_update\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "organizations",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_organizations_organizations_update"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.org_subscriptions\\` has a row level security policy \\`org_subscriptions_select\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "org_subscriptions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_org_subscriptions_org_subscriptions_select"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dog_assignments\\` has a row level security policy \\`dog_assignments_select\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dog_assignments",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dog_assignments_dog_assignments_select"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dog_assignments\\` has a row level security policy \\`dog_assignments_insert\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dog_assignments",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dog_assignments_dog_assignments_insert"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dog_assignments\\` has a row level security policy \\`dog_assignments_update\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dog_assignments",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dog_assignments_dog_assignments_update"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dogs\\` has a row level security policy \\`Users insert own dogs\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dogs_Users insert own dogs"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dogs\\` has a row level security policy \\`Users update own dogs\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dogs_Users update own dogs"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dogs\\` has a row level security policy \\`Users delete own dogs\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dogs_Users delete own dogs"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dog_env\\` has a row level security policy \\`Users read own dog env\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dog_env_Users read own dog env"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dog_env\\` has a row level security policy \\`Users insert own dog env\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dog_env_Users insert own dog env"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dog_env\\` has a row level security policy \\`Users update own dog env\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dog_env_Users update own dog env"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.dog_env\\` has a row level security policy \\`Users delete own dog env\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_dog_env_Users delete own dog env"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.user_training_status\\` has a row level security policy \\`Authenticated users can read own training status\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "user_training_status",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_user_training_status_Authenticated users can read own training status"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.user_training_status\\` has a row level security policy \\`Authenticated users can update own training status\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "user_training_status",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_user_training_status_Authenticated users can update own training status"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.user_settings\\` has a row level security policy \\`Users insert own settings\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_user_settings_Users insert own settings"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.user_settings\\` has a row level security policy \\`Users update own settings\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_user_settings_Users update own settings"
+  },
+  {
+    "name": "auth_rls_initplan",
+    "title": "Auth RLS Initialization Plan",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if calls to \\`current_setting()\\` and \\`auth.\u003cfunction\u003e()\\` in RLS policies are being unnecessarily re-evaluated for each row",
+    "detail": "Table \\`public.user_settings\\` has a row level security policy \\`Users delete own settings\\` that re-evaluates current_setting() or auth.\u003cfunction\u003e() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \\`auth.\u003cfunction\u003e()\\` with \\`(select auth.\u003cfunction\u003e())\\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "auth_rls_init_plan_public_user_settings_Users delete own settings"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`anon\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_insert}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_anon_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`anon\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_select}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_anon_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`anon\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_update}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_anon_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`authenticated\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_insert}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_authenticated_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`authenticated\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_select}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_authenticated_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`authenticated\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_update}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_authenticated_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`authenticator\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_insert}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_authenticator_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`authenticator\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_select}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_authenticator_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`authenticator\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_update}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_authenticator_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_insert}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_cli_login_postgres_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_select}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_cli_login_postgres_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_update}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_cli_login_postgres_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_insert}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_dashboard_user_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_select}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_dashboard_user_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_update}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_dashboard_user_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_insert}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_supabase_privileged_role_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_select}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_supabase_privileged_role_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.behavior_logs\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",behavior_logs_b2b_update}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "behavior_logs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_behavior_logs_supabase_privileged_role_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`anon\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_anon_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`anon\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_anon_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`anon\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_anon_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`anon\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_anon_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`authenticated\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_authenticated_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`authenticated\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_authenticated_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`authenticated\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_authenticated_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`authenticated\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_authenticated_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`authenticator\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_authenticator_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`authenticator\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_authenticator_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`authenticator\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_authenticator_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`authenticator\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_authenticator_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_cli_login_postgres_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_cli_login_postgres_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_cli_login_postgres_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_cli_login_postgres_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_dashboard_user_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_dashboard_user_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_dashboard_user_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_dashboard_user_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_supabase_privileged_role_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_supabase_privileged_role_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_supabase_privileged_role_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dog_env\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dog env\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dog_env",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dog_env_supabase_privileged_role_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`anon\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_anon_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`anon\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_anon_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`anon\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_anon_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`anon\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_anon_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`authenticated\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_authenticated_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`authenticated\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_authenticated_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`authenticated\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_authenticated_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`authenticated\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_authenticated_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`authenticator\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_authenticator_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`authenticator\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_authenticator_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`authenticator\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_authenticator_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`authenticator\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_authenticator_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_cli_login_postgres_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_cli_login_postgres_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_cli_login_postgres_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_cli_login_postgres_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_dashboard_user_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_dashboard_user_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_dashboard_user_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_dashboard_user_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_supabase_privileged_role_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_supabase_privileged_role_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_supabase_privileged_role_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.dogs\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own dogs\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "dogs",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_dogs_supabase_privileged_role_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.noti_history\\` has multiple permissive policies for role \\`anon\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own notifications\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "noti_history",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_noti_history_anon_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.noti_history\\` has multiple permissive policies for role \\`authenticated\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own notifications\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "noti_history",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_noti_history_authenticated_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.noti_history\\` has multiple permissive policies for role \\`authenticator\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own notifications\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "noti_history",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_noti_history_authenticator_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.noti_history\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own notifications\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "noti_history",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_noti_history_cli_login_postgres_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.noti_history\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own notifications\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "noti_history",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_noti_history_dashboard_user_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.noti_history\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own notifications\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "noti_history",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_noti_history_supabase_privileged_role_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.subscriptions\\` has multiple permissive policies for role \\`anon\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own subscriptions\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "subscriptions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_subscriptions_anon_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.subscriptions\\` has multiple permissive policies for role \\`authenticated\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own subscriptions\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "subscriptions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_subscriptions_authenticated_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.subscriptions\\` has multiple permissive policies for role \\`authenticator\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own subscriptions\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "subscriptions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_subscriptions_authenticator_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.subscriptions\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own subscriptions\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "subscriptions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_subscriptions_cli_login_postgres_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.subscriptions\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own subscriptions\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "subscriptions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_subscriptions_dashboard_user_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.subscriptions\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own subscriptions\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "subscriptions",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_subscriptions_supabase_privileged_role_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`anon\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_anon_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`anon\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_anon_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`anon\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_anon_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`anon\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_anon_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`authenticated\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_authenticated_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`authenticated\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_authenticated_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`authenticated\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_authenticated_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`authenticated\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_authenticated_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`authenticator\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_authenticator_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`authenticator\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_authenticator_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`authenticator\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_authenticator_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`authenticator\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_authenticator_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_cli_login_postgres_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_cli_login_postgres_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_cli_login_postgres_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_cli_login_postgres_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_dashboard_user_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_dashboard_user_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_dashboard_user_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_dashboard_user_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`DELETE\\`. Policies include \\`{\"Service role full access\",\"Users delete own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_supabase_privileged_role_DELETE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`INSERT\\`. Policies include \\`{\"Service role full access\",\"Users insert own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_supabase_privileged_role_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_supabase_privileged_role_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_settings\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`UPDATE\\`. Policies include \\`{\"Service role full access\",\"Users update own settings\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_settings",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_settings_supabase_privileged_role_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_training_status\\` has multiple permissive policies for role \\`authenticated\\` for action \\`INSERT\\`. Policies include \\`{\"Authenticated users can insert own training status\",\"Service role full access\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_training_status",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_training_status_authenticated_INSERT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_training_status\\` has multiple permissive policies for role \\`authenticated\\` for action \\`SELECT\\`. Policies include \\`{\"Authenticated users can read own training status\",\"Service role full access\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_training_status",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_training_status_authenticated_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.user_training_status\\` has multiple permissive policies for role \\`authenticated\\` for action \\`UPDATE\\`. Policies include \\`{\"Authenticated users can update own training status\",\"Service role full access\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "user_training_status",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_user_training_status_authenticated_UPDATE"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.users\\` has multiple permissive policies for role \\`anon\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own data\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "users",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_users_anon_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.users\\` has multiple permissive policies for role \\`authenticated\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own data\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "users",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_users_authenticated_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.users\\` has multiple permissive policies for role \\`authenticator\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own data\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "users",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_users_authenticator_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.users\\` has multiple permissive policies for role \\`cli_login_postgres\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own data\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "users",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_users_cli_login_postgres_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.users\\` has multiple permissive policies for role \\`dashboard_user\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own data\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "users",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_users_dashboard_user_SELECT"
+  },
+  {
+    "name": "multiple_permissive_policies",
+    "title": "Multiple Permissive Policies",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects if multiple permissive row level security policies are present on a table for the same \\`role\\` and \\`action\\` (e.g. insert). Multiple permissive policies are suboptimal for performance as each policy must be executed for every relevant query.",
+    "detail": "Table \\`public.users\\` has multiple permissive policies for role \\`supabase_privileged_role\\` for action \\`SELECT\\`. Policies include \\`{\"Service role full access\",\"Users read own data\"}\\`",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies",
+    "metadata": {
+      "name": "users",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "multiple_permissive_policies_public_users_supabase_privileged_role_SELECT"
+  },
+  {
+    "name": "duplicate_index",
+    "title": "Duplicate Index",
+    "level": "WARN",
+    "facing": "EXTERNAL",
+    "categories": [
+      "PERFORMANCE"
+    ],
+    "description": "Detects cases where two ore more identical indexes exist.",
+    "detail": "Table \\`public.ai_recommendation_snapshots\\` has identical indexes {ai_recommendation_snapshots_dedupe_key_key,idx_rec_dedupe_key}. Drop all except one of them",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0009_duplicate_index",
+    "metadata": {
+      "name": "ai_recommendation_snapshots",
+      "schema": "public",
+      "type": "table"
+    },
+    "cache_key": "duplicate_index_public_ai_recommendation_snapshots_{ai_recommendation_snapshots_dedupe_key_key,idx_rec_dedupe_key}"
+  }
+]

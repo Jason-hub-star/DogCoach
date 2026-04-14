@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-04-09T10:09:38.810Z",
+  "userState": {
+    "ok": true,
+    "userId": "495b69e6-f59a-4a42-8857-7254e11f0b5c",
+    "email": "perf-auto-1775725109192@gmail.com"
+  },
+  "rows": [
+    {
+      "run": 1,
+      "route": "dashboard",
+      "path": "/dashboard",
+      "dataReadyMs": 3947,
+      "skeletonVisibleMs": 2328,
+      "skeletonToDataMs": 1606,
+      "stableUiMs": 3947,
+      "apiCount5s": 2,
+      "apiDurations": [],
+      "apiStatuses": [],
+      "readyTimedOut": false,
+      "readyError": null,
+      "h1Text": null
+    },
+    {
+      "run": 1,
+      "route": "log",
+      "path": "/log",
+      "dataReadyMs": 5053,
+      "skeletonVisibleMs": 4144,
+      "skeletonToDataMs": 882,
+      "stableUiMs": 5053,
+      "apiCount5s": 2,
+      "apiDurations": [],
+      "apiStatuses": [],
+      "readyTimedOut": false,
+      "readyError": null,
+      "h1Text": null
+    },
+    {
+      "run": 1,
+      "route": "coach",
+      "path": "/coach",
+      "dataReadyMs": 266,
+      "skeletonVisibleMs": null,
+      "skeletonToDataMs": null,
+      "stableUiMs": 266,
+      "apiCount5s": 0,
+      "apiDurations": [],
+      "apiStatuses": [],
+      "readyTimedOut": false,
+      "readyError": null,
+      "h1Text": "훈련 아카데미"
+    },
+    {
+      "run": 1,
+      "route": "settings",
+      "path": "/settings",
+      "dataReadyMs": 229,
+      "skeletonVisibleMs": null,
+      "skeletonToDataMs": null,
+      "stableUiMs": 229,
+      "apiCount5s": 1,
+      "apiDurations": [],
+      "apiStatuses": [],
+      "readyTimedOut": false,
+      "readyError": null,
+      "h1Text": "환경 설정"
+    },
+    {
+      "run": 1,
+      "route": "dog_profile",
+      "path": "/dog/profile",
+      "dataReadyMs": 1275,
+      "skeletonVisibleMs": 267,
+      "skeletonToDataMs": 1006,
+      "stableUiMs": 1275,
+      "apiCount5s": 3,
+      "apiDurations": [],
+      "apiStatuses": [],
+      "readyTimedOut": false,
+      "readyError": null,
+      "h1Text": "반려견 프로필"
+    }
+  ]
+}

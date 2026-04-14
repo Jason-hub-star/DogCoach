@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-04-08T06:47:22.274Z",
+  "frontendUrl": "https://taillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app",
+  "dogName": "qa_tabs_1775630475804",
+  "status": "FAIL",
+  "passCount": 0,
+  "failCount": 9,
+  "steps": [
+    {
+      "name": "Landing -> Survey CTA",
+      "status": "FAIL",
+      "reason": "Error: page.goto: Navigation to \"https://taillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app/survey\" is interrupted by another navigation to \"https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Ftaillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app%252F%26nonce%3Df25d233e39d030bd81785def14c15fbc019d187fe84ad22164e5230ee5fa2136\"\nCall log:\n\u001b[2m  - navigating to \"https://taillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app/survey\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/vercel_public_preview_after_guestlog_patch/landing_survey_tabs_e2e_fail_1.png"
+      },
+      "durationMs": 1546,
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Ftaillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app%252Fsurvey%26nonce%3Df25d233e39d030bd81785def14c15fbc019d187fe84ad22164e5230ee5fa2136"
+    },
+    {
+      "name": "Survey submit (7-step)",
+      "status": "FAIL",
+      "reason": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('예: 머루')\u001b[22m\n",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/vercel_public_preview_after_guestlog_patch/landing_survey_tabs_e2e_fail_2.png"
+      },
+      "durationMs": 30057,
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Ftaillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app%252Fsurvey%26nonce%3Df25d233e39d030bd81785def14c15fbc019d187fe84ad22164e5230ee5fa2136"
+    },
+    {
+      "name": "Result -> Dashboard entry",
+      "status": "FAIL",
+      "reason": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/vercel_public_preview_after_guestlog_patch/landing_survey_tabs_e2e_fail_3.png"
+      },
+      "durationMs": 30181,
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Ftaillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app%252Fdashboard%26nonce%3Df25d233e39d030bd81785def14c15fbc019d187fe84ad22164e5230ee5fa2136"
+    },
+    {
+      "name": "Dashboard quick log",
+      "status": "FAIL",
+      "reason": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '짖음' }).first()\u001b[22m\n",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/vercel_public_preview_after_guestlog_patch/landing_survey_tabs_e2e_fail_4.png"
+      },
+      "durationMs": 30054,
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Ftaillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app%252Fdashboard%26nonce%3Df25d233e39d030bd81785def14c15fbc019d187fe84ad22164e5230ee5fa2136"
+    },
+    {
+      "name": "Log tab timeline",
+      "status": "FAIL",
+      "reason": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/vercel_public_preview_after_guestlog_patch/landing_survey_tabs_e2e_fail_5.png"
+      },
+      "durationMs": 61036,
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Ftaillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app%252Flog%26nonce%3Df25d233e39d030bd81785def14c15fbc019d187fe84ad22164e5230ee5fa2136"
+    },
+    {
+      "name": "Log tab analytics",
+      "status": "FAIL",
+      "reason": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '분석 & 코칭' })\u001b[22m\n",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/vercel_public_preview_after_guestlog_patch/landing_survey_tabs_e2e_fail_6.png"
+      },
+      "durationMs": 30060,
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Ftaillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app%252Flog%26nonce%3Df25d233e39d030bd81785def14c15fbc019d187fe84ad22164e5230ee5fa2136"
+    },
+    {
+      "name": "Coach tab",
+      "status": "FAIL",
+      "reason": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/vercel_public_preview_after_guestlog_patch/landing_survey_tabs_e2e_fail_7.png"
+      },
+      "durationMs": 61083,
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Ftaillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app%252Fcoach%26nonce%3Df25d233e39d030bd81785def14c15fbc019d187fe84ad22164e5230ee5fa2136"
+    },
+    {
+      "name": "Settings tab",
+      "status": "FAIL",
+      "reason": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/vercel_public_preview_after_guestlog_patch/landing_survey_tabs_e2e_fail_8.png"
+      },
+      "durationMs": 61267,
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Ftaillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app%252Fsettings%26nonce%3Df25d233e39d030bd81785def14c15fbc019d187fe84ad22164e5230ee5fa2136"
+    },
+    {
+      "name": "Quick-record tab open",
+      "status": "FAIL",
+      "reason": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/vercel_public_preview_after_guestlog_patch/landing_survey_tabs_e2e_fail_9.png"
+      },
+      "durationMs": 60930,
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Ftaillog-a0v65in5l-kimjuyoung1127s-projects.vercel.app%252Fdashboard%253FopenDetailLog%253D1%26nonce%3Df25d233e39d030bd81785def14c15fbc019d187fe84ad22164e5230ee5fa2136"
+    }
+  ],
+  "apiSummary": {}
+}

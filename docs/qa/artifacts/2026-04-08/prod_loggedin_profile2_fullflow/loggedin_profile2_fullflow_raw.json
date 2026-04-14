@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-04-08T07:46:35.043Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "status": "FAIL",
+  "passCount": 4,
+  "failCount": 4,
+  "steps": [
+    {
+      "name": "Session present and API token valid (or onboarding-needed)",
+      "status": "PASS",
+      "details": {
+        "email": "suho181030@gmail.com",
+        "uid": "516a1e45-2f0d-459b-9bda-8624ecd8b2e3",
+        "authMeStatus": 404
+      },
+      "durationMs": 6524,
+      "url": "https://www.mungai.co.kr/"
+    },
+    {
+      "name": "/login redirect with logged-in session",
+      "status": "FAIL",
+      "reason": "not redirected to dashboard/survey",
+      "details": {
+        "url": "https://www.mungai.co.kr/login"
+      },
+      "durationMs": 3599,
+      "url": "https://www.mungai.co.kr/login"
+    },
+    {
+      "name": "Complete survey as logged-in user if needed",
+      "status": "FAIL",
+      "reason": "TimeoutError: page.waitForURL: Timeout 60000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================",
+      "details": {
+        "screenshotPath": "/Users/family/jason/TailLogweb/docs/qa/artifacts/2026-04-08/prod_loggedin_profile2_fullflow/loggedin_profile2_fail_3.png"
+      },
+      "durationMs": 67140,
+      "url": "https://www.mungai.co.kr/survey"
+    },
+    {
+      "name": "Result -> Dashboard load",
+      "status": "FAIL",
+      "reason": "dashboard auth/error",
+      "details": {},
+      "durationMs": 7096,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Dashboard quick log create",
+      "status": "FAIL",
+      "reason": "TimeoutError: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '짖음' }).first()\u001b[22m\n",
+      "details": {
+        "screenshotPath": "/Users/family/jason/TailLogweb/docs/qa/artifacts/2026-04-08/prod_loggedin_profile2_fullflow/loggedin_profile2_fail_5.png"
+      },
+      "durationMs": 20051,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Log tab timeline + analytics",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 673,
+      "url": "https://www.mungai.co.kr/log"
+    },
+    {
+      "name": "Coach tab open",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 418,
+      "url": "https://www.mungai.co.kr/coach"
+    },
+    {
+      "name": "Settings tab open",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 185,
+      "url": "https://www.mungai.co.kr/settings"
+    }
+  ],
+  "apiSummary": {
+    "POST /api/v1/auth/migrate-guest 200": 7,
+    "GET /api/v1/auth/me 404": 3,
+    "GET /api/v1/dogs/profile 404": 2,
+    "GET /api/v1/dashboard/ 401": 1,
+    "GET /api/v1/dashboard/ 404": 1
+  }
+}

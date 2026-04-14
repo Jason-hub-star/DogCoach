@@ -1,0 +1,2 @@
+NEXT_PUBLIC_API_URL="https://backend-production-61c6.up.railway.app"
+NEXT_PUBLIC_SITE_URL="https://www.mungai.co.kr"

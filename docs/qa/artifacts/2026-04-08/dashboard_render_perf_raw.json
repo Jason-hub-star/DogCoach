@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-04-08T05:43:39.165Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "backendUrl": "https://backend-production-61c6.up.railway.app",
+  "seeded": {
+    "cookie": {
+      "name": "anonymous_sid",
+      "value": "6a2e03d7-b850-4a87-80a9-e176f5f4955e"
+    },
+    "seedResponse": {
+      "id": "971222f1-a126-405d-b406-3175af425422",
+      "name": "qa_perf_1775626987142",
+      "breed": "mixed",
+      "created_at": "2026-04-08T05:43:08.934309Z"
+    }
+  },
+  "desktopRuns": [
+    {
+      "label": "desktop",
+      "run": 1,
+      "landingDomMs": 183,
+      "dashboardDataReadyMs": 6067,
+      "skeletonToDataMs": 5894,
+      "dashboardApiMs": 5745,
+      "dashboardApiStatus": 200,
+      "h1Text": "반가워요, qa_perf_1775626987142 보호자님",
+      "skeletonDetected": true,
+      "renderState": "dashboard_loaded"
+    }
+  ],
+  "mobileRuns": [
+    {
+      "label": "mobile_iphone13",
+      "run": 1,
+      "landingDomMs": 143,
+      "dashboardDataReadyMs": 5662,
+      "skeletonToDataMs": 5486,
+      "dashboardApiMs": 5348,
+      "dashboardApiStatus": 200,
+      "h1Text": "반가워요, qa_perf_1775626987142 보호자님",
+      "skeletonDetected": true,
+      "renderState": "dashboard_loaded"
+    }
+  ],
+  "apiRuns": [
+    {
+      "ms": 5104,
+      "status": 200
+    },
+    {
+      "ms": 5224,
+      "status": 200
+    }
+  ]
+}

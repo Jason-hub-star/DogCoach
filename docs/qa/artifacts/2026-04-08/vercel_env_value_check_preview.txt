@@ -1,0 +1,2 @@
+API_URL="https://api.mungai.co.kr"
+SITE_URL="https://www.mungai.co.kr"

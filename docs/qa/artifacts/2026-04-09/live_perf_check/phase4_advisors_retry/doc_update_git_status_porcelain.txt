@@ -1,0 +1,201 @@
+ M .agent/ai-context/00-index.md
+ M .agent/ai-context/01-today-plan.md
+ M .agent/ai-context/02-progress.md
+ M .agent/ai-context/03-open-issues.md
+ M .agent/ai-context/04-rules.md
+ M .agent/ai-context/05-handoff.md
+ M .agent/rules/dogcoach.md
+ M .claude/settings.local.json
+ M .gitignore
+ M AGENTS.md
+ M Backend/Dockerfile
+ M Backend/app/core/config.py
+ M Backend/app/core/database.py
+ M Backend/app/features/auth/schemas.py
+ M Backend/app/features/auth/service.py
+ M Backend/app/features/dashboard/service.py
+ M Backend/app/features/onboarding/repository.py
+ M Backend/app/main.py
+ M Backend/app/shared/models.py
+ M Backend/supabase_schema.sql
+ M Backend/tests/conftest.py
+ M Backend/tests/features/test_e2e_guest_migration.py
+ M CLAUDE.md
+ M Frontend/package.json
+ M Frontend/src/app/(app)/CLAUDE.md
+ M Frontend/src/app/(app)/coach/page.tsx
+ M Frontend/src/app/(app)/dashboard/page.tsx
+ M Frontend/src/app/(app)/dog/profile/page.tsx
+ M Frontend/src/app/(app)/log/page.tsx
+ M Frontend/src/app/(app)/settings/page.tsx
+ M Frontend/src/app/(public)/privacy/page.tsx
+ M Frontend/src/app/(public)/result/page.tsx
+ M Frontend/src/app/(public)/terms/page.tsx
+ M Frontend/src/app/auth/callback/page.tsx
+ M Frontend/src/app/layout.tsx
+ M Frontend/src/app/login/page.tsx
+ M Frontend/src/components/features/ai-recommendations/RecommendationCard.tsx
+ M Frontend/src/components/features/coach/ChallengeJourneyMap.tsx
+ M Frontend/src/components/features/coach/ChallengeOnboardingModal.tsx
+ M Frontend/src/components/features/coach/MissionActionOverlay/MissionSuccessView.tsx
+ M Frontend/src/components/features/coach/MissionActionOverlay/index.tsx
+ M Frontend/src/components/features/coach/MissionActionOverlay/useMissionAction.ts
+ M Frontend/src/components/features/dashboard/CoreDataRequiredBanner.tsx
+ M Frontend/src/components/features/dashboard/CreateLogDialog.tsx
+ M Frontend/src/components/features/dashboard/DashboardHeader.tsx
+ M Frontend/src/components/features/dashboard/EditLogDialog.tsx
+ M Frontend/src/components/features/dashboard/EnhancementCard.tsx
+ M Frontend/src/components/features/dashboard/QuickLogWidget.tsx
+ M Frontend/src/components/features/dashboard/RecentLogList.tsx
+ M Frontend/src/components/features/landing/ABCSolutionSection.tsx
+ M Frontend/src/components/features/landing/BehaviorMapSection.tsx
+ M Frontend/src/components/features/landing/ExpertSynergySection.tsx
+ M Frontend/src/components/features/landing/FAQSection.tsx
+ M Frontend/src/components/features/landing/FinalCTASection.tsx
+ M Frontend/src/components/features/landing/HeroSection.tsx
+ M Frontend/src/components/features/landing/PricingSection.tsx
+ M Frontend/src/components/features/landing/ProblemSection.tsx
+ M Frontend/src/components/features/landing/ProcessSection.tsx
+ M Frontend/src/components/features/landing/SeamlessSection.tsx
+ M Frontend/src/components/features/landing/SocialProofSection.tsx
+ M Frontend/src/components/features/landing/SolutionSection.tsx
+ M Frontend/src/components/features/landing/TestimonialsSection.tsx
+ M Frontend/src/components/features/log/AnalyticsView.tsx
+ M Frontend/src/components/features/log/LogCard.tsx
+ M Frontend/src/components/features/log/RecommendationSection.tsx
+ M Frontend/src/components/features/log/ReportDocument.tsx
+ M Frontend/src/components/features/log/TrainingHistoryAccordion.tsx
+ M Frontend/src/components/features/result/ActionPlanCard.tsx
+ M Frontend/src/components/features/result/AnalysisRadarChart.tsx
+ M Frontend/src/components/features/result/BehaviorIssueSummary.tsx
+ M Frontend/src/components/features/result/ConversionCTA.tsx
+ M Frontend/src/components/features/result/LockedAnalysisSection.tsx
+ M Frontend/src/components/features/result/ResultHeader.tsx
+ M Frontend/src/components/features/settings/AccountSection.tsx
+ M Frontend/src/components/features/settings/AiPreferenceSettings.tsx
+ M Frontend/src/components/features/settings/AppInfoSection.tsx
+ M Frontend/src/components/features/settings/DataSection.tsx
+ M Frontend/src/components/features/settings/NotificationSection.tsx
+ M Frontend/src/components/features/settings/SubscriptionSection.tsx
+ M Frontend/src/components/features/survey/KakaoSyncModal.tsx
+ M Frontend/src/components/features/survey/Step1Profile.tsx
+ M Frontend/src/components/features/survey/Step2Environment.tsx
+ M Frontend/src/components/features/survey/Step3Health.tsx
+ M Frontend/src/components/features/survey/Step4Problems.tsx
+ M Frontend/src/components/features/survey/Step5Triggers.tsx
+ M Frontend/src/components/features/survey/Step6PastAttempts.tsx
+ M Frontend/src/components/features/survey/Step7Temperament.tsx
+ M Frontend/src/components/features/survey/SurveyControls.tsx
+ M Frontend/src/components/features/survey/SurveyLoading.tsx
+ M Frontend/src/components/features/survey/SurveyProgress.tsx
+ M Frontend/src/components/shared/layout/Footer.tsx
+ M Frontend/src/components/shared/layout/Header.tsx
+ M Frontend/src/components/shared/layout/Sidebar.tsx
+ M Frontend/src/components/shared/layout/materials/DebugLoginToggle.tsx
+ M Frontend/src/components/shared/modals/ComingSoonModal.tsx
+ M Frontend/src/components/shared/modals/ConfirmDialog.tsx
+ M Frontend/src/components/shared/modals/InAppBrowserLoginModal.tsx
+ M Frontend/src/components/shared/modals/ValidationErrorModal.tsx
+ M Frontend/src/components/shared/ui/PremiumBackground.tsx
+ M Frontend/src/components/ui/Button.tsx
+ M Frontend/src/components/ui/Toast.tsx
+ M Frontend/src/components/ui/animations/ShimmerButton.tsx
+ M Frontend/src/components/ui/animations/SmoothToggle.tsx
+ M Frontend/src/hooks/useAuth.ts
+ M Frontend/src/hooks/useQueries.ts
+ M Frontend/src/lib/api.ts
+ M Frontend/src/styles/globals.css
+ M README.md
+ M docs/README.md
+ M docs/backend.md
+ M docs/deploy.md
+ M docs/qa/README.md
+?? .agent/ai-context/logs/2026-04-08-session-log.md
+?? .claude/README.md
+?? .claude/automations/
+?? .claude/commands/
+?? .claude/hooks/
+?? .claude/settings.json
+?? .github/workflows/railway-backend-deploy.yml
+?? Backend/scripts/patch_2026_04_08_add_behavior_logs_duration.sql
+?? Backend/scripts/patch_2026_04_09_phase3_hotpath_indexes.sql
+?? Backend/scripts/patch_2026_04_09_phase4_rls_initplan_cleanup.sql
+?? Backend/scripts/patch_2026_04_09_phase4_rls_perf.sql
+?? Backend/tests/core/
+?? Backend/tests/features/test_repository_transaction_safety.py
+?? Frontend/.env.local
+?? Frontend/scripts/check-color-hardcode.mjs
+?? Frontend/src/lib/theme/
+?? docs/archive/
+?? docs/qa/P0_P1_PARALLEL_RUNBOOK.md
+?? docs/qa/UX_RISK_TEST_CASE_BANK.md
+?? docs/qa/artifacts/2026-04-08/DASHBOARD_REALDATA_TEST_REPORT.md
+?? docs/qa/artifacts/2026-04-08/VERCEL_CHECK_REPORT.md
+?? docs/qa/artifacts/2026-04-08/context_mapping_real_flow_after_fix.json
+?? docs/qa/artifacts/2026-04-08/dashboard_api_guard_perf.txt
+?? docs/qa/artifacts/2026-04-08/dashboard_api_stability_summary.txt
+?? docs/qa/artifacts/2026-04-08/dashboard_render_perf_raw.json
+?? docs/qa/artifacts/2026-04-08/dashboard_render_perf_raw_local_after_guest_fix.json
+?? docs/qa/artifacts/2026-04-08/dashboard_render_perf_raw_prod_baseline.json
+?? docs/qa/artifacts/2026-04-08/dashboard_render_perf_raw_vercel_5x5.json
+?? docs/qa/artifacts/2026-04-08/dashboard_render_perf_report.md
+?? docs/qa/artifacts/2026-04-08/dashboard_render_perf_report_local_after_guest_fix.md
+?? docs/qa/artifacts/2026-04-08/dashboard_render_perf_report_prod_baseline.md
+?? docs/qa/artifacts/2026-04-08/dashboard_render_perf_report_vercel_5x5.md
+?? docs/qa/artifacts/2026-04-08/full_journey_started_at.txt
+?? docs/qa/artifacts/2026-04-08/landing_survey_tabs_e2e_fail_2.png
+?? docs/qa/artifacts/2026-04-08/landing_survey_tabs_e2e_fail_3.png
+?? docs/qa/artifacts/2026-04-08/landing_survey_tabs_e2e_fail_4.png
+?? docs/qa/artifacts/2026-04-08/landing_survey_tabs_e2e_fail_6.png
+?? docs/qa/artifacts/2026-04-08/landing_survey_tabs_e2e_fail_9.png
+?? docs/qa/artifacts/2026-04-08/landing_survey_tabs_e2e_raw.json
+?? docs/qa/artifacts/2026-04-08/landing_survey_tabs_e2e_report.md
+?? docs/qa/artifacts/2026-04-08/local_after_guestlog_patch/
+?? docs/qa/artifacts/2026-04-08/p0p1_parallel/
+?? docs/qa/artifacts/2026-04-08/p1_parallel_run/api_prod/
+?? docs/qa/artifacts/2026-04-08/p1_parallel_run/batch2_targeted/
+?? docs/qa/artifacts/2026-04-08/p1_parallel_run/batch3_gap_fill/
+?? docs/qa/artifacts/2026-04-08/p1_parallel_run/dashboard_perf_prod/
+?? docs/qa/artifacts/2026-04-08/p1_parallel_run/e2e_guest_prod/
+?? docs/qa/artifacts/2026-04-08/p1_parallel_run/e2e_loggedin_profile_prod/
+?? docs/qa/artifacts/2026-04-08/p1_parallel_run/web_smoke_prod/
+?? docs/qa/artifacts/2026-04-08/prod_after_backend_deploy_5709/
+?? docs/qa/artifacts/2026-04-08/prod_after_cors_hardening/
+?? docs/qa/artifacts/2026-04-08/prod_after_guestlog_patch/
+?? docs/qa/artifacts/2026-04-08/prod_after_guestlog_patch_v2/
+?? docs/qa/artifacts/2026-04-08/prod_after_guestlog_patch_v3/
+?? docs/qa/artifacts/2026-04-08/prod_after_user_role_fix/
+?? docs/qa/artifacts/2026-04-08/prod_loggedin_profile2_fullflow/
+?? docs/qa/artifacts/2026-04-08/prod_loggedin_profile2_fullflow_after_fix/
+?? docs/qa/artifacts/2026-04-08/prod_loggedin_realuser_flow/
+?? docs/qa/artifacts/2026-04-08/vercel_env_value_check_preview.txt
+?? docs/qa/artifacts/2026-04-08/vercel_env_value_check_prod.txt
+?? docs/qa/artifacts/2026-04-08/vercel_env_value_check_prod_after_fix.txt
+?? docs/qa/artifacts/2026-04-08/vercel_preview_after_guestlog_patch/
+?? docs/qa/artifacts/2026-04-08/vercel_public_preview_after_guestlog_patch/
+?? docs/qa/artifacts/2026-04-09/P0_LOADING_BASELINE_SNAPSHOT.md
+?? docs/qa/artifacts/2026-04-09/live_perf_check/
+?? docs/ref/
+?? docs/status/
+?? scripts/docs/
+?? scripts/qa/measure_app_route_baseline.mjs
+?? scripts/qa/measure_authenticated_route_baseline.mjs
+?? scripts/qa/measure_dashboard_render_perf.mjs
+?? scripts/qa/run_dashboard_perf_suite.sh
+?? scripts/qa/run_landing_survey_tabs_e2e.mjs
+?? scripts/qa/run_loggedin_profile_fullflow.mjs
+?? scripts/qa/run_p1_batch2_targeted.mjs
+?? scripts/qa/run_parallel_api_qa.sh
+?? scripts/qa/run_parallel_web_smoke.sh
+?? supabase/
+?? tmp_qa_api/
+?? tmp_qa_api_full/
+?? tmp_qa_perf/
+?? tmp_qa_perf_stability/
+?? tmp_qa_profile_snapshot/
+?? tmp_qa_smoke/
+?? tmp_qa_smoke_full/
+?? tmp_vercel_cors/
+?? tmp_vercel_cors_api_domain/
+?? "\354\202\254\354\227\205\352\263\204\355\232\215\354\204\234.md"
+?? "\354\202\254\354\227\205\352\263\204\355\232\215\354\204\234_\352\271\200\354\243\274\354\230\201.pdf"

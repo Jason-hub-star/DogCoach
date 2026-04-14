@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-04-08T08:30:40.418Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "backendUrl": "https://backend-production-61c6.up.railway.app",
+  "profileDir": "/Users/family/jason/TailLogweb/tmp_qa_profile_snapshot",
+  "status": "PASS",
+  "passCount": 8,
+  "failCount": 0,
+  "steps": [
+    {
+      "name": "Session present and API token valid (or onboarding-needed)",
+      "status": "PASS",
+      "details": {
+        "email": "umjitak@gmail.com",
+        "uid": "9571718f-6e14-4fb1-900a-598e75949907",
+        "authMeStatus": 200
+      },
+      "durationMs": 5758,
+      "url": "https://www.mungai.co.kr/"
+    },
+    {
+      "name": "/login redirect with logged-in session",
+      "status": "PASS",
+      "details": {
+        "redirectedTo": "https://www.mungai.co.kr/dashboard"
+      },
+      "durationMs": 5510,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Complete survey as logged-in user if needed",
+      "status": "PASS",
+      "details": {
+        "skipped": true,
+        "reason": "current route is not /survey"
+      },
+      "durationMs": 0,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Result -> Dashboard load",
+      "status": "PASS",
+      "details": {
+        "initialTotalLogs": 2
+      },
+      "durationMs": 9057,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Dashboard quick log create",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 8389,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Log tab timeline + analytics",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 30572,
+      "url": "https://www.mungai.co.kr/log"
+    },
+    {
+      "name": "Coach tab open",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 127,
+      "url": "https://www.mungai.co.kr/coach"
+    },
+    {
+      "name": "Settings tab open",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 138,
+      "url": "https://www.mungai.co.kr/settings"
+    }
+  ],
+  "apiSummary": {
+    "POST /api/v1/auth/migrate-guest 200": 7,
+    "GET /api/v1/auth/me 200": 2,
+    "GET /api/v1/dashboard/ 401": 1,
+    "GET /api/v1/dashboard/ 200": 2,
+    "POST /api/v1/logs 307": 1,
+    "POST /api/v1/logs/ 201": 1
+  }
+}

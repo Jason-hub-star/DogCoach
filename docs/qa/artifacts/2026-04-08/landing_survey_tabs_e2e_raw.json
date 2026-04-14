@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-04-08T06:26:25.027Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "dogName": "qa_tabs_1775629535803",
+  "status": "FAIL",
+  "passCount": 7,
+  "failCount": 2,
+  "steps": [
+    {
+      "name": "Landing -> Survey CTA",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 951,
+      "url": "https://www.mungai.co.kr/survey"
+    },
+    {
+      "name": "Survey submit (7-step)",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 10208,
+      "url": "https://www.mungai.co.kr/result?newDog=true&dogName=qa_tabs_1775629535803"
+    },
+    {
+      "name": "Result -> Dashboard entry",
+      "status": "PASS",
+      "details": {
+        "initialTotalLogs": 1
+      },
+      "durationMs": 5837,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Dashboard quick log",
+      "status": "FAIL",
+      "reason": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+      "details": {
+        "screenshotPath": "/Users/family/jason/TailLogweb/docs/qa/artifacts/2026-04-08/landing_survey_tabs_e2e_fail_4.png"
+      },
+      "durationMs": 31026,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Log tab timeline",
+      "status": "FAIL",
+      "reason": "timeline did not show expected log count",
+      "details": {},
+      "durationMs": 124,
+      "url": "https://www.mungai.co.kr/log"
+    },
+    {
+      "name": "Log tab analytics",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 267,
+      "url": "https://www.mungai.co.kr/log"
+    },
+    {
+      "name": "Coach tab",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 113,
+      "url": "https://www.mungai.co.kr/coach"
+    },
+    {
+      "name": "Settings tab",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 123,
+      "url": "https://www.mungai.co.kr/settings"
+    },
+    {
+      "name": "Quick-record tab open",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 163,
+      "url": "https://www.mungai.co.kr/dashboard?openDetailLog=1"
+    }
+  ],
+  "apiSummary": {
+    "POST /api/v1/onboarding/survey 201": 1,
+    "GET /api/v1/dashboard/ 200": 1
+  }
+}

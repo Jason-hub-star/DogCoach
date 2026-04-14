@@ -1,0 +1,6 @@
+{
+  "name": "qa_dog_guest",
+  "breed": "mixed",
+  "chronic_issues": { "top_issues": ["짖음"] },
+  "triggers": { "ids": ["초인종"] }
+}

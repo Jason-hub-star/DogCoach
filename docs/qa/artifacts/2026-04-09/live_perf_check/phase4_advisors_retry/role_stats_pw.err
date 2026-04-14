@@ -1,0 +1,3 @@
+Connecting to remote database...
+failed to scan targets: can't scan into dest[3]: cannot scan null into *string
+Try rerunning the command with --debug to troubleshoot the error.

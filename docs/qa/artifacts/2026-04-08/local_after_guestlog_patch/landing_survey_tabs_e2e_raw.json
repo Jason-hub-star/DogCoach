@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-04-08T06:29:13.758Z",
+  "frontendUrl": "http://127.0.0.1:3002",
+  "dogName": "qa_tabs_1775629631736",
+  "status": "FAIL",
+  "passCount": 4,
+  "failCount": 5,
+  "steps": [
+    {
+      "name": "Landing -> Survey CTA",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 3163,
+      "url": "http://127.0.0.1:3002/survey"
+    },
+    {
+      "name": "Survey submit (7-step)",
+      "status": "FAIL",
+      "reason": "TimeoutError: page.waitForURL: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/local_after_guestlog_patch/landing_survey_tabs_e2e_fail_2.png"
+      },
+      "durationMs": 47943,
+      "url": "http://127.0.0.1:3002/survey"
+    },
+    {
+      "name": "Result -> Dashboard entry",
+      "status": "FAIL",
+      "reason": "dashboard returned authentication error",
+      "details": {},
+      "durationMs": 2318,
+      "url": "http://127.0.0.1:3002/dashboard"
+    },
+    {
+      "name": "Dashboard quick log",
+      "status": "FAIL",
+      "reason": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '짖음' }).first()\u001b[22m\n",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/local_after_guestlog_patch/landing_survey_tabs_e2e_fail_4.png"
+      },
+      "durationMs": 30064,
+      "url": "http://127.0.0.1:3002/dashboard"
+    },
+    {
+      "name": "Log tab timeline",
+      "status": "FAIL",
+      "reason": "timeline did not show expected log count",
+      "details": {},
+      "durationMs": 3164,
+      "url": "http://127.0.0.1:3002/log"
+    },
+    {
+      "name": "Log tab analytics",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 277,
+      "url": "http://127.0.0.1:3002/log"
+    },
+    {
+      "name": "Coach tab",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 1655,
+      "url": "http://127.0.0.1:3002/coach"
+    },
+    {
+      "name": "Settings tab",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 2888,
+      "url": "http://127.0.0.1:3002/settings"
+    },
+    {
+      "name": "Quick-record tab open",
+      "status": "FAIL",
+      "reason": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+      "details": {
+        "screenshotPath": "docs/qa/artifacts/2026-04-08/local_after_guestlog_patch/landing_survey_tabs_e2e_fail_9.png"
+      },
+      "durationMs": 30300,
+      "url": "http://127.0.0.1:3002/dashboard?openDetailLog=1"
+    }
+  ],
+  "apiSummary": {}
+}

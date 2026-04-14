@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-04-08T05:39:03.097Z",
+  "seed": {
+    "status": 201,
+    "dogId": "914b7b63-ec28-4895-bb8a-8f4650bf7cbc",
+    "name": "qa_flow_after_fix_1775626726250"
+  },
+  "ui": {
+    "hasNoDog": false,
+    "hasInsightDashboardText": true,
+    "hasCoreDataBanner": false,
+    "hasDogProfileLink": true,
+    "h1": "반가워요, qa_flow_after_fix_1775626726250 보호자님",
+    "textSnippet": "TailLog\n🐶\n반려견 없음\n게스트님\n빠른 기록하기\n대시보드\n기록 & 분석\nAI 코칭\n설정\n로그아웃\nINSIGHT DASHBOARD\n반가워요,\nqa_flow_after_fix_1775626726250 보호자님\n연속 실천\n1 Days\n누적 기록\n1 Total\n🚧\n\n다견 기능 준비중\n\n현재 최신 강아지만 표시됩니다. 곧 여러 강아지를 관리할 수 있어요!\n\n닫기\nINSTANT TRACKING\n빠른 기록\nACTIVE\n🔊\n짖음\n🦷\n입질\n💧\n배변실수\n🏠\n분리불안\n⚡\n흥분\n📝\n기타\nTIMELINE\n최근 기록\n1개 기록됨\n📝\n과도한 짖음\n오후 02:38\n강도 5"
+  },
+  "dashApiCalls": [
+    {
+      "type": "req",
+      "method": "GET",
+      "url": "https://backend-production-61c6.up.railway.app/api/v1/dashboard/"
+    },
+    {
+      "type": "res",
+      "status": 200,
+      "url": "https://backend-production-61c6.up.railway.app/api/v1/dashboard/",
+      "bodySnippet": "{\"dog_profile\":{\"id\":\"914b7b63-ec28-4895-bb8a-8f4650bf7cbc\",\"name\":\"qa_flow_after_fix_1775626726250\",\"breed\":\"mixed\",\"age_months\":0,\"profile_image_url\":null},\"stats\":{\"total_logs\":1,\"current_streak\":1,\"last_logged_at\":\"2"
+    }
+  ],
+  "apiEventsCount": 4
+}

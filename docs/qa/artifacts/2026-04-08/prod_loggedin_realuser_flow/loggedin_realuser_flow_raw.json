@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-04-08T07:38:26.539Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "status": "FAIL",
+  "passCount": 6,
+  "failCount": 4,
+  "steps": [
+    {
+      "name": "Load home with existing real-user session",
+      "status": "PASS",
+      "details": {
+        "uid": "f59ac308-f321-464e-9a72-d686f55dd94f",
+        "email": "gmdqn2tp@gmail.com"
+      },
+      "durationMs": 713,
+      "url": "https://www.mungai.co.kr/"
+    },
+    {
+      "name": "/login redirect for already authenticated user",
+      "status": "FAIL",
+      "reason": "did not redirect to dashboard/survey",
+      "details": {
+        "url": "https://www.mungai.co.kr/login"
+      },
+      "durationMs": 3652,
+      "url": "https://www.mungai.co.kr/login"
+    },
+    {
+      "name": "Dashboard load (real data render)",
+      "status": "FAIL",
+      "reason": "dashboard auth/error state",
+      "details": {},
+      "durationMs": 3017,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Quick log create from dashboard",
+      "status": "FAIL",
+      "reason": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '짖음' }).first()\u001b[22m\n",
+      "details": {
+        "screenshotPath": "/Users/family/jason/TailLogweb/docs/qa/artifacts/2026-04-08/prod_loggedin_realuser_flow/loggedin_realuser_fail_4.png"
+      },
+      "durationMs": 15061,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Log tab timeline + analytics",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 637,
+      "url": "https://www.mungai.co.kr/log"
+    },
+    {
+      "name": "Coach tab open",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 769,
+      "url": "https://www.mungai.co.kr/coach"
+    },
+    {
+      "name": "Settings tab open",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 831,
+      "url": "https://www.mungai.co.kr/settings"
+    },
+    {
+      "name": "/survey guard redirect for logged-in existing dog",
+      "status": "FAIL",
+      "reason": "survey guard did not redirect to dashboard",
+      "details": {
+        "url": "https://www.mungai.co.kr/survey"
+      },
+      "durationMs": 3598,
+      "url": "https://www.mungai.co.kr/survey"
+    },
+    {
+      "name": "/survey?enhance=true submit new dog as logged-in user",
+      "status": "PASS",
+      "details": {
+        "dogName": "qa_loggedin_1775633862630"
+      },
+      "durationMs": 10295,
+      "url": "https://www.mungai.co.kr/result?newDog=true&dogName=qa_loggedin_1775633862630"
+    },
+    {
+      "name": "Result -> Dashboard re-entry after logged-in survey submit",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 5336,
+      "url": "https://www.mungai.co.kr/dashboard"
+    }
+  ],
+  "apiSummary": {
+    "GET /api/v1/dashboard/ 401": 4,
+    "POST /api/v1/onboarding/survey 201": 1,
+    "GET /api/v1/dashboard/ 200": 1
+  }
+}

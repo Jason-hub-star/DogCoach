@@ -1,0 +1,113 @@
+{
+  "generatedAt": "2026-04-08T09:25:18.062Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "backendUrl": "https://backend-production-61c6.up.railway.app",
+  "profileDir": "/Users/family/jason/TailLogweb/tmp_qa_profile_snapshot",
+  "summary": {
+    "PASS": 10,
+    "BLOCKED": 1
+  },
+  "caseResults": [
+    {
+      "caseId": "AUTH-05",
+      "title": "OAuth callback returnTo survey",
+      "status": "PASS",
+      "note": "redirected to /survey",
+      "details": {
+        "url": "https://www.mungai.co.kr/auth/callback?returnTo=/survey"
+      },
+      "durationMs": 640
+    },
+    {
+      "caseId": "AUTH-06",
+      "title": "OAuth callback returnTo dashboard",
+      "status": "PASS",
+      "note": "redirected to /dashboard",
+      "details": {
+        "url": "https://www.mungai.co.kr/auth/callback?returnTo=/dashboard"
+      },
+      "durationMs": 293
+    },
+    {
+      "caseId": "AUTH-09",
+      "title": "migrate-guest failure should not block callback routing",
+      "status": "PASS",
+      "note": "callback routing continued despite migrate-guest 500",
+      "details": {
+        "url": "https://www.mungai.co.kr/auth/callback?returnTo=/dashboard"
+      },
+      "durationMs": 686
+    },
+    {
+      "caseId": "DASH-16",
+      "title": "Quick log repeated taps stability",
+      "status": "PASS",
+      "note": "repeated taps did not break quick-log flow",
+      "details": {
+        "before": 7,
+        "after": 10
+      },
+      "durationMs": 18385
+    },
+    {
+      "caseId": "DASH-05",
+      "title": "Log edit save via API patch",
+      "status": "PASS",
+      "note": "log patch 200 and intensity updated",
+      "details": {
+        "logId": "901310e9-73f4-48d3-8242-dcf61a1af93c",
+        "prev": 3,
+        "next": 4
+      },
+      "durationMs": 13638
+    },
+    {
+      "caseId": "COACH-09",
+      "title": "Settings data delete/export guidance visible",
+      "status": "PASS",
+      "note": "data management/export/delete guidance rendered",
+      "details": {},
+      "durationMs": 232
+    },
+    {
+      "caseId": "AUTH-04",
+      "title": "Auth callback without session",
+      "status": "PASS",
+      "note": "error UI shown for missing callback session",
+      "details": {},
+      "durationMs": 3001
+    },
+    {
+      "caseId": "AUTH-03",
+      "title": "Expired/invalid token re-entry to /login",
+      "status": "PASS",
+      "note": "invalid token did not cause infinite loading; login UI recovered",
+      "details": {},
+      "durationMs": 3104
+    },
+    {
+      "caseId": "AUTH-10",
+      "title": "Corrupted localStorage auth token recovery",
+      "status": "PASS",
+      "note": "corrupted localStorage token did not break login page rendering",
+      "details": {},
+      "durationMs": 2802
+    },
+    {
+      "caseId": "NET-14",
+      "title": "Login session refresh expired recovery",
+      "status": "PASS",
+      "note": "same invalid/expired token recovery path verified via /login",
+      "details": {},
+      "durationMs": 0
+    },
+    {
+      "caseId": "NET-06",
+      "title": "Deploy rootDirectory validation",
+      "status": "BLOCKED",
+      "note": "runtime QA cannot deterministically prove deploy rootDirectory config without deployment mutation",
+      "details": {},
+      "durationMs": 0
+    }
+  ]
+}

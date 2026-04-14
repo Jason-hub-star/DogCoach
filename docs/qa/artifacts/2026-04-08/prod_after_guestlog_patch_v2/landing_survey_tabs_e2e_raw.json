@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-04-08T06:53:14.910Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "dogName": "qa_tabs_1775631120285",
+  "status": "FAIL",
+  "passCount": 8,
+  "failCount": 1,
+  "steps": [
+    {
+      "name": "Landing -> Survey CTA",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 3987,
+      "url": "https://www.mungai.co.kr/survey"
+    },
+    {
+      "name": "Survey submit (7-step)",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 20843,
+      "url": "https://www.mungai.co.kr/result?newDog=true&dogName=qa_tabs_1775631120285"
+    },
+    {
+      "name": "Result -> Dashboard entry",
+      "status": "PASS",
+      "details": {
+        "initialTotalLogs": 1
+      },
+      "durationMs": 6344,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Dashboard quick log",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 7471,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Log tab timeline",
+      "status": "FAIL",
+      "reason": "timeline did not show expected log count",
+      "details": {},
+      "durationMs": 30800,
+      "url": "https://www.mungai.co.kr/log"
+    },
+    {
+      "name": "Log tab analytics",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 264,
+      "url": "https://www.mungai.co.kr/log"
+    },
+    {
+      "name": "Coach tab",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 159,
+      "url": "https://www.mungai.co.kr/coach"
+    },
+    {
+      "name": "Settings tab",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 139,
+      "url": "https://www.mungai.co.kr/settings"
+    },
+    {
+      "name": "Quick-record tab open",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 4243,
+      "url": "https://www.mungai.co.kr/dashboard?openDetailLog=1"
+    }
+  ],
+  "apiSummary": {
+    "POST /api/v1/onboarding/survey 201": 1,
+    "GET /api/v1/dashboard/ 200": 3,
+    "POST /api/v1/logs 307": 1,
+    "POST /api/v1/logs/ 201": 1
+  }
+}

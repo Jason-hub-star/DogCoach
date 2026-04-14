@@ -1,0 +1,43 @@
+
+  
+   Name                               | Table size | Index size | Total size | Estimated row count | Seq scans 
+  ------------------------------------|------------|------------|------------|---------------------|-----------
+   public.behavior_logs               | 56 kB      | 64 kB      | 120 kB     | 130                 | 245       
+   public.dog_env                     | 72 kB      | 48 kB      | 120 kB     | 64                  | 196       
+   public.users                       | 48 kB      | 64 kB      | 112 kB     | 1                   | 144       
+   public.ai_recommendation_snapshots | 16 kB      | 96 kB      | 112 kB     | 0                   | 2         
+   public.user_training_status        | 48 kB      | 48 kB      | 96 kB      | 0                   | 21        
+   public.dogs                        | 48 kB      | 48 kB      | 96 kB      | 64                  | 985       
+   public.training_library            | 16 kB      | 80 kB      | 96 kB      | 0                   | 0         
+   public.toss_orders                 | 16 kB      | 64 kB      | 80 kB      | 0                   | 0         
+   public.training_sessions           | 16 kB      | 64 kB      | 80 kB      | 0                   | 0         
+   public.noti_history                | 16 kB      | 64 kB      | 80 kB      | 1                   | 2         
+   public.user_settings               | 16 kB      | 48 kB      | 64 kB      | 0                   | 12        
+   public.daily_reports               | 8192 bytes | 56 kB      | 64 kB      | 0                   | 2         
+   public.ai_coaching                 | 16 kB      | 32 kB      | 48 kB      | 0                   | 2         
+   public.training_behavior_snapshots | 16 kB      | 32 kB      | 48 kB      | 0                   | 2         
+   public.dog_assignments             | 8192 bytes | 32 kB      | 40 kB      | 0                   | 2         
+   public.ai_cost_usage_daily         | 8192 bytes | 32 kB      | 40 kB      | 0                   | 2         
+   public.ai_cost_usage_monthly       | 8192 bytes | 32 kB      | 40 kB      | 0                   | 2         
+   public.action_tracker              | 8192 bytes | 32 kB      | 40 kB      | 0                   | 1         
+   public.org_dogs                    | 8192 bytes | 32 kB      | 40 kB      | 0                   | 2         
+   public.org_members                 | 8192 bytes | 24 kB      | 32 kB      | 0                   | 2         
+   public.org_analytics_daily         | 8192 bytes | 24 kB      | 32 kB      | 0                   | 2         
+   public.content_metrics             | 0 bytes    | 24 kB      | 24 kB      | 0                   | 0         
+   public.training_media              | 8192 bytes | 16 kB      | 24 kB      | 0                   | 0         
+   public.media_assets                | 8192 bytes | 16 kB      | 24 kB      | 0                   | 2         
+   public.edge_function_requests      | 8192 bytes | 16 kB      | 24 kB      | 0                   | 2         
+   public.ai_cost_usage_org           | 0 bytes    | 24 kB      | 24 kB      | 0                   | 0         
+   public.ai_recommendation_feedback  | 8192 bytes | 16 kB      | 24 kB      | 0                   | 2         
+   public.log_summaries               | 8192 bytes | 16 kB      | 24 kB      | 0                   | 2         
+   public.training_goals              | 0 bytes    | 24 kB      | 24 kB      | 0                   | 0         
+   public.training_plans              | 8192 bytes | 16 kB      | 24 kB      | 0                   | 0         
+   public.parent_interactions         | 8192 bytes | 16 kB      | 24 kB      | 0                   | 2         
+   public.organizations               | 8192 bytes | 16 kB      | 24 kB      | 0                   | 2         
+   public.content_providers           | 8192 bytes | 16 kB      | 24 kB      | 0                   | 0         
+   public.subscriptions               | 8192 bytes | 16 kB      | 24 kB      | 0                   | 2         
+   public.pii_access_log              | 8192 bytes | 8192 bytes | 16 kB      | 0                   | 0         
+   public.plan_items                  | 0 bytes    | 16 kB      | 16 kB      | 0                   | 0         
+   public.org_dogs_pii                | 8192 bytes | 8192 bytes | 16 kB      | 0                   | 0         
+   public.org_subscriptions           | 8192 bytes | 8192 bytes | 16 kB      | 0                   | 2         
+

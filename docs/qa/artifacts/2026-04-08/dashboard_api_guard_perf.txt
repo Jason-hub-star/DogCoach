@@ -1,0 +1,2 @@
+no_cookie {'count': 10, 'codes': {401: 10}, 'min': 385, 'p50': 584, 'p90': 617, 'max': 760, 'avg': 537}
+invalid_cookie {'count': 10, 'codes': {404: 10}, 'min': 2382, 'p50': 2646, 'p90': 2780, 'max': 2855, 'avg': 2654}

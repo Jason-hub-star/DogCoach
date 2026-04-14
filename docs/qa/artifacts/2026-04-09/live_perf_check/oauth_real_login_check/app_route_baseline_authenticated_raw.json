@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-04-09T09:46:44.371Z",
+  "userState": {
+    "ok": true,
+    "userId": "f59ac308-f321-464e-9a72-d686f55dd94f",
+    "email": "gmdqn2tp@gmail.com"
+  },
+  "rows": [
+    {
+      "run": 1,
+      "route": "dashboard",
+      "path": "/dashboard",
+      "dataReadyMs": 8627,
+      "skeletonVisibleMs": 54,
+      "skeletonToDataMs": 8567,
+      "stableUiMs": 9194,
+      "apiCount5s": 2,
+      "apiDurations": [
+        {
+          "pattern": "/api/v1/dashboard/",
+          "ms": 1356
+        },
+        {
+          "pattern": "/api/v1/dashboard/",
+          "ms": 6136
+        }
+      ],
+      "apiStatuses": [
+        {
+          "pattern": "/api/v1/dashboard/",
+          "status": 401
+        },
+        {
+          "pattern": "/api/v1/dashboard/",
+          "status": 200
+        }
+      ],
+      "readyTimedOut": false,
+      "readyError": null,
+      "h1Text": "반가워요, 메이 보호자님"
+    },
+    {
+      "run": 1,
+      "route": "log",
+      "path": "/log",
+      "dataReadyMs": 5100,
+      "skeletonVisibleMs": null,
+      "skeletonToDataMs": null,
+      "stableUiMs": 5100,
+      "apiCount5s": 1,
+      "apiDurations": [
+        {
+          "pattern": "/api/v1/dashboard/",
+          "ms": 6303
+        },
+        {
+          "pattern": "/api/v1/logs/",
+          "ms": 4411
+        }
+      ],
+      "apiStatuses": [
+        {
+          "pattern": "/api/v1/dashboard/",
+          "status": 200
+        },
+        {
+          "pattern": "/api/v1/logs/",
+          "status": 200
+        }
+      ],
+      "readyTimedOut": false,
+      "readyError": null,
+      "h1Text": null
+    },
+    {
+      "run": 1,
+      "route": "coach",
+      "path": "/coach",
+      "dataReadyMs": 87,
+      "skeletonVisibleMs": null,
+      "skeletonToDataMs": null,
+      "stableUiMs": 87,
+      "apiCount5s": 1,
+      "apiDurations": [],
+      "apiStatuses": [],
+      "readyTimedOut": false,
+      "readyError": null,
+      "h1Text": "훈련 아카데미"
+    },
+    {
+      "run": 1,
+      "route": "settings",
+      "path": "/settings",
+      "dataReadyMs": 219,
+      "skeletonVisibleMs": null,
+      "skeletonToDataMs": null,
+      "stableUiMs": 219,
+      "apiCount5s": 1,
+      "apiDurations": [],
+      "apiStatuses": [],
+      "readyTimedOut": false,
+      "readyError": null,
+      "h1Text": "환경 설정"
+    },
+    {
+      "run": 1,
+      "route": "dog_profile",
+      "path": "/dog/profile",
+      "dataReadyMs": 9121,
+      "skeletonVisibleMs": 123,
+      "skeletonToDataMs": 8994,
+      "stableUiMs": 9699,
+      "apiCount5s": 1,
+      "apiDurations": [
+        {
+          "pattern": "/api/v1/dogs/profile",
+          "ms": 8977
+        }
+      ],
+      "apiStatuses": [
+        {
+          "pattern": "/api/v1/dogs/profile",
+          "status": 200
+        }
+      ],
+      "readyTimedOut": false,
+      "readyError": null,
+      "h1Text": "반려견 프로필"
+    }
+  ]
+}

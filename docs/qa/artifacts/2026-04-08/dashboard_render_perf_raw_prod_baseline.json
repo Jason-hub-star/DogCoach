@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-04-08T04:38:19.829Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "backendUrl": "https://backend-production-61c6.up.railway.app",
+  "seeded": {
+    "cookie": {
+      "name": "anonymous_sid",
+      "value": "15245066-9d8b-4d9a-9cfd-370568ccec31"
+    },
+    "seedResponse": {
+      "id": "74f94213-05b8-441c-9056-dc5391101eed",
+      "name": "qa_perf_1775622888152",
+      "breed": "mixed",
+      "created_at": "2026-04-08T04:34:49.905266Z"
+    }
+  },
+  "desktopRuns": [
+    {
+      "label": "desktop",
+      "run": 1,
+      "landingDomMs": 160,
+      "dashboardDataReadyMs": 137,
+      "skeletonToDataMs": 56,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "desktop",
+      "run": 2,
+      "landingDomMs": 225,
+      "dashboardDataReadyMs": 315,
+      "skeletonToDataMs": 221,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "desktop",
+      "run": 3,
+      "landingDomMs": 136,
+      "dashboardDataReadyMs": 178,
+      "skeletonToDataMs": 71,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    }
+  ],
+  "mobileRuns": [
+    {
+      "label": "mobile_iphone13",
+      "run": 1,
+      "landingDomMs": 135,
+      "dashboardDataReadyMs": 163,
+      "skeletonToDataMs": 66,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    },
+    {
+      "label": "mobile_iphone13",
+      "run": 2,
+      "landingDomMs": 141,
+      "dashboardDataReadyMs": 223,
+      "skeletonToDataMs": 61,
+      "dashboardApiMs": null,
+      "dashboardApiStatus": null,
+      "h1Text": null,
+      "skeletonDetected": true,
+      "renderState": "no_dog"
+    }
+  ],
+  "apiRuns": [
+    {
+      "ms": 5285,
+      "status": 200
+    },
+    {
+      "ms": 5138,
+      "status": 200
+    },
+    {
+      "ms": 5059,
+      "status": 200
+    },
+    {
+      "ms": 5061,
+      "status": 200
+    },
+    {
+      "ms": 4916,
+      "status": 200
+    },
+    {
+      "ms": 5121,
+      "status": 200
+    },
+    {
+      "ms": 5015,
+      "status": 200
+    },
+    {
+      "ms": 5149,
+      "status": 200
+    },
+    {
+      "ms": 5070,
+      "status": 200
+    },
+    {
+      "ms": 5094,
+      "status": 200
+    }
+  ]
+}

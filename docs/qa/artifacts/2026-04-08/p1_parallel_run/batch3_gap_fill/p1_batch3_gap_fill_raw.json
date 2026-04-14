@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-04-08T09:32:28.814Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "backendUrl": "https://backend-production-61c6.up.railway.app",
+  "profileDir": "/Users/family/jason/TailLogweb/tmp_qa_profile_snapshot",
+  "summary": {
+    "PASS": 5,
+    "PARTIAL": 1,
+    "FAIL": 0,
+    "BLOCKED": 0
+  },
+  "cases": [
+    {
+      "caseId": "AUTH-08",
+      "title": "/auth/me 404 should be interpreted as onboarding-needed",
+      "status": "PASS",
+      "note": "404 from /auth/me routed to /survey",
+      "details": {
+        "url": "https://www.mungai.co.kr/survey"
+      },
+      "durationMs": 2186
+    },
+    {
+      "caseId": "AUTH-11",
+      "title": "Valid token but no profile should start onboarding survey",
+      "status": "PASS",
+      "note": "login session with profile-missing branch reached survey step",
+      "details": {
+        "url": "https://www.mungai.co.kr/survey"
+      },
+      "durationMs": 1388
+    },
+    {
+      "caseId": "SURVEY-02",
+      "title": "Logged-in /survey should remain survey when profile missing",
+      "status": "PASS",
+      "note": "logged-in survey route stayed on onboarding flow under profile-missing branch",
+      "details": {
+        "url": "https://www.mungai.co.kr/survey"
+      },
+      "durationMs": 1344
+    },
+    {
+      "caseId": "NET-15",
+      "title": "404 body from /auth/me should drive profile-missing interpretation",
+      "status": "PASS",
+      "note": "callback interpreted auth/me 404 as onboarding-needed and routed to survey",
+      "details": {
+        "url": "https://www.mungai.co.kr/survey"
+      },
+      "durationMs": 2001
+    },
+    {
+      "caseId": "AUTH-12",
+      "title": "Valid token + dashboard no-dog branch should not hard-freeze",
+      "status": "PARTIAL",
+      "note": "dashboard did not freeze, but showed generic error instead of no-dog onboarding UX",
+      "details": {},
+      "durationMs": 1798
+    },
+    {
+      "caseId": "DASH-11",
+      "title": "/dogs/profile 404 should be handled without crash",
+      "status": "PASS",
+      "note": "dog profile page gracefully handled 404 and exposed onboarding CTA",
+      "details": {},
+      "durationMs": 1122
+    }
+  ]
+}

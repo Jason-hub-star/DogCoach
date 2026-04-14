@@ -1,0 +1,2 @@
+sequential {'count': 30, 'ok_count': 30, 'min': 4818, 'p50': 5081, 'p90': 5236, 'max': 5317, 'avg': 5095}
+concurrent {'count': 50, 'ok_count': 50, 'min': 4750, 'p50': 5057, 'p90': 5175, 'max': 5336, 'avg': 5019}

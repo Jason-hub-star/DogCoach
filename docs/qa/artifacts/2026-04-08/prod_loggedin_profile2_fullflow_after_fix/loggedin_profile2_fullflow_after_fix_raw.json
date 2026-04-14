@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-04-08T07:59:15.923Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "status": "PASS",
+  "passCount": 7,
+  "failCount": 0,
+  "steps": [
+    {
+      "name": "Logged-in token available",
+      "status": "PASS",
+      "details": {
+        "present": true,
+        "email": "suho181030@gmail.com",
+        "uid": "516a1e45-2f0d-459b-9bda-8624ecd8b2e3"
+      },
+      "durationMs": 569,
+      "url": "https://www.mungai.co.kr/"
+    },
+    {
+      "name": "/login redirects to survey/dashboard",
+      "status": "PASS",
+      "details": {
+        "finalUrl": "https://www.mungai.co.kr/dashboard"
+      },
+      "durationMs": 6994,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Survey submit returns 201 and lands on result",
+      "status": "PASS",
+      "details": {
+        "dogName": "qa_p2_afterfix_1775635112940",
+        "surveyStatus": 201
+      },
+      "durationMs": 17268,
+      "url": "https://www.mungai.co.kr/result?newDog=true&dogName=qa_p2_afterfix_1775635112940"
+    },
+    {
+      "name": "Dashboard load after result",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 8776,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Dashboard quick log",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 8178,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Log tab timeline + analytics",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 643,
+      "url": "https://www.mungai.co.kr/log"
+    },
+    {
+      "name": "Coach and Settings tabs",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 555,
+      "url": "https://www.mungai.co.kr/settings"
+    }
+  ],
+  "apiSummary": {
+    "GET /api/v1/auth/me 200": 3,
+    "POST /api/v1/auth/migrate-guest 200": 5,
+    "GET /api/v1/dogs/profile 200": 1,
+    "POST /api/v1/onboarding/survey 201": 1,
+    "GET /api/v1/dashboard/ 401": 2,
+    "GET /api/v1/dashboard/ 200": 1,
+    "POST /api/v1/logs 307": 1,
+    "POST /api/v1/logs/ 201": 1
+  }
+}

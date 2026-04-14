@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-04-08T07:13:08.343Z",
+  "frontendUrl": "https://www.mungai.co.kr",
+  "dogName": "qa_tabs_1775632327593",
+  "status": "PASS",
+  "passCount": 9,
+  "failCount": 0,
+  "steps": [
+    {
+      "name": "Landing -> Survey CTA",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 706,
+      "url": "https://www.mungai.co.kr/survey"
+    },
+    {
+      "name": "Survey submit (7-step)",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 10297,
+      "url": "https://www.mungai.co.kr/result?newDog=true&dogName=qa_tabs_1775632327593"
+    },
+    {
+      "name": "Result -> Dashboard entry",
+      "status": "PASS",
+      "details": {
+        "initialTotalLogs": 1
+      },
+      "durationMs": 5973,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Dashboard quick log",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 8163,
+      "url": "https://www.mungai.co.kr/dashboard"
+    },
+    {
+      "name": "Log tab timeline",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 30374,
+      "url": "https://www.mungai.co.kr/log"
+    },
+    {
+      "name": "Log tab analytics",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 263,
+      "url": "https://www.mungai.co.kr/log"
+    },
+    {
+      "name": "Coach tab",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 154,
+      "url": "https://www.mungai.co.kr/coach"
+    },
+    {
+      "name": "Settings tab",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 202,
+      "url": "https://www.mungai.co.kr/settings"
+    },
+    {
+      "name": "Quick-record tab open",
+      "status": "PASS",
+      "details": {},
+      "durationMs": 4338,
+      "url": "https://www.mungai.co.kr/dashboard?openDetailLog=1"
+    }
+  ],
+  "apiSummary": {
+    "POST /api/v1/onboarding/survey 201": 1,
+    "GET /api/v1/dashboard/ 200": 3,
+    "POST /api/v1/logs 307": 1,
+    "POST /api/v1/logs/ 201": 1
+  }
+}
