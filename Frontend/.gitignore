@@ -30,8 +30,8 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (private repo - all tracked)
-!.env*
+# env files
+.env*
 
 # vercel
 .vercel

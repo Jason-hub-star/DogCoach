@@ -62,5 +62,11 @@ coverage/
 # Logs
 *.log
 
+# Local QA artifacts
+tmp_qa_*/
+tmp_vercel_*/
+tmp_qa_profile_snapshot/
+
 # Binaries
 cloudflared.exe
+.vercel
