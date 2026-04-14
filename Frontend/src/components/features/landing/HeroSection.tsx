@@ -1,3 +1,5 @@
+/* 랜딩 첫 화면의 핵심 가치 제안과 CTA를 보여주는 히어로 섹션입니다.
+   모바일에서는 한국어 문장이 의미 단위로 안정적으로 줄바꿈되도록 구성합니다. */
 "use client";
 
 import { motion } from "framer-motion";
@@ -13,10 +15,9 @@ export function HeroSection() {
     const { data: dogProfile } = useDogProfile(token);
     const hasDog = isLoggedIn && !!dogProfile?.basic?.id;
     const dogName = "아이";
-    const titleWords = ["아이의", "짖음,", "이제", "'감'이", "아닌", "'데이터'로", "해결하세요."];
 
     return (
-        <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-orange-50/20">
+        <section className="relative w-full min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-orange-50/20">
             {/* Background Decor (Organic Blobs) */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -31,40 +32,48 @@ export function HeroSection() {
                 className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-brand-orange/10 rounded-full blur-[100px] -z-0"
             />
 
-            <div className="container px-4 md:px-6 relative z-10 flex flex-col items-center text-center">
-                <div className="max-w-4xl space-y-10">
+            <div className="container px-5 md:px-6 relative z-10 flex flex-col items-center text-center">
+                <div className="max-w-4xl space-y-8 md:space-y-10">
                     {/* Badge */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-100 shadow-xl shadow-gray-200/40 text-sm font-bold text-brand-dark mb-4 hover:border-brand-lime transition-all cursor-default"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-100 shadow-xl shadow-gray-200/40 text-xs sm:text-sm font-bold text-brand-dark mb-2 md:mb-4 hover:border-brand-lime transition-all cursor-default"
                     >
                         <Sparkles className="w-4 h-4 text-brand-orange" />
                         <span>데이터로 읽는 우리 아이의 속마음</span>
                     </motion.div>
 
                     {/* Copy - Massive Typography */}
-                    <h1 className="text-5xl md:text-8xl font-black tracking-tight text-gray-900 leading-[1.1] break-keep font-outfit">
-                        {titleWords.map((word, i) => (
+                    <h1 className="text-[clamp(2.1rem,10vw,4.75rem)] md:text-8xl font-black tracking-[-0.02em] text-slate-800 leading-[1.18] md:leading-[1.1] break-keep text-balance-kr font-outfit">
+                        {[
+                            `${dogName}의 짖음,`,
+                            "감이 아닌",
+                            "데이터로 해결하세요.",
+                        ].map((line, i) => (
                             <motion.span
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.1 * i }}
-                                className={cn(
-                                    "inline-block mr-[0.2em]",
-                                    word === "'데이터'로" && "text-brand-lime relative"
-                                )}
+                                className="block md:inline md:mr-[0.24em]"
                             >
-                                {word}
-                                {word === "'데이터'로" && (
-                                    <motion.span
-                                        initial={{ width: 0 }}
-                                        animate={{ width: "100%" }}
-                                        transition={{ duration: 0.8, delay: 1.2 }}
-                                        className="absolute bottom-2 left-0 h-3 bg-brand-lime/20 -z-10 rounded-sm"
-                                    />
+                                {line === "데이터로 해결하세요." ? (
+                                    <>
+                                        <span className="text-brand-lime relative inline-block">
+                                            데이터로
+                                            <motion.span
+                                                initial={{ width: 0 }}
+                                                animate={{ width: "100%" }}
+                                                transition={{ duration: 0.8, delay: 0.35 }}
+                                                className="absolute bottom-2 left-0 h-3 bg-brand-lime/20 -z-10 rounded-sm"
+                                            />
+                                        </span>{" "}
+                                        해결하세요.
+                                    </>
+                                ) : (
+                                    line
                                 )}
                             </motion.span>
                         ))}
@@ -74,11 +83,16 @@ export function HeroSection() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1.5 }}
-                        className="text-xl md:text-3xl text-gray-500 max-w-3xl mx-auto leading-relaxed break-keep font-medium"
+                        className="text-lg sm:text-xl md:text-3xl text-gray-500 max-w-3xl mx-auto leading-[1.8] md:leading-relaxed break-keep text-pretty-kr font-medium"
                     >
-                        매번 똑같은 훈련 영상은 그만.<br className="hidden md:block" />
-                        <span className="text-gray-900 font-bold underline decoration-brand-lime decoration-4 underline-offset-4">TailLog</span>가 {dogName}의 행동 패턴을 정밀 분석해<br className="md:hidden" />
-                        딱 맞는 솔루션을 처방합니다.
+                        <span className="block md:inline">매번 똑같은 훈련 영상은 그만.</span>{" "}
+                        <span className="block md:inline">
+                            <span className="text-slate-800 font-bold underline decoration-brand-lime decoration-4 underline-offset-4">
+                                TailLog
+                            </span>
+                            가 {dogName}의 행동 패턴을 정밀 분석해
+                        </span>{" "}
+                        <span className="block md:inline">딱 맞는 솔루션을 처방합니다.</span>
                     </motion.p>
 
                     {/* CTA Group */}
@@ -86,12 +100,12 @@ export function HeroSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 1.8 }}
-                        className="flex flex-col sm:flex-row gap-6 justify-center pt-8 items-center"
+                        className="flex flex-col sm:flex-row gap-5 md:gap-6 justify-center pt-6 md:pt-8 items-center"
                     >
                         <Link
                             href={hasDog ? "/dashboard" : "/survey"}
                             className={cn(
-                                "group relative inline-flex items-center justify-center px-10 py-5 text-xl font-bold text-white transition-all bg-brand-lime rounded-full overflow-hidden hover:scale-105 shadow-2xl shadow-brand-lime/30"
+                                "group relative inline-flex items-center justify-center px-8 md:px-10 py-4 md:py-5 text-lg md:text-xl font-bold text-white transition-all bg-brand-lime rounded-full overflow-hidden hover:scale-105 shadow-2xl shadow-brand-lime/30"
                             )}
                         >
                             <span className="relative z-10 flex items-center">
